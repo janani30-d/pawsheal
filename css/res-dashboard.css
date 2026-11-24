@@ -1,0 +1,4627 @@
+
+/* ==========================================
+   PAWSHEAL DASHBOARD - RTL SUPPORT
+========================================== */
+
+/* Main layout */
+
+html[dir="rtl"] .paw-dashboard-main {
+    margin-left: 0;
+    margin-right: var(--paw-sidebar-width);
+}
+
+html[dir="rtl"] .paw-dashboard-sidebar {
+    left: auto;
+    right: 0;
+    border-right: none;
+    border-left: 1px solid var(--paw-border);
+}
+
+html[dir="rtl"] .paw-dashboard-header {
+    right: auto;
+    left: 0;
+}
+
+/* Header alignment */
+
+html[dir="rtl"] .paw-header-left,
+html[dir="rtl"] .paw-header-right {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-header-heading {
+    text-align: right;
+}
+
+html[dir="rtl"] .paw-header-profile {
+    padding-left: 0;
+    padding-right: 13px;
+    border-left: none;
+    border-right: 1px solid var(--paw-border);
+}
+
+html[dir="rtl"] .paw-profile-arrow {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+/* Sidebar alignment */
+
+html[dir="rtl"] .paw-sidebar-navigation {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-sidebar-label {
+    text-align: right;
+}
+
+html[dir="rtl"] .paw-sidebar-item a {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .paw-sidebar-logout {
+    direction: rtl;
+}
+
+/* Notification badge */
+
+html[dir="rtl"] .paw-notification-badge {
+    right: auto;
+    left: -6px;
+}
+
+/* Logout modal */
+
+html[dir="rtl"] .paw-logout-card {
+    direction: rtl;
+    text-align: center;
+}
+
+html[dir="rtl"] .paw-logout-actions {
+    direction: rtl;
+}
+
+
+/* ==========================================
+   RESPONSIVE - IPAD PRO / 1024px
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .paw-dashboard-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1100;
+    }
+
+    .paw-dashboard-sidebar.active {
+        transform: translateX(0);
+    }
+
+    html[dir="rtl"] .paw-dashboard-sidebar {
+        transform: translateX(100%);
+    }
+
+    html[dir="rtl"] .paw-dashboard-sidebar.active {
+        transform: translateX(0);
+    }
+
+    .paw-dashboard-main,
+    html[dir="rtl"] .paw-dashboard-main {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .paw-dashboard-header {
+        width: 100%;
+    }
+
+    .paw-dashboard-menu-toggle {
+        display: flex;
+        flex-shrink: 0;
+    }
+
+    .paw-dashboard-overlay.active {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 1050;
+        background: rgba(12, 27, 20, 0.45);
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - IPAD MINI / 768px
+========================================== */
+
+@media (max-width: 768px) {
+
+    .paw-mypets-page .paw-mypets-workspace {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .paw-mypets-page .paw-mypets-overview-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .paw-dashboard-header {
+        padding: 0 20px;
+        gap: 12px;
+    }
+
+    .paw-header-right {
+        gap: 9px;
+    }
+
+    .paw-header-profile-info,
+    .paw-profile-arrow {
+        display: none;
+    }
+
+    .paw-header-profile {
+        padding-left: 10px;
+    }
+
+    html[dir="rtl"] .paw-header-profile {
+        padding-left: 0;
+        padding-right: 10px;
+    }
+
+    .paw-dashboard-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - MOBILE / 480px
+========================================== */
+
+@media (max-width: 480px) {
+
+    .paw-mypets-page .paw-mypets-workspace {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .paw-mypets-page .paw-mypets-overview-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    :root {
+        --paw-header-height: 74px;
+    }
+
+    .paw-dashboard-header {
+        padding: 0 13px;
+        gap: 8px;
+    }
+
+    .paw-header-left {
+        gap: 9px;
+    }
+
+    .paw-dashboard-menu-toggle {
+        width: 37px;
+        height: 37px;
+    }
+
+    .paw-header-heading p {
+        display: none;
+    }
+
+    .paw-header-right {
+        gap: 6px;
+    }
+
+    .paw-header-notification,
+    .paw-header-theme-toggle,
+    .paw-header-rtl-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .paw-header-profile img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .paw-header-profile {
+        padding-left: 7px;
+    }
+
+    html[dir="rtl"] .paw-header-profile {
+        padding-left: 0;
+        padding-right: 7px;
+    }
+
+    .paw-notification-badge {
+        width: 17px;
+        height: 17px;
+    }
+
+    .paw-dashboard-content {
+        padding: calc(var(--paw-header-height) + 20px) 13px 25px;
+    }
+
+    .paw-logout-card {
+        padding: 28px 20px;
+    }
+
+    .paw-logout-actions {
+        gap: 8px;
+    }
+
+    .paw-logout-cancel,
+    .paw-logout-confirm {
+        padding: 0 14px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - SMALL MOBILE / 360px
+========================================== */
+
+@media (max-width: 360px) {
+
+    .paw-dashboard-header {
+        padding: 0 9px;
+    }
+
+    .paw-header-left {
+        gap: 6px;
+    }
+
+    .paw-dashboard-menu-toggle {
+        width: 34px;
+        height: 34px;
+    }
+
+    .paw-header-right {
+        gap: 5px;
+    }
+
+    .paw-header-notification,
+    .paw-header-theme-toggle,
+    .paw-header-rtl-toggle {
+        width: 33px;
+        height: 33px;
+    }
+
+    .paw-header-profile img {
+        width: 32px;
+        height: 32px;
+    }
+
+}
+
+
+/* ==========================================
+   RTL - RESPONSIVE SIDEBAR
+========================================== */
+
+@media (max-width: 1024px) {
+
+    html[dir="rtl"] .paw-dashboard-sidebar {
+        left: auto;
+        right: 0;
+    }
+
+    html[dir="rtl"] .paw-dashboard-header {
+        left: 0;
+        right: auto;
+    }
+
+    html[dir="rtl"] .paw-dashboard-menu-toggle {
+        direction: rtl;
+    }
+
+}
+
+
+/* ==========================================
+   DARK MODE - RESPONSIVE OVERLAY
+========================================== */
+
+html.dark-mode .paw-dashboard-overlay.active {
+    background: rgba(0, 0, 0, 0.60);
+}
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   PAWSHEAL DASHBOARD - RTL SUPPORT
+========================================== */
+
+html[dir="rtl"] .paw-dashboard-main {
+    margin-left: 0 !important;
+    margin-right: 265px !important;
+}
+
+html[dir="rtl"] .paw-dashboard-content {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-overview-welcome {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-overview-welcome-content {
+    text-align: right;
+}
+
+html[dir="rtl"] .paw-overview-welcome-image {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .paw-overview-paw-one {
+    right: auto;
+    left: 12%;
+}
+
+html[dir="rtl"] .paw-overview-paw-two {
+    right: auto;
+    left: 5%;
+}
+
+html[dir="rtl"] .paw-overview-date,
+html[dir="rtl"] .paw-overview-book-btn {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-overview-stats,
+html[dir="rtl"] .paw-overview-pet-list {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-overview-stat-card,
+html[dir="rtl"] .paw-overview-pet-card,
+html[dir="rtl"] .paw-overview-appointment-card,
+html[dir="rtl"] .paw-overview-activity-item,
+html[dir="rtl"] .paw-overview-reminder-card {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-overview-stat-info,
+html[dir="rtl"] .paw-overview-pet-info,
+html[dir="rtl"] .paw-overview-appointment-details,
+html[dir="rtl"] .paw-overview-activity-info,
+html[dir="rtl"] .paw-overview-reminder-info {
+    text-align: right;
+}
+
+html[dir="rtl"] .paw-overview-pet-info {
+    padding: 11px 0 11px 10px;
+}
+
+html[dir="rtl"] .paw-overview-panel-header {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-overview-panel-header a {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .paw-overview-panel-header a i,
+html[dir="rtl"] .paw-overview-book-btn i:last-child {
+    transform: rotate(180deg);
+}
+
+html[dir="rtl"] .paw-overview-appointment-meta {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-overview-reminder-status {
+    text-align: center;
+}
+
+/* ==========================================
+   RESPONSIVE - IPAD PRO
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .paw-dashboard-main,
+    html[dir="rtl"] .paw-dashboard-main {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .paw-dashboard-content {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        padding: 116px 24px 30px;
+    }
+
+    .paw-overview-welcome,
+    .paw-overview-stats {
+        grid-column: 1 / -1;
+    }
+
+    .paw-overview-welcome {
+        min-height: 225px;
+        padding: 25px 28px;
+    }
+
+    .paw-overview-welcome-content {
+        width: 58%;
+    }
+
+    .paw-overview-welcome-image {
+        width: 45%;
+    }
+
+    .paw-overview-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-overview-pet-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE - IPAD MINI
+========================================== */
+
+@media (max-width: 768px) {
+
+    .paw-dashboard-content {
+        grid-template-columns: 1fr;
+        gap: 17px;
+        padding: 110px 20px 30px;
+    }
+
+    .paw-overview-welcome,
+    .paw-overview-stats {
+        grid-column: 1;
+    }
+
+    .paw-overview-welcome {
+        min-height: 220px;
+        padding: 24px;
+    }
+
+    .paw-overview-welcome-content {
+        width: 62%;
+    }
+
+    .paw-overview-welcome-image {
+        width: 42%;
+    }
+
+    .paw-overview-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-overview-pet-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .paw-dashboard-content {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 94px 13px 25px;
+    }
+
+    .paw-overview-welcome {
+        min-height: 250px;
+        align-items: flex-start;
+        padding: 22px 19px;
+    }
+
+    .paw-overview-welcome-content {
+        width: 100%;
+        position: relative;
+        z-index: 3;
+    }
+
+    .paw-overview-welcome-content p {
+        max-width: 85%;
+    }
+
+    .paw-overview-welcome-image {
+        width: 52%;
+        height: 135px;
+        right: 0;
+        opacity: 0.40;
+    }
+
+    html[dir="rtl"] .paw-overview-welcome-image {
+        right: auto;
+        left: 0;
+    }
+
+    .paw-overview-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .paw-overview-stat-card {
+        min-height: 95px;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .paw-overview-stat-icon {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+    }
+
+    .paw-overview-pet-list {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-overview-panel {
+        padding: 16px;
+    }
+
+    .paw-overview-appointment-card {
+        flex-wrap: wrap;
+    }
+
+    .paw-overview-appointment-status {
+        margin-left: 83px;
+    }
+
+    html[dir="rtl"] .paw-overview-appointment-status {
+        margin-left: 0;
+        margin-right: 83px;
+    }
+
+    .paw-overview-reminder-card {
+        flex-wrap: wrap;
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE - SMALL MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+
+    .paw-dashboard-content {
+        padding: 94px 10px 22px;
+        gap: 13px;
+    }
+
+    .paw-overview-welcome {
+        min-height: 245px;
+        padding: 18px 15px;
+    }
+
+    .paw-overview-stats {
+        gap: 8px;
+    }
+
+    .paw-overview-stat-card {
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .paw-overview-stat-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+    }
+
+    .paw-overview-panel {
+        padding: 13px;
+    }
+
+    .paw-overview-appointment-card {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .paw-overview-appointment-status {
+        margin-left: 78px;
+    }
+
+    html[dir="rtl"] .paw-overview-appointment-status {
+        margin-left: 0;
+        margin-right: 78px;
+    }
+
+    .paw-overview-reminder-card {
+        gap: 9px;
+        padding: 8px;
+    }
+
+    .paw-overview-reminder-icon {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   MY PETS PAGE - PART 3
+   RESPONSIVE CSS + RTL
+========================================== */
+
+
+/* ==========================================
+   IPAD PRO - 1024px
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .paw-mypets-page {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .paw-mypets-hero {
+        min-height: 230px;
+        padding: 28px;
+    }
+
+    .paw-mypets-hero-content {
+        width: 62%;
+    }
+
+    .paw-mypets-hero-image {
+        width: 42%;
+    }
+
+    .paw-mypets-workspace {
+        grid-template-columns: 235px minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .paw-mypets-list-panel,
+    .paw-mypets-details-panel,
+    .paw-mypets-add-section {
+        padding: 18px;
+    }
+
+    .paw-mypets-profile {
+        gap: 14px;
+    }
+
+    .paw-mypets-profile-image {
+        width: 105px;
+        height: 105px;
+    }
+
+    .paw-mypets-profile-title {
+        flex-wrap: wrap;
+    }
+
+    .paw-mypets-basic-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-mypets-overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-mypets-health-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-mypets-timeline-card {
+        width: 100%;
+    }
+
+    .paw-mypets-tabs {
+        gap: 17px;
+    }
+
+    .paw-mypets-form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ==========================================
+   IPAD MINI - 768px
+========================================== */
+
+@media (max-width: 768px) {
+
+    .paw-mypets-hero {
+        min-height: 220px;
+        padding: 25px;
+    }
+
+    .paw-mypets-hero-content {
+        width: 70%;
+    }
+
+    .paw-mypets-hero-image {
+        width: 38%;
+        opacity: .85;
+    }
+
+    .paw-mypets-hero-content > p {
+        max-width: 390px;
+    }
+
+    .paw-mypets-workspace {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .paw-mypets-list-panel {
+        width: 100%;
+    }
+
+    .paw-mypets-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-mypets-list-note {
+        margin-top: 16px;
+    }
+
+    .paw-mypets-details-panel {
+        width: 100%;
+    }
+
+    .paw-mypets-profile {
+        align-items: center;
+    }
+
+    .paw-mypets-profile-image {
+        width: 115px;
+        height: 115px;
+    }
+
+    .paw-mypets-overview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-mypets-health-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-mypets-action-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-mypets-timeline-item {
+        flex-wrap: wrap;
+    }
+
+    .paw-mypets-timeline-tag {
+        margin-left: 45px;
+    }
+
+    .paw-mypets-form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* ==========================================
+   MOBILE - 480px
+========================================== */
+
+@media (max-width: 480px) {
+
+    .paw-mypets-hero {
+        min-height: 245px;
+        padding: 22px 19px;
+        align-items: flex-start;
+    }
+
+    .paw-mypets-hero-content {
+        width: 100%;
+        z-index: 2;
+    }
+
+    .paw-mypets-hero-content > p {
+        max-width: 290px;
+    }
+
+    .paw-mypets-hero-image {
+        right: 0;
+        bottom: 0;
+        top: auto;
+        width: 48%;
+        height: 62%;
+        opacity: .38;
+    }
+
+    .paw-mypets-hero-bottom {
+        flex-wrap: wrap;
+        gap: 13px;
+        margin-top: 18px;
+    }
+
+    .paw-mypets-workspace {
+        gap: 15px;
+        margin-bottom: 18px;
+    }
+
+    .paw-mypets-list-panel,
+    .paw-mypets-details-panel,
+    .paw-mypets-add-section {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .paw-mypets-list {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-mypets-list-card {
+        padding: 9px;
+    }
+
+    .paw-mypets-profile {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .paw-mypets-profile-image {
+        width: 85px;
+        height: 85px;
+    }
+
+    .paw-mypets-profile-title {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .paw-mypets-profile-actions {
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 11px;
+    }
+
+    .paw-mypets-edit-btn,
+    .paw-mypets-delete-btn {
+        min-height: 34px;
+        padding: 0 9px;
+    }
+
+    .paw-mypets-basic-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding: 15px 0;
+    }
+
+    .paw-mypets-info-item {
+        padding: 10px;
+    }
+
+    .paw-mypets-tabs {
+        gap: 17px;
+        padding-top: 14px;
+    }
+
+    .paw-mypets-tab {
+        padding-bottom: 11px;
+    }
+
+    .paw-mypets-overview-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .paw-mypets-health-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .paw-mypets-metric {
+        gap: 7px;
+        padding: 10px 7px;
+    }
+
+    .paw-mypets-metric-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .paw-mypets-action-buttons {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-mypets-action-buttons a,
+    .paw-mypets-action-buttons button {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .paw-mypets-timeline-card {
+        padding: 14px;
+    }
+
+    .paw-mypets-timeline-item {
+        flex-wrap: nowrap;
+    }
+
+    .paw-mypets-timeline-tag {
+        display: none;
+    }
+
+    .paw-mypets-form-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .paw-mypets-photo-group {
+        margin-top: 15px;
+    }
+
+    .paw-mypets-form-actions {
+        flex-wrap: wrap;
+    }
+
+    .paw-mypets-reset-btn,
+    .paw-mypets-submit-btn {
+        flex: 1;
+        padding: 0 12px;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE - 360px
+========================================== */
+
+@media (max-width: 360px) {
+
+    .paw-mypets-hero {
+        min-height: 250px;
+        padding: 19px 15px;
+    }
+
+    .paw-mypets-hero-content {
+        width: 100%;
+    }
+
+    .paw-mypets-hero-image {
+        width: 45%;
+        height: 55%;
+    }
+
+    .paw-mypets-hero-bottom {
+        gap: 10px;
+    }
+
+    .paw-mypets-count > i {
+        width: 37px;
+        height: 37px;
+    }
+
+    .paw-mypets-add-btn {
+        min-height: 39px;
+        padding: 0 12px;
+    }
+
+    .paw-mypets-list-panel,
+    .paw-mypets-details-panel,
+    .paw-mypets-add-section {
+        padding: 12px;
+    }
+
+    .paw-mypets-profile {
+        gap: 9px;
+    }
+
+    .paw-mypets-profile-image {
+        width: 72px;
+        height: 72px;
+    }
+
+    .paw-mypets-profile-actions {
+        gap: 6px;
+    }
+
+    .paw-mypets-edit-btn,
+    .paw-mypets-delete-btn {
+        min-height: 32px;
+        padding: 0 7px;
+    }
+
+    .paw-mypets-basic-info {
+        gap: 7px;
+    }
+
+    .paw-mypets-info-item {
+        padding: 9px 7px;
+    }
+
+    .paw-mypets-tabs {
+        gap: 15px;
+    }
+
+    .paw-mypets-health-card,
+    .paw-mypets-timeline-card {
+        padding: 12px;
+    }
+
+    .paw-mypets-health-metrics {
+        gap: 7px;
+    }
+
+    .paw-mypets-metric {
+        gap: 6px;
+        padding: 9px 6px;
+    }
+
+    .paw-mypets-metric-icon {
+        width: 27px;
+        height: 27px;
+    }
+
+    .paw-mypets-action-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-mypets-timeline {
+        gap: 17px;
+    }
+
+    .paw-mypets-form-actions {
+        flex-direction: column;
+    }
+
+    .paw-mypets-reset-btn,
+    .paw-mypets-submit-btn {
+        width: 100%;
+        flex: auto;
+    }
+}
+
+
+/* ==========================================
+   RTL RESPONSIVE ADJUSTMENTS
+========================================== */
+
+html[dir="rtl"] .paw-mypets-hero {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-mypets-hero-image {
+    right: auto;
+    left: 0;
+}
+
+html[dir="rtl"] .paw-mypets-list-card {
+    text-align: right;
+}
+
+html[dir="rtl"] .paw-mypets-list-card > i {
+    transform: rotate(180deg);
+}
+
+html[dir="rtl"] .paw-mypets-timeline {
+    padding-right: 4px;
+    padding-left: 0;
+}
+
+html[dir="rtl"] .paw-mypets-timeline::before {
+    right: 20px;
+    left: auto;
+}
+
+html[dir="rtl"] .paw-mypets-timeline-item {
+    direction: rtl;
+}
+
+html[dir="rtl"] .paw-mypets-timeline-tag {
+    margin-right: 45px;
+    margin-left: 0;
+}
+
+html[dir="rtl"] .paw-mypets-search input {
+    text-align: right;
+}
+
+html[dir="rtl"] .paw-mypets-form-actions {
+    justify-content: flex-start;
+}
+
+@media (max-width: 480px) {
+    html[dir="rtl"] .paw-mypets-timeline-tag {
+        margin-right: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   PAWSHEAL - APPOINTMENTS PAGE
+   PART 3 - RESPONSIVE CSS + RTL
+========================================== */
+
+
+/* ==========================================
+   IPAD PRO - 1024px
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .paw-appointments-page {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .paw-appointment-hero {
+        min-height: 190px;
+        padding: 23px;
+    }
+
+    .paw-appointment-hero-content {
+        width: 43%;
+    }
+
+    .paw-appointment-hero-image {
+        left: 35%;
+        width: 34%;
+    }
+
+    .paw-appointment-next {
+        width: 29%;
+        padding-left: 17px;
+    }
+
+    .paw-appointment-stats {
+        gap: 12px;
+    }
+
+    .paw-appointment-stat-card {
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .paw-appointment-stat-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .paw-appointment-workspace {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .paw-appointment-left-column {
+        width: 100%;
+    }
+
+    .paw-appointment-book-panel {
+        width: 100%;
+    }
+
+    .paw-appointment-item,
+    .paw-appointment-history-item {
+        grid-template-columns: 55px minmax(100px, 1fr) minmax(120px, 1fr) minmax(135px, 1fr) auto 20px;
+        gap: 9px;
+    }
+
+    .paw-appointment-pet-image {
+        width: 52px;
+        height: 50px;
+    }
+
+    .paw-appointment-form-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    html[dir="rtl"] .paw-appointment-hero-image {
+        right: 35%;
+        left: auto;
+    }
+
+    html[dir="rtl"] .paw-appointment-next {
+        padding-right: 17px;
+        padding-left: 0;
+    }
+}
+
+
+/* ==========================================
+   IPAD MINI - 768px
+========================================== */
+
+@media (max-width: 768px) {
+
+    .paw-appointment-hero {
+        min-height: 205px;
+        padding: 22px;
+    }
+
+    .paw-appointment-hero-content {
+        width: 55%;
+    }
+
+    .paw-appointment-hero-image {
+        left: 44%;
+        width: 32%;
+        opacity: .8;
+    }
+
+    .paw-appointment-next {
+        width: 32%;
+        padding-left: 13px;
+    }
+
+    .paw-appointment-next-info strong {
+        line-height: 1.5;
+    }
+
+    .paw-appointment-hero-btn {
+        padding: 0 9px;
+    }
+
+    .paw-appointment-stats {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .paw-appointment-stat-card {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: 110px;
+        gap: 9px;
+        padding: 13px;
+    }
+
+    .paw-appointment-stat-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .paw-appointment-panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .paw-appointment-filters {
+        width: 100%;
+    }
+
+    .paw-appointment-filters select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .paw-appointment-item,
+    .paw-appointment-history-item {
+        grid-template-columns: 55px minmax(0, 1fr) minmax(0, 1fr) auto 20px;
+        row-gap: 10px;
+    }
+
+    .paw-appointment-vet {
+        grid-column: 2 / 4;
+    }
+
+    .paw-appointment-status {
+        grid-column: 4;
+        grid-row: 1;
+    }
+
+    .paw-appointment-view-btn {
+        grid-column: 5;
+        grid-row: 1;
+    }
+
+    .paw-appointment-pet-image {
+        grid-row: 1 / 3;
+        align-self: start;
+    }
+
+    .paw-appointment-date {
+        grid-column: 3;
+    }
+
+    .paw-appointment-vet {
+        grid-row: 2;
+    }
+
+    .paw-appointment-form-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-appointment-book-panel {
+        padding: 19px;
+    }
+
+    html[dir="rtl"] .paw-appointment-hero-image {
+        right: 44%;
+        left: auto;
+    }
+}
+
+
+/* ==========================================
+   MOBILE - 480px
+========================================== */
+
+@media (max-width: 480px) {
+
+    .paw-appointment-hero {
+        min-height: 255px;
+        padding: 20px;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .paw-appointment-hero-content {
+        width: 100%;
+        max-width: 310px;
+    }
+
+    .paw-appointment-hero-content p {
+        max-width: 270px;
+    }
+
+    .paw-appointment-hero-image {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        width: 48%;
+        height: 65%;
+        opacity: .35;
+    }
+
+    .paw-appointment-next {
+        z-index: 2;
+        width: 100%;
+        min-height: auto;
+        padding: 13px 0 0;
+        margin-top: 15px;
+        border-top: 1px solid rgba(255,255,255,.3);
+        border-left: 0;
+    }
+
+    .paw-appointment-next-info {
+        gap: 3px;
+    }
+
+    .paw-appointment-next-info strong {
+        font-size: 15px;
+    }
+
+    .paw-appointment-next-info small {
+        font-size: 12px;
+    }
+
+    .paw-appointment-hero-btn {
+        width: auto;
+        min-height: 38px;
+        padding: 0 13px;
+        margin-top: 10px;
+    }
+
+    .paw-appointment-stats {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .paw-appointment-stat-card {
+        flex-direction: row;
+        align-items: center;
+        min-height: 75px;
+        padding: 12px 15px;
+    }
+
+    .paw-appointment-stat-icon {
+        width: 43px;
+        height: 43px;
+    }
+
+    .paw-appointment-stat-info {
+        gap: 3px;
+    }
+
+    .paw-appointment-workspace {
+        gap: 14px;
+    }
+
+    .paw-appointment-list-panel,
+    .paw-appointment-history-panel,
+    .paw-appointment-book-panel {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .paw-appointment-panel-heading {
+        gap: 13px;
+    }
+
+    .paw-appointment-filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .paw-appointment-filters select {
+        width: 100%;
+        height: 40px;
+    }
+
+    .paw-appointment-item,
+    .paw-appointment-history-item {
+        grid-template-columns: 48px minmax(0, 1fr) auto;
+        gap: 9px;
+        padding: 11px 9px;
+    }
+
+    .paw-appointment-pet-image {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        width: 46px;
+        height: 46px;
+    }
+
+    .paw-appointment-pet-info {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .paw-appointment-date {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .paw-appointment-vet {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .paw-appointment-status {
+        grid-column: 3;
+        grid-row: 1;
+        min-width: 0;
+        padding: 6px 8px;
+    }
+
+    .paw-appointment-view-btn {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+    .paw-appointment-pet-info strong {
+        font-size: 14px;
+    }
+
+    .paw-appointment-date strong,
+    .paw-appointment-vet strong {
+        flex-wrap: wrap;
+    }
+
+    .paw-appointment-history-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .paw-appointment-history-view {
+        align-self: flex-end;
+    }
+
+    .paw-appointment-history-title {
+        align-items: flex-start;
+    }
+
+    .paw-appointment-book-heading {
+        align-items: flex-start;
+    }
+
+    .paw-appointment-form-row {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .paw-appointment-book-form {
+        gap: 14px;
+    }
+
+    .paw-appointment-modal {
+        padding: 12px;
+    }
+
+    .paw-appointment-modal-card {
+        padding: 22px 16px;
+    }
+
+    .paw-appointment-modal-actions {
+        flex-direction: column;
+    }
+
+    .paw-appointment-reschedule-btn,
+    .paw-appointment-cancel-btn {
+        width: 100%;
+        flex: auto;
+    }
+
+
+    /* RTL MOBILE */
+
+    html[dir="rtl"] .paw-appointment-hero {
+        align-items: flex-start;
+    }
+
+    html[dir="rtl"] .paw-appointment-hero-image {
+        right: auto;
+        left: 0;
+    }
+
+    html[dir="rtl"] .paw-appointment-next {
+        padding-right: 0;
+        padding-left: 0;
+        border-right: 0;
+        border-top: 1px solid rgba(255,255,255,.3);
+    }
+
+    html[dir="rtl"] .paw-appointment-item,
+    html[dir="rtl"] .paw-appointment-history-item {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-appointment-pet-image {
+        grid-column: 3;
+    }
+
+    html[dir="rtl"] .paw-appointment-pet-info,
+    html[dir="rtl"] .paw-appointment-date,
+    html[dir="rtl"] .paw-appointment-vet {
+        grid-column: 2;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .paw-appointment-status {
+        grid-column: 1;
+    }
+
+    html[dir="rtl"] .paw-appointment-view-btn {
+        grid-column: 1;
+    }
+
+    html[dir="rtl"] .paw-appointment-input-wrapper input,
+    html[dir="rtl"] .paw-appointment-input-wrapper select {
+        padding-right: 37px;
+        padding-left: 12px;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .paw-appointment-notes-wrapper textarea {
+        padding-right: 37px;
+        padding-left: 12px;
+        text-align: right;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE - 360px
+========================================== */
+
+@media (max-width: 360px) {
+
+    .paw-appointment-hero {
+        min-height: 270px;
+        padding: 17px;
+    }
+
+    .paw-appointment-hero-content {
+        max-width: 270px;
+    }
+
+    .paw-appointment-hero-image {
+        width: 43%;
+        height: 57%;
+    }
+
+    .paw-appointment-next {
+        margin-top: 12px;
+    }
+
+    .paw-appointment-hero-btn {
+        min-height: 36px;
+        padding: 0 10px;
+    }
+
+    .paw-appointment-stat-card {
+        padding: 10px 12px;
+    }
+
+    .paw-appointment-list-panel,
+    .paw-appointment-history-panel,
+    .paw-appointment-book-panel {
+        padding: 11px;
+    }
+
+    .paw-appointment-item,
+    .paw-appointment-history-item {
+        grid-template-columns: 42px minmax(0, 1fr) auto;
+        gap: 7px;
+        padding: 9px 7px;
+    }
+
+    .paw-appointment-pet-image {
+        width: 40px;
+        height: 42px;
+    }
+
+    .paw-appointment-status {
+        padding: 5px 6px;
+        font-size: 11px;
+    }
+
+    .paw-appointment-date strong,
+    .paw-appointment-vet strong {
+        font-size: 12px;
+    }
+
+    .paw-appointment-date span,
+    .paw-appointment-vet span,
+    .paw-appointment-pet-info span {
+        font-size: 12px;
+    }
+
+    .paw-appointment-history-icon,
+    .paw-appointment-book-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .paw-appointment-modal-card {
+        padding: 20px 13px;
+    }
+
+    .paw-appointment-detail-row {
+        gap: 8px;
+    }
+
+    .paw-appointment-detail-row strong {
+        overflow-wrap: anywhere;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   PAWSHEAL - MEDICAL RECORDS
+   PART 3: RESPONSIVE CSS + RTL
+===================================================== */
+
+
+/* =====================================================
+   1024px - TABLET / SMALL LAPTOP
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    .paw-dashboard-content.paw-medical-page {
+        padding: 24px 22px;
+    }
+
+    .paw-medical-hero {
+        min-height: 210px;
+        padding: 27px;
+    }
+
+    .paw-medical-hero-content {
+        width: 48%;
+    }
+
+    .paw-medical-hero-image {
+        right: 205px;
+        width: 215px;
+    }
+
+    .paw-medical-hero-summary {
+        min-width: 155px;
+    }
+
+    .paw-medical-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .paw-medical-workspace {
+        grid-template-columns: 260px minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .paw-medical-sidebar-panel {
+        padding: 15px;
+    }
+
+    .paw-medical-detail-panel {
+        padding: 18px;
+    }
+
+    .paw-medical-detail-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .paw-medical-detail-body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .paw-medical-detail-profile {
+        display: grid;
+        grid-template-columns: 145px minmax(0, 1fr);
+        align-items: center;
+        gap: 18px;
+        padding-right: 0;
+        padding-bottom: 18px;
+        border-right: 0;
+        border-bottom: 1px solid #EDF0EB;
+    }
+
+    .paw-medical-pet-photo {
+        height: 130px;
+    }
+
+    .paw-medical-profile-info {
+        gap: 12px;
+    }
+
+    .paw-medical-diagnosis {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    .paw-medical-diagnosis .paw-medical-info-row {
+        padding-bottom: 12px;
+    }
+
+    .paw-medical-lower-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    html[dir="rtl"] .paw-medical-hero-image {
+        right: auto;
+        left: 205px;
+    }
+
+    html[dir="rtl"] .paw-medical-detail-profile {
+        padding-left: 0;
+        border-left: 0;
+        border-bottom: 1px solid #EDF0EB;
+    }
+
+    html.dark-mode .paw-medical-detail-profile {
+        border-bottom-color: #405849;
+    }
+
+}
+
+
+/* =====================================================
+   768px - TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .paw-dashboard-content.paw-medical-page {
+        padding: 20px 18px;
+    }
+
+    .paw-medical-hero {
+        min-height: 205px;
+        padding: 24px;
+    }
+
+    .paw-medical-hero-content {
+        width: 55%;
+    }
+
+    .paw-medical-hero-image {
+        right: 145px;
+        width: 185px;
+        opacity: 0.9;
+    }
+
+    .paw-medical-hero-summary {
+        min-width: 130px;
+        gap: 15px;
+    }
+
+    .paw-medical-hero-count {
+        gap: 8px;
+    }
+
+    .paw-medical-hero-count > i {
+        width: 36px;
+        height: 36px;
+    }
+
+    .paw-medical-add-btn {
+        min-height: 40px;
+        padding: 0 13px;
+    }
+
+    .paw-medical-workspace {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .paw-medical-sidebar-panel {
+        padding: 18px;
+    }
+
+    .paw-medical-record-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .paw-medical-record-item {
+        min-width: 0;
+    }
+
+    .paw-medical-record-item:nth-child(5) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 5px);
+    }
+
+    .paw-medical-detail-heading {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .paw-medical-detail-actions {
+        width: 100%;
+    }
+
+    .paw-medical-detail-actions button {
+        flex: 1;
+    }
+
+    .paw-medical-detail-body {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 18px;
+    }
+
+    .paw-medical-detail-profile {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding-right: 15px;
+        padding-bottom: 0;
+        border-right: 1px solid #EDF0EB;
+        border-bottom: 0;
+    }
+
+    .paw-medical-pet-photo {
+        height: 145px;
+    }
+
+    .paw-medical-diagnosis {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .paw-medical-lower-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    html[dir="rtl"] .paw-medical-hero-image {
+        right: auto;
+        left: 145px;
+    }
+
+    html[dir="rtl"] .paw-medical-detail-profile {
+        padding-right: 15px;
+        padding-left: 0;
+        border-right: 1px solid #EDF0EB;
+        border-left: 0;
+        border-bottom: 0;
+    }
+
+    html.dark-mode[dir="rtl"] .paw-medical-detail-profile {
+        border-right-color: #405849;
+    }
+
+}
+
+
+/* =====================================================
+   480px - MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .paw-dashboard-content.paw-medical-page {
+        padding: 16px 13px;
+    }
+
+    .paw-medical-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 23px 19px;
+        gap: 15px;
+    }
+
+    .paw-medical-hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .paw-medical-hero-content h2 {
+        max-width: 290px;
+    }
+
+    .paw-medical-hero-content p {
+        max-width: 290px;
+    }
+
+    .paw-medical-hero-image {
+        top: auto;
+        right: 0;
+        bottom: 0;
+        width: 145px;
+        height: 145px;
+        opacity: 0.55;
+    }
+
+    .paw-medical-hero-summary {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-width: 0;
+        padding-top: 8px;
+    }
+
+    .paw-medical-hero-count {
+        position: relative;
+        z-index: 2;
+    }
+
+    .paw-medical-add-btn {
+        position: relative;
+        z-index: 2;
+    }
+
+    .paw-medical-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 17px;
+    }
+
+    .paw-medical-stat-card {
+        min-height: 85px;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .paw-medical-stat-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .paw-medical-sidebar-panel {
+        padding: 14px;
+    }
+
+    .paw-medical-record-list {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-medical-record-item {
+        min-height: 67px;
+    }
+
+    .paw-medical-detail-panel {
+        padding: 15px;
+    }
+
+    .paw-medical-detail-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .paw-medical-detail-title {
+        width: 100%;
+    }
+
+    .paw-medical-detail-actions {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+        gap: 6px;
+    }
+
+    .paw-medical-detail-actions button {
+        min-width: 0;
+        padding: 0 6px;
+        font-size: 11px;
+    }
+
+    .paw-medical-detail-body {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .paw-medical-detail-profile {
+        display: grid;
+        grid-template-columns: 115px minmax(0, 1fr);
+        align-items: center;
+        gap: 13px;
+        padding-right: 0;
+        padding-bottom: 17px;
+        border-right: 0;
+        border-bottom: 1px solid #EDF0EB;
+    }
+
+    .paw-medical-pet-photo {
+        height: 120px;
+    }
+
+    .paw-medical-profile-info {
+        gap: 10px;
+    }
+
+    .paw-medical-info-row {
+        gap: 8px;
+    }
+
+    .paw-medical-info-row > i {
+        width: 27px;
+        height: 27px;
+        font-size: 12px;
+    }
+
+    .paw-medical-diagnosis {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-medical-lower-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .paw-medical-timeline-panel,
+    .paw-medical-documents-panel {
+        padding: 15px;
+    }
+
+    .paw-medical-modal {
+        padding: 12px;
+    }
+
+    .paw-medical-modal-card {
+        max-height: 92vh;
+        padding: 22px 16px;
+    }
+
+    .paw-medical-modal-form-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .paw-medical-modal-form-group.full {
+        grid-column: auto;
+    }
+
+    .paw-medical-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .paw-medical-modal-actions button {
+        width: 100%;
+    }
+
+
+    /* RTL - MOBILE */
+
+    html[dir="rtl"] .paw-medical-hero-image {
+        right: auto;
+        left: 0;
+    }
+
+    html[dir="rtl"] .paw-medical-detail-profile {
+        padding-left: 0;
+        border-left: 0;
+        border-bottom: 1px solid #EDF0EB;
+    }
+
+    html[dir="rtl"] .paw-medical-detail-actions button {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-medical-timeline {
+        padding-right: 7px;
+        padding-left: 0;
+    }
+
+    html[dir="rtl"] .paw-medical-modal-close {
+        right: auto;
+        left: 12px;
+    }
+
+    html.dark-mode[dir="rtl"] .paw-medical-detail-profile {
+        border-bottom-color: #405849;
+    }
+
+}
+
+
+/* =====================================================
+   360px - SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .paw-dashboard-content.paw-medical-page {
+        padding: 13px 10px;
+    }
+
+    .paw-medical-hero {
+        padding: 20px 15px;
+    }
+
+    .paw-medical-hero-content h2 {
+        max-width: 245px;
+    }
+
+    .paw-medical-hero-content p {
+        max-width: 245px;
+    }
+
+    .paw-medical-hero-image {
+        width: 120px;
+        height: 125px;
+        opacity: 0.42;
+    }
+
+    .paw-medical-hero-summary {
+        gap: 8px;
+    }
+
+    .paw-medical-hero-count > i {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+
+    .paw-medical-add-btn {
+        min-height: 37px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .paw-medical-stat-card {
+        gap: 8px;
+        padding: 10px 8px;
+    }
+
+    .paw-medical-stat-icon {
+        width: 33px;
+        height: 33px;
+        font-size: 14px;
+    }
+
+    .paw-medical-sidebar-panel {
+        padding: 12px;
+    }
+
+    .paw-medical-detail-panel {
+        padding: 12px;
+    }
+
+    .paw-medical-detail-profile {
+        grid-template-columns: 95px minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .paw-medical-pet-photo {
+        height: 105px;
+    }
+
+    .paw-medical-detail-actions button {
+        gap: 4px;
+        padding: 0 4px;
+        font-size: 10px;
+    }
+
+    .paw-medical-timeline-panel,
+    .paw-medical-documents-panel {
+        padding: 12px;
+    }
+
+    .paw-medical-document-item {
+        gap: 7px;
+        padding: 10px 7px;
+    }
+
+    .paw-medical-pdf-icon {
+        width: 32px;
+        height: 37px;
+        font-size: 16px;
+    }
+
+    .paw-medical-document-actions {
+        gap: 2px;
+    }
+
+    .paw-medical-document-actions button {
+        width: 26px;
+        height: 28px;
+    }
+
+    .paw-medical-modal-card {
+        padding: 20px 13px;
+    }
+
+    html[dir="rtl"] .paw-medical-detail-profile {
+        grid-template-columns: minmax(0, 1fr) 95px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   PAWSHEAL - PRESCRIPTIONS PAGE
+   PART 3 - RESPONSIVE CSS + RTL
+===================================================== */
+
+
+/* =====================================================
+   1. IPAD PRO / SMALL LAPTOP - 1024px
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    .paw-dashboard-content.paw-prescriptions-page {
+        padding: 23px 20px;
+    }
+
+    .paw-rx-dashboard {
+        grid-template-columns: 245px minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .paw-rx-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-rx-current-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-rx-schedule-card {
+        width: 100%;
+    }
+
+    .paw-rx-schedule-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .paw-rx-schedule-item {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .paw-rx-schedule-content {
+        flex-basis: calc(100% - 55px);
+    }
+
+    .paw-rx-dose-check {
+        margin-left: auto;
+    }
+
+    .paw-rx-tabs {
+        gap: 6px;
+    }
+
+    .paw-rx-tab {
+        padding: 0 12px;
+    }
+
+    .paw-rx-hero-image {
+        right: 18px;
+    }
+
+    html[dir="rtl"] .paw-rx-hero-image {
+        right: auto;
+        left: 18px;
+    }
+
+}
+
+
+/* =====================================================
+   2. TABLET - 768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .paw-dashboard-content.paw-prescriptions-page {
+        padding: 20px 17px;
+    }
+
+    .paw-rx-hero {
+        min-height: 125px;
+        padding: 20px;
+    }
+
+    .paw-rx-hero-content {
+        max-width: 65%;
+        gap: 14px;
+    }
+
+    .paw-rx-hero-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 25px;
+    }
+
+    .paw-rx-hero-image {
+        right: 10px;
+        height: 105px;
+    }
+
+    .paw-rx-hero-image img {
+        width: 100px;
+        height: 95px;
+    }
+
+    .paw-rx-hero-image img + img {
+        width: 88px;
+        height: 85px;
+    }
+
+    html[dir="rtl"] .paw-rx-hero-image {
+        right: auto;
+        left: 10px;
+    }
+
+    .paw-rx-navigation {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .paw-rx-tabs {
+        display: flex;
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 7px;
+        scrollbar-width: thin;
+    }
+
+    .paw-rx-tab {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    .paw-rx-add-button {
+        align-self: flex-end;
+    }
+
+    .paw-rx-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-rx-pet-column {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        align-items: stretch;
+    }
+
+    .paw-rx-progress-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .paw-rx-progress-circle {
+        width: 145px;
+        height: 145px;
+    }
+
+    .paw-rx-progress-breakdown {
+        margin-top: auto;
+    }
+
+    .paw-rx-main-column {
+        width: 100%;
+    }
+
+    .paw-rx-current-grid {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    }
+
+    .paw-rx-schedule-list {
+        display: flex;
+    }
+
+    .paw-rx-schedule-item {
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .paw-rx-schedule-content {
+        flex-basis: auto;
+    }
+
+    .paw-rx-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   3. MOBILE - 480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .paw-dashboard-content.paw-prescriptions-page {
+        padding: 16px 12px;
+    }
+
+    /* HERO */
+
+    .paw-rx-hero {
+        min-height: 135px;
+        padding: 17px;
+        border-radius: 13px;
+    }
+
+    .paw-rx-hero-content {
+        max-width: 72%;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .paw-rx-hero-icon {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+        border-radius: 9px;
+        font-size: 19px;
+    }
+
+    .paw-rx-hero-content h2 {
+        margin-bottom: 5px;
+    }
+
+    .paw-rx-hero-content p {
+        max-width: 220px;
+        line-height: 1.45;
+    }
+
+    .paw-rx-hero-image {
+        right: -12px;
+        bottom: -5px;
+        height: 75px;
+    }
+
+    .paw-rx-hero-image img {
+        width: 70px;
+        height: 70px;
+        border-radius: 35% 35% 8px 8px;
+    }
+
+    .paw-rx-hero-image img + img {
+        width: 63px;
+        height: 62px;
+        margin-left: -10px;
+        border-width: 2px;
+    }
+
+    html[dir="rtl"] .paw-rx-hero-image {
+        right: auto;
+        left: -12px;
+    }
+
+    /* NAVIGATION */
+
+    .paw-rx-navigation {
+        gap: 12px;
+        margin-bottom: 16px;
+    }
+
+    .paw-rx-tabs {
+        gap: 7px;
+    }
+
+    .paw-rx-tab {
+        min-height: 39px;
+        padding: 0 12px;
+        border-radius: 20px;
+        font-size: 12px;
+    }
+
+    .paw-rx-add-button {
+        min-height: 41px;
+        padding: 0 15px;
+        font-size: 13px;
+    }
+
+    /* PET SECTION */
+
+    .paw-rx-pet-column {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .paw-rx-pet-card,
+    .paw-rx-progress-card {
+        padding: 15px;
+    }
+
+    .paw-rx-selected-pet > img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .paw-rx-progress-circle {
+        width: 135px;
+        height: 135px;
+    }
+
+    .paw-rx-progress-breakdown {
+        gap: 8px;
+    }
+
+    /* SUMMARY */
+
+    .paw-rx-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .paw-rx-summary-card {
+        min-height: 83px;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .paw-rx-summary-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+    .paw-rx-summary-card > div strong {
+        font-size: 22px;
+    }
+
+    /* CURRENT PRESCRIPTION */
+
+    .paw-rx-current-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .paw-rx-current-card,
+    .paw-rx-schedule-card {
+        padding: 14px;
+    }
+
+    .paw-rx-current-header {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .paw-rx-current-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .paw-rx-medicine-profile > img {
+        width: 100px;
+        height: 90px;
+    }
+
+    .paw-rx-medicine-profile {
+        gap: 11px;
+    }
+
+    .paw-rx-detail-row {
+        grid-template-columns: 40% minmax(0, 1fr);
+        gap: 7px;
+        padding: 8px 9px;
+    }
+
+    .paw-rx-instruction-row {
+        padding: 10px;
+    }
+
+    /* MEDICATION SCHEDULE */
+
+    .paw-rx-schedule-list {
+        gap: 8px;
+    }
+
+    .paw-rx-schedule-item {
+        min-height: 65px;
+        padding: 9px;
+    }
+
+    .paw-rx-schedule-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
+    }
+
+    /* REMINDERS + DOCUMENTS */
+
+    .paw-rx-bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .paw-rx-reminders-card,
+    .paw-rx-documents-card {
+        padding: 14px;
+    }
+
+    .paw-rx-document-item {
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .paw-rx-document-actions {
+        gap: 3px;
+    }
+
+    .paw-rx-document-actions button {
+        width: 29px;
+        height: 29px;
+    }
+
+    /* MODAL */
+
+    .paw-rx-modal {
+        padding: 12px;
+    }
+
+    .paw-rx-modal-card {
+        max-height: 92vh;
+        padding: 21px 16px;
+    }
+
+    .paw-rx-form-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .paw-rx-form-group.full {
+        grid-column: auto;
+    }
+
+    .paw-rx-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .paw-rx-form-actions button {
+        width: 100%;
+    }
+
+    html[dir="rtl"] .paw-rx-current-actions {
+        justify-content: flex-start;
+    }
+
+}
+
+
+/* =====================================================
+   4. SMALL MOBILE - 360px
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .paw-dashboard-content.paw-prescriptions-page {
+        padding: 13px 9px;
+    }
+
+    .paw-rx-hero {
+        min-height: 125px;
+        padding: 14px;
+    }
+
+    .paw-rx-hero-content {
+        max-width: 76%;
+        gap: 8px;
+    }
+
+    .paw-rx-hero-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .paw-rx-hero-image img {
+        width: 58px;
+        height: 62px;
+    }
+
+    .paw-rx-hero-image img + img {
+        width: 53px;
+        height: 55px;
+    }
+
+    .paw-rx-tab {
+        min-height: 36px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .paw-rx-add-button {
+        min-height: 38px;
+        padding: 0 12px;
+        font-size: 12px;
+    }
+
+    .paw-rx-summary-card {
+        min-height: 77px;
+        gap: 7px;
+        padding: 8px;
+    }
+
+    .paw-rx-summary-icon {
+        width: 33px;
+        height: 33px;
+        font-size: 15px;
+    }
+
+    .paw-rx-summary-card > div strong {
+        font-size: 20px;
+    }
+
+    .paw-rx-summary-card > div span {
+        font-size: 11px;
+    }
+
+    .paw-rx-medicine-profile > img {
+        width: 82px;
+        height: 82px;
+    }
+
+    .paw-rx-current-card,
+    .paw-rx-schedule-card {
+        padding: 12px;
+    }
+
+    .paw-rx-detail-row {
+        grid-template-columns: 43% minmax(0, 1fr);
+        padding: 8px;
+    }
+
+    .paw-rx-detail-row > span,
+    .paw-rx-detail-row > strong {
+        font-size: 11px;
+    }
+
+    .paw-rx-schedule-item {
+        gap: 8px;
+    }
+
+    .paw-rx-schedule-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .paw-rx-reminder-item,
+    .paw-rx-document-item {
+        gap: 7px;
+        padding: 8px;
+    }
+
+    .paw-rx-document-info strong {
+        font-size: 11px;
+    }
+
+}
+
+
+/* =====================================================
+   5. RTL RESPONSIVE ADJUSTMENTS
+===================================================== */
+
+@media (max-width: 768px) {
+
+    html[dir="rtl"] .paw-rx-navigation {
+        align-items: stretch;
+    }
+
+    html[dir="rtl"] .paw-rx-add-button {
+        align-self: flex-start;
+    }
+
+    html[dir="rtl"] .paw-rx-progress-row {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-rx-schedule-item,
+    html[dir="rtl"] .paw-rx-reminder-item,
+    html[dir="rtl"] .paw-rx-document-item {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-rx-dose-check {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    html[dir="rtl"] .paw-rx-form-actions {
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    html[dir="rtl"] .paw-rx-hero-content {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-rx-current-header {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-rx-current-actions {
+        justify-content: flex-start;
+    }
+
+    html[dir="rtl"] .paw-rx-document-actions {
+        direction: rtl;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   PAWSHEAL - VACCINATION RECORDS
+   PART 3 - RESPONSIVE CSS + RTL
+===================================================== */
+
+
+/* =====================================================
+   1. IPAD PRO / SMALL LAPTOP - 1024px
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    .paw-dashboard-content.paw-vaccination-page {
+        padding: 23px 20px;
+    }
+
+    .paw-vax-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-vax-add-button {
+        grid-column: 1 / -1;
+        justify-self: end;
+    }
+
+    .paw-vax-main-grid {
+        grid-template-columns: 270px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .paw-vax-pet-card {
+        padding: 14px;
+    }
+
+    .paw-vax-selected-pet > img {
+        width: 75px;
+        height: 85px;
+    }
+
+    .paw-vax-progress-content {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .paw-vax-progress-text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .paw-vax-records-card {
+        padding: 14px;
+    }
+
+    .paw-vax-records-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .paw-vax-record-controls {
+        width: 100%;
+    }
+
+    .paw-vax-record-controls input {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+
+    .paw-vax-record-controls select {
+        flex-shrink: 0;
+    }
+
+    .paw-vax-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-vax-documents-content {
+        grid-template-columns: 220px minmax(0, 1fr);
+    }
+
+    .paw-vax-timeline-card,
+    .paw-vax-upcoming-card {
+        padding: 15px;
+    }
+
+}
+
+
+/* =====================================================
+   2. TABLET - 768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .paw-dashboard-content.paw-vaccination-page {
+        padding: 20px 16px;
+    }
+
+    /* HERO */
+
+    .paw-vax-hero {
+        min-height: 125px;
+        padding: 18px;
+    }
+
+    .paw-vax-hero-content {
+        max-width: 70%;
+        gap: 13px;
+    }
+
+    .paw-vax-hero-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 25px;
+    }
+
+    .paw-vax-hero-image {
+        right: 12px;
+        height: 115px;
+    }
+
+    .paw-vax-hero-image img {
+        width: 110px;
+        height: 105px;
+    }
+
+    .paw-vax-hero-image img + img {
+        width: 95px;
+        height: 95px;
+    }
+
+    html[dir="rtl"] .paw-vax-hero-image {
+        right: auto;
+        left: 12px;
+    }
+
+    /* SUMMARY */
+
+    .paw-vax-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .paw-vax-summary-card {
+        min-height: 80px;
+    }
+
+    .paw-vax-add-button {
+        grid-column: 1 / -1;
+    }
+
+    /* MAIN GRID */
+
+    .paw-vax-main-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .paw-vax-pet-card {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        align-items: center;
+        column-gap: 20px;
+    }
+
+    .paw-vax-pet-card > .paw-vax-section-heading {
+        grid-column: 1 / -1;
+        margin-bottom: 12px;
+    }
+
+    .paw-vax-pet-tabs {
+        grid-column: 1;
+        margin-top: 0;
+    }
+
+    .paw-vax-selected-pet {
+        grid-column: 1;
+        margin-top: 12px;
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .paw-vax-progress-section {
+        grid-column: 2;
+        grid-row: 2 / span 2;
+        padding: 0;
+    }
+
+    .paw-vax-progress-content {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .paw-vax-progress-circle {
+        width: 125px;
+        height: 125px;
+    }
+
+    .paw-vax-progress-breakdown {
+        margin-top: 8px;
+    }
+
+    /* RECORDS */
+
+    .paw-vax-records-card {
+        width: 100%;
+    }
+
+    .paw-vax-records-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .paw-vax-record-controls {
+        width: 100%;
+    }
+
+    .paw-vax-table {
+        min-width: 730px;
+    }
+
+    /* BOTTOM SECTIONS */
+
+    .paw-vax-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-vax-documents-content {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-vax-upload-area {
+        min-height: 145px;
+    }
+
+}
+
+
+/* =====================================================
+   3. MOBILE - 480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .paw-dashboard-content.paw-vaccination-page {
+        padding: 16px 12px;
+    }
+
+    /* HERO */
+
+    .paw-vax-hero {
+        min-height: 125px;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .paw-vax-hero-content {
+        max-width: 74%;
+        align-items: flex-start;
+        gap: 9px;
+    }
+
+    .paw-vax-hero-icon {
+        width: 39px;
+        height: 39px;
+        border-width: 2px;
+        border-radius: 9px;
+        font-size: 17px;
+    }
+
+    .paw-vax-hero-content h2 {
+        margin-bottom: 5px;
+    }
+
+    .paw-vax-hero-content p {
+        max-width: 220px;
+        line-height: 1.45;
+    }
+
+    .paw-vax-hero-image {
+        right: -12px;
+        bottom: -5px;
+        height: 78px;
+    }
+
+    .paw-vax-hero-image img {
+        width: 70px;
+        height: 72px;
+        border-radius: 35% 35% 7px 7px;
+    }
+
+    .paw-vax-hero-image img + img {
+        width: 60px;
+        height: 62px;
+        margin-left: -9px;
+        border-width: 2px;
+    }
+
+    html[dir="rtl"] .paw-vax-hero-image {
+        right: auto;
+        left: -12px;
+    }
+
+    /* SUMMARY */
+
+    .paw-vax-summary {
+        gap: 8px;
+    }
+
+    .paw-vax-summary-card {
+        min-height: 72px;
+        gap: 8px;
+        padding: 9px;
+        border-radius: 10px;
+    }
+
+    .paw-vax-summary-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+    }
+
+    .paw-vax-summary-card strong {
+        font-size: 21px;
+    }
+
+    .paw-vax-summary-card > div span {
+        font-size: 11px;
+    }
+
+    .paw-vax-add-button {
+        width: 100%;
+        min-height: 42px;
+    }
+
+    /* PET OVERVIEW */
+
+    .paw-vax-pet-card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 14px;
+    }
+
+    .paw-vax-pet-card > .paw-vax-section-heading {
+        margin-bottom: 0;
+    }
+
+    .paw-vax-pet-tabs {
+        margin-top: 13px;
+    }
+
+    .paw-vax-selected-pet {
+        margin-top: 14px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #E6EEE7;
+    }
+
+    .paw-vax-selected-pet > img {
+        width: 80px;
+        height: 85px;
+    }
+
+    .paw-vax-progress-section {
+        padding-top: 14px;
+    }
+
+    .paw-vax-progress-content {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .paw-vax-progress-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .paw-vax-progress-breakdown > div {
+        min-height: 37px;
+    }
+
+    /* RECORDS */
+
+    .paw-vax-records-card {
+        padding: 13px;
+    }
+
+    .paw-vax-records-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 11px;
+    }
+
+    .paw-vax-record-controls {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+        gap: 7px;
+    }
+
+    .paw-vax-record-controls input,
+    .paw-vax-record-controls select {
+        width: 100%;
+        min-width: 0;
+        height: 38px;
+        padding: 0 8px;
+        font-size: 11px;
+    }
+
+    .paw-vax-table {
+        min-width: 700px;
+    }
+
+    .paw-vax-record-footer {
+        align-items: center;
+        gap: 8px;
+    }
+
+    .paw-vax-record-footer span,
+    .paw-vax-record-footer button {
+        font-size: 11px;
+    }
+
+    /* BOTTOM GRID */
+
+    .paw-vax-bottom-grid {
+        gap: 11px;
+    }
+
+    .paw-vax-timeline-card,
+    .paw-vax-upcoming-card {
+        padding: 13px;
+    }
+
+    .paw-vax-bottom-header {
+        align-items: flex-start;
+        gap: 9px;
+    }
+
+    .paw-vax-section-heading > span {
+        width: 32px;
+        height: 32px;
+    }
+
+    .paw-vax-section-heading h3 {
+        font-size: 16px;
+    }
+
+    .paw-vax-timeline-pet-tabs button {
+        min-width: 54px;
+        min-height: 29px;
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    .paw-vax-timeline-item {
+        gap: 8px;
+        min-height: 58px;
+    }
+
+    .paw-vax-timeline-marker {
+        width: 34px;
+        height: 34px;
+        font-size: 12px;
+    }
+
+    .paw-vax-timeline-list::before {
+        left: 16px;
+    }
+
+    .paw-vax-timeline-item > .paw-vax-status {
+        padding: 4px 7px;
+        font-size: 10px;
+    }
+
+    .paw-vax-upcoming-item {
+        gap: 7px;
+        min-height: 66px;
+        padding: 7px;
+    }
+
+    .paw-vax-upcoming-date {
+        width: 37px;
+        height: 44px;
+    }
+
+    .paw-vax-upcoming-date strong {
+        font-size: 17px;
+    }
+
+    .paw-vax-upcoming-icon {
+        width: 31px;
+        height: 31px;
+        font-size: 14px;
+    }
+
+    .paw-vax-upcoming-information strong {
+        font-size: 12px;
+    }
+
+    .paw-vax-upcoming-item > .paw-vax-status {
+        padding: 4px 6px;
+        font-size: 9px;
+    }
+
+    /* DOCUMENTS */
+
+    .paw-vax-documents-card {
+        padding: 13px;
+    }
+
+    .paw-vax-upload-area {
+        min-height: 135px;
+        padding: 12px;
+    }
+
+    .paw-vax-document-item {
+        gap: 8px;
+        min-height: 60px;
+        padding: 8px;
+    }
+
+    .paw-vax-document-icon {
+        width: 35px;
+        height: 37px;
+        font-size: 17px;
+    }
+
+    .paw-vax-document-information strong {
+        font-size: 11px;
+    }
+
+    .paw-vax-document-actions {
+        gap: 3px;
+    }
+
+    .paw-vax-document-actions button {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    /* MODALS */
+
+    .paw-vax-modal,
+    .paw-vax-details-modal {
+        padding: 10px;
+    }
+
+    .paw-vax-modal-card,
+    .paw-vax-details-card {
+        max-height: 92vh;
+        padding: 22px 15px;
+    }
+
+    .paw-vax-form-grid,
+    .paw-vax-details-content {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .paw-vax-form-group.full,
+    .paw-vax-details-content > div.full {
+        grid-column: auto;
+    }
+
+    .paw-vax-form-actions,
+    .paw-vax-details-actions {
+        flex-direction: column-reverse;
+    }
+
+    .paw-vax-form-actions button,
+    .paw-vax-details-actions button {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   4. SMALL MOBILE - 360px
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .paw-dashboard-content.paw-vaccination-page {
+        padding: 13px 9px;
+    }
+
+    /* HERO */
+
+    .paw-vax-hero {
+        min-height: 115px;
+        padding: 12px;
+    }
+
+    .paw-vax-hero-content {
+        max-width: 77%;
+        gap: 7px;
+    }
+
+    .paw-vax-hero-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .paw-vax-hero-image img {
+        width: 57px;
+        height: 59px;
+    }
+
+    .paw-vax-hero-image img + img {
+        width: 50px;
+        height: 52px;
+    }
+
+    /* SUMMARY */
+
+    .paw-vax-summary-card {
+        min-height: 66px;
+        gap: 6px;
+        padding: 7px;
+    }
+
+    .paw-vax-summary-icon {
+        width: 31px;
+        height: 31px;
+        font-size: 14px;
+    }
+
+    .paw-vax-summary-card strong {
+        font-size: 19px;
+    }
+
+    .paw-vax-summary-card > div span {
+        font-size: 10px;
+    }
+
+    /* PET */
+
+    .paw-vax-pet-card {
+        padding: 12px;
+    }
+
+    .paw-vax-selected-pet > img {
+        width: 70px;
+        height: 76px;
+    }
+
+    .paw-vax-progress-circle {
+        width: 105px;
+        height: 105px;
+    }
+
+    .paw-vax-progress-number strong {
+        font-size: 22px;
+    }
+
+    .paw-vax-progress-content {
+        gap: 10px;
+    }
+
+    /* RECORDS */
+
+    .paw-vax-records-card {
+        padding: 11px;
+    }
+
+    .paw-vax-record-controls input,
+    .paw-vax-record-controls select {
+        font-size: 10px;
+    }
+
+    .paw-vax-table {
+        min-width: 680px;
+    }
+
+    /* TIMELINE */
+
+    .paw-vax-timeline-card,
+    .paw-vax-upcoming-card {
+        padding: 11px;
+    }
+
+    .paw-vax-timeline-item {
+        gap: 6px;
+    }
+
+    .paw-vax-timeline-marker {
+        width: 31px;
+        height: 31px;
+        font-size: 11px;
+    }
+
+    .paw-vax-timeline-list::before {
+        left: 14px;
+    }
+
+    .paw-vax-timeline-item > .paw-vax-status {
+        padding: 4px 5px;
+        font-size: 9px;
+    }
+
+    .paw-vax-upcoming-item {
+        gap: 5px;
+        padding: 6px;
+    }
+
+    .paw-vax-upcoming-date {
+        width: 33px;
+        height: 40px;
+    }
+
+    .paw-vax-upcoming-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .paw-vax-upcoming-information strong {
+        font-size: 11px;
+    }
+
+    .paw-vax-upcoming-information p,
+    .paw-vax-upcoming-information small {
+        font-size: 9px;
+    }
+
+    /* DOCUMENTS */
+
+    .paw-vax-document-item {
+        gap: 6px;
+        padding: 7px;
+    }
+
+    .paw-vax-document-information strong {
+        font-size: 10px;
+    }
+
+    .paw-vax-document-information small {
+        font-size: 9px;
+    }
+
+}
+
+
+/* =====================================================
+   5. RTL RESPONSIVE ADJUSTMENTS
+===================================================== */
+
+@media (max-width: 768px) {
+
+    html[dir="rtl"] .paw-vax-pet-card {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-vax-progress-content,
+    html[dir="rtl"] .paw-vax-progress-breakdown > div,
+    html[dir="rtl"] .paw-vax-record-controls,
+    html[dir="rtl"] .paw-vax-upcoming-item,
+    html[dir="rtl"] .paw-vax-document-item {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-vax-timeline-list {
+        padding-right: 10px;
+        padding-left: 0;
+    }
+
+    html[dir="rtl"] .paw-vax-timeline-list::before {
+        right: 19px;
+        left: auto;
+    }
+
+    html[dir="rtl"] .paw-vax-pet-information {
+        align-items: flex-start;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    html[dir="rtl"] .paw-vax-hero-content {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-vax-records-header,
+    html[dir="rtl"] .paw-vax-bottom-header {
+        align-items: flex-start;
+        text-align: right;
+    }
+
+    html[dir="rtl"] .paw-vax-timeline-list {
+        padding-right: 8px;
+    }
+
+    html[dir="rtl"] .paw-vax-timeline-list::before {
+        right: 16px;
+    }
+
+    html[dir="rtl"] .paw-vax-form-actions,
+    html[dir="rtl"] .paw-vax-details-actions {
+        align-items: stretch;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =====================================================
+   PAWSHEAL - PAYMENTS PAGE
+   PART 3 - RESPONSIVE CSS + RTL
+===================================================== */
+
+
+/* =====================================================
+   1. IPAD PRO / SMALL LAPTOP - 1024px
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    .paw-dashboard-content.paw-payments-page {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .paw-payment-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paw-payment-main-pay-button {
+        grid-column: 1 / -1;
+        justify-self: end;
+        min-width: 150px;
+    }
+
+    .paw-payment-methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .paw-payment-methods-card,
+    .paw-payment-outstanding-card {
+        width: 100%;
+    }
+
+    .paw-payment-transactions-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .paw-payment-filters {
+        width: 100%;
+    }
+
+    .paw-payment-filters select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .paw-payment-table {
+        min-width: 920px;
+    }
+
+}
+
+
+/* =====================================================
+   2. TABLET - 768px
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .paw-dashboard-content.paw-payments-page {
+        padding: 20px 16px;
+    }
+
+    /* HERO */
+
+    .paw-payment-hero {
+        min-height: 125px;
+        padding: 18px;
+    }
+
+    .paw-payment-hero-content {
+        max-width: 70%;
+        gap: 12px;
+    }
+
+    .paw-payment-hero-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+    }
+
+    .paw-payment-hero-image {
+        right: 30px;
+        height: 115px;
+    }
+
+    .paw-payment-hero-image img {
+        width: 110px;
+        height: 105px;
+    }
+
+    .paw-payment-hero-image img + img {
+        width: 95px;
+        height: 92px;
+    }
+
+    .paw-payment-hero-shield {
+        right: 12px;
+        top: 12px;
+    }
+
+    /* SUMMARY */
+
+    .paw-payment-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .paw-payment-summary-card {
+        min-height: 82px;
+    }
+
+    .paw-payment-main-pay-button {
+        grid-column: 1 / -1;
+        width: 100%;
+        justify-self: stretch;
+    }
+
+    /* PAYMENT METHODS */
+
+    .paw-payment-methods-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .paw-payment-methods-card,
+    .paw-payment-outstanding-card {
+        padding: 15px;
+    }
+
+    /* TRANSACTIONS */
+
+    .paw-payment-transactions-card {
+        padding: 15px;
+    }
+
+    .paw-payment-tabs {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        scrollbar-width: thin;
+    }
+
+    .paw-payment-tab {
+        flex-shrink: 0;
+    }
+
+    .paw-payment-filters {
+        width: 100%;
+    }
+
+    .paw-payment-filters select {
+        flex: 1;
+    }
+
+    .paw-payment-table {
+        min-width: 900px;
+    }
+
+    /* HISTORY */
+
+    .paw-payment-history-summary {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .paw-payment-history-summary > div {
+        padding: 10px;
+    }
+
+    /* INVOICES */
+
+    .paw-payment-invoice-item {
+        gap: 9px;
+    }
+
+}
+
+
+/* =====================================================
+   3. MOBILE - 480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .paw-dashboard-content.paw-payments-page {
+        padding: 16px 12px;
+    }
+
+    /* HERO */
+
+    .paw-payment-hero {
+        min-height: 125px;
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .paw-payment-hero-content {
+        max-width: 75%;
+        align-items: flex-start;
+        gap: 9px;
+    }
+
+    .paw-payment-hero-icon {
+        width: 39px;
+        height: 39px;
+        border-width: 1px;
+        border-radius: 9px;
+        font-size: 17px;
+    }
+
+    .paw-payment-hero-content h2 {
+        margin-bottom: 5px;
+    }
+
+    .paw-payment-hero-content p {
+        max-width: 210px;
+        line-height: 1.45;
+    }
+
+    .paw-payment-hero-image {
+        right: -15px;
+        bottom: -5px;
+        height: 77px;
+    }
+
+    .paw-payment-hero-image img {
+        width: 69px;
+        height: 72px;
+        border-radius: 35% 35% 7px 7px;
+    }
+
+    .paw-payment-hero-image img + img {
+        width: 59px;
+        height: 62px;
+        margin-left: -9px;
+        border-width: 2px;
+    }
+
+    .paw-payment-hero-shield {
+        top: 8px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    /* SUMMARY */
+
+    .paw-payment-summary {
+        gap: 8px;
+    }
+
+    .paw-payment-summary-card {
+        min-height: 72px;
+        gap: 7px;
+        padding: 9px;
+        border-radius: 10px;
+    }
+
+    .paw-payment-summary-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .paw-payment-summary-card strong {
+        font-size: 21px;
+    }
+
+    .paw-payment-summary-card > div span {
+        font-size: 11px;
+    }
+
+    .paw-payment-summary-card > div small {
+        font-size: 10px;
+    }
+
+    .paw-payment-main-pay-button {
+        min-height: 42px;
+    }
+
+    /* PAYMENT METHODS */
+
+    .paw-payment-methods-card,
+    .paw-payment-outstanding-card {
+        padding: 13px;
+        border-radius: 11px;
+    }
+
+    .paw-payment-section-header {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .paw-payment-section-title {
+        gap: 8px;
+    }
+
+    .paw-payment-section-title > span {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .paw-payment-section-title h3 {
+        font-size: 16px;
+    }
+
+    .paw-payment-method-item {
+        min-height: 60px;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .paw-payment-method-brand {
+        width: 40px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .paw-payment-method-info strong {
+        font-size: 12px;
+    }
+
+    .paw-payment-method-info small {
+        font-size: 10px;
+    }
+
+    .paw-payment-default {
+        padding: 4px 7px;
+        font-size: 9px;
+    }
+
+    .paw-payment-method-more {
+        width: 26px;
+        height: 28px;
+    }
+
+    /* OUTSTANDING */
+
+    .paw-payment-outstanding-item {
+        grid-template-columns: 35px minmax(0, 1fr) auto;
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .paw-payment-outstanding-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .paw-payment-outstanding-info strong {
+        font-size: 12px;
+    }
+
+    .paw-payment-outstanding-info p {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .paw-payment-outstanding-amount {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    .paw-payment-outstanding-amount strong {
+        font-size: 13px;
+    }
+
+    .paw-payment-outstanding-amount .paw-payment-status {
+        font-size: 9px;
+        padding: 4px 6px;
+    }
+
+    .paw-payment-pay-button {
+        grid-column: 2 / -1;
+        justify-self: end;
+        min-height: 30px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    /* TRANSACTIONS */
+
+    .paw-payment-transactions-card {
+        padding: 12px;
+        border-radius: 11px;
+    }
+
+    .paw-payment-transactions-header {
+        gap: 10px;
+    }
+
+    .paw-payment-tabs {
+        gap: 2px;
+    }
+
+    .paw-payment-tab {
+        min-height: 39px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .paw-payment-filters {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .paw-payment-filters select {
+        width: 100%;
+        height: 36px;
+        padding: 0 7px;
+        font-size: 10px;
+    }
+
+    .paw-payment-table {
+        min-width: 880px;
+    }
+
+    .paw-payment-table th {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .paw-payment-table td {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    /* HISTORY */
+
+    .paw-payment-history-summary {
+        grid-template-columns: 1fr;
+        gap: 7px;
+    }
+
+    .paw-payment-history-summary > div {
+        min-height: 60px;
+        padding: 10px;
+    }
+
+    .paw-payment-history-summary strong {
+        font-size: 20px;
+    }
+
+    .paw-payment-history-item {
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .paw-payment-history-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .paw-payment-history-info strong {
+        font-size: 12px;
+    }
+
+    .paw-payment-history-info small {
+        font-size: 10px;
+    }
+
+    .paw-payment-history-amount {
+        font-size: 12px;
+    }
+
+    /* INVOICES */
+
+    .paw-payment-invoice-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .paw-payment-invoice-header select {
+        width: 100%;
+    }
+
+    .paw-payment-invoice-item {
+        display: grid;
+        grid-template-columns: 37px minmax(0, 1fr) auto;
+        gap: 8px;
+        padding: 9px;
+    }
+
+    .paw-payment-invoice-icon {
+        width: 35px;
+        height: 39px;
+        font-size: 17px;
+    }
+
+    .paw-payment-invoice-info strong {
+        font-size: 11px;
+    }
+
+    .paw-payment-invoice-info p {
+        font-size: 10px;
+    }
+
+    .paw-payment-invoice-info small {
+        font-size: 9px;
+    }
+
+    .paw-payment-invoice-item > .paw-payment-status {
+        grid-column: 3;
+        grid-row: 1;
+        font-size: 9px;
+        padding: 4px 6px;
+    }
+
+    .paw-payment-invoice-actions {
+        grid-column: 2 / -1;
+        justify-content: flex-end;
+    }
+
+    .paw-payment-invoice-actions button {
+        width: 27px;
+        height: 27px;
+    }
+
+    /* MODALS */
+
+    .paw-payment-modal,
+    .paw-payment-method-modal,
+    .paw-payment-pay-modal {
+        padding: 10px;
+    }
+
+    .paw-payment-modal-card,
+    .paw-payment-method-modal-card,
+    .paw-payment-pay-card {
+        max-height: 92vh;
+        padding: 22px 15px;
+        border-radius: 13px;
+    }
+
+    .paw-payment-modal-heading h3 {
+        font-size: 19px;
+    }
+
+    .paw-payment-details-list > div {
+        min-height: 39px;
+    }
+
+    .paw-payment-details-list span,
+    .paw-payment-details-list strong {
+        font-size: 11px;
+    }
+
+    .paw-payment-modal-actions {
+        flex-direction: column;
+    }
+
+    .paw-payment-modal-actions button {
+        width: 100%;
+    }
+
+    .paw-payment-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .paw-payment-form-actions button {
+        width: 100%;
+    }
+
+    .paw-payment-card-row {
+        gap: 8px;
+    }
+
+}
+
+
+/* =====================================================
+   4. SMALL MOBILE - 360px
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .paw-dashboard-content.paw-payments-page {
+        padding: 13px 9px;
+    }
+
+    /* HERO */
+
+    .paw-payment-hero {
+        min-height: 115px;
+        padding: 12px;
+    }
+
+    .paw-payment-hero-content {
+        max-width: 77%;
+        gap: 7px;
+    }
+
+    .paw-payment-hero-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .paw-payment-hero-image img {
+        width: 57px;
+        height: 59px;
+    }
+
+    .paw-payment-hero-image img + img {
+        width: 50px;
+        height: 52px;
+    }
+
+    /* SUMMARY */
+
+    .paw-payment-summary-card {
+        min-height: 65px;
+        gap: 5px;
+        padding: 7px;
+    }
+
+    .paw-payment-summary-icon {
+        width: 29px;
+        height: 29px;
+        font-size: 13px;
+    }
+
+    .paw-payment-summary-card strong {
+        font-size: 19px;
+    }
+
+    .paw-payment-summary-card > div span {
+        font-size: 10px;
+    }
+
+    .paw-payment-summary-card > div small {
+        font-size: 9px;
+    }
+
+    /* PAYMENT METHODS */
+
+    .paw-payment-methods-card,
+    .paw-payment-outstanding-card {
+        padding: 11px;
+    }
+
+    .paw-payment-method-item {
+        gap: 6px;
+        padding: 7px;
+    }
+
+    .paw-payment-method-brand {
+        width: 35px;
+        height: 27px;
+        font-size: 10px;
+    }
+
+    .paw-payment-method-info strong {
+        font-size: 11px;
+    }
+
+    .paw-payment-default {
+        padding: 4px 5px;
+        font-size: 8px;
+    }
+
+    /* OUTSTANDING */
+
+    .paw-payment-outstanding-item {
+        grid-template-columns: 31px minmax(0, 1fr) auto;
+        gap: 6px;
+        padding: 7px;
+    }
+
+    .paw-payment-outstanding-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .paw-payment-outstanding-info strong {
+        font-size: 11px;
+    }
+
+    .paw-payment-outstanding-info p {
+        font-size: 9px;
+    }
+
+    .paw-payment-outstanding-amount strong {
+        font-size: 12px;
+    }
+
+    /* TRANSACTIONS */
+
+    .paw-payment-transactions-card {
+        padding: 10px;
+    }
+
+    .paw-payment-tab {
+        padding: 0 8px;
+        font-size: 10px;
+    }
+
+    .paw-payment-filters select {
+        padding: 0 5px;
+        font-size: 9px;
+    }
+
+    .paw-payment-table {
+        min-width: 850px;
+    }
+
+    /* INVOICES */
+
+    .paw-payment-invoice-item {
+        grid-template-columns: 32px minmax(0, 1fr) auto;
+        gap: 6px;
+        padding: 7px;
+    }
+
+    .paw-payment-invoice-icon {
+        width: 31px;
+        height: 35px;
+        font-size: 15px;
+    }
+
+    .paw-payment-invoice-info strong {
+        font-size: 10px;
+    }
+
+    .paw-payment-invoice-info p {
+        font-size: 9px;
+    }
+
+    .paw-payment-invoice-info small {
+        font-size: 8px;
+    }
+
+    /* MODALS */
+
+    .paw-payment-modal-card,
+    .paw-payment-method-modal-card,
+    .paw-payment-pay-card {
+        padding: 20px 12px;
+    }
+
+    .paw-payment-details-list > div {
+        gap: 7px;
+    }
+
+}
+
+
+/* =====================================================
+   5. RTL RESPONSIVE ADJUSTMENTS
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    html[dir="rtl"] .paw-payment-hero-image {
+        right: auto;
+        left: 30px;
+    }
+
+    html[dir="rtl"] .paw-payment-hero-shield {
+        right: auto;
+        left: 12px;
+    }
+
+    html[dir="rtl"] .paw-payment-main-pay-button {
+        justify-self: start;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    html[dir="rtl"] .paw-payment-hero-content,
+    html[dir="rtl"] .paw-payment-summary-card,
+    html[dir="rtl"] .paw-payment-method-item,
+    html[dir="rtl"] .paw-payment-outstanding-item,
+    html[dir="rtl"] .paw-payment-history-item,
+    html[dir="rtl"] .paw-payment-invoice-item {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-payment-filters,
+    html[dir="rtl"] .paw-payment-tabs {
+        direction: rtl;
+    }
+
+    html[dir="rtl"] .paw-payment-table {
+        text-align: right;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    html[dir="rtl"] .paw-payment-hero-image {
+        right: auto;
+        left: -15px;
+    }
+
+    html[dir="rtl"] .paw-payment-hero-shield {
+        right: auto;
+        left: 8px;
+    }
+
+    html[dir="rtl"] .paw-payment-outstanding-amount {
+        align-items: flex-start;
+    }
+
+    html[dir="rtl"] .paw-payment-pay-button {
+        justify-self: start;
+    }
+
+    html[dir="rtl"] .paw-payment-details-list strong {
+        text-align: left;
+    }
+
+    html[dir="rtl"] .paw-payment-modal-actions,
+    html[dir="rtl"] .paw-payment-form-actions {
+        align-items: stretch;
+    }
+
+}
+/* Add room at the end of selects without replacing their native arrow. */
+.paw-dashboard-layout select {
+    padding-inline-end: 32px;
+}
