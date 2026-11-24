@@ -536,20 +536,21 @@ html[dir="rtl"] .paw-overview-reminder-status {
     }
 
     .paw-overview-welcome-content {
-        width: 100%;
+        width: 78%;
         position: relative;
         z-index: 3;
     }
 
     .paw-overview-welcome-content p {
-        max-width: 85%;
+        max-width: 100%;
     }
 
     .paw-overview-welcome-image {
-        width: 52%;
-        height: 135px;
-        right: 0;
-        opacity: 0.40;
+        width: 38%;
+        height: 115px;
+        right: 5px;
+        opacity: 1;
+        z-index: 1;
     }
 
     html[dir="rtl"] .paw-overview-welcome-image {
@@ -583,11 +584,26 @@ html[dir="rtl"] .paw-overview-reminder-status {
     }
 
     .paw-overview-appointment-card {
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 68px minmax(0, 1fr);
+        align-items: center;
+        gap: 12px;
+    }
+
+    .paw-overview-appointment-details h3 {
+        margin-bottom: 8px;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+    }
+
+    .paw-overview-appointment-meta {
+        gap: 7px 12px;
     }
 
     .paw-overview-appointment-status {
-        margin-left: 83px;
+        grid-column: 2;
+        justify-self: start;
+        margin-left: 0;
     }
 
     html[dir="rtl"] .paw-overview-appointment-status {
@@ -613,8 +629,28 @@ html[dir="rtl"] .paw-overview-reminder-status {
     }
 
     .paw-overview-welcome {
-        min-height: 245px;
-        padding: 18px 15px;
+        min-height: 275px;
+        padding: 18px 15px 92px;
+    }
+
+    .paw-overview-welcome-image {
+        top: auto;
+        right: 4px;
+        bottom: 2px;
+        width: 38%;
+        height: 82px;
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .paw-overview-welcome-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .paw-overview-book-btn {
+        position: relative;
+        z-index: 2;
     }
 
     .paw-overview-stats {
@@ -637,12 +673,14 @@ html[dir="rtl"] .paw-overview-reminder-status {
     }
 
     .paw-overview-appointment-card {
-        gap: 10px;
+        grid-template-columns: 58px minmax(0, 1fr);
+        gap: 9px;
         padding: 10px;
     }
 
     .paw-overview-appointment-status {
-        margin-left: 78px;
+        grid-column: 2;
+        margin-left: 0;
     }
 
     html[dir="rtl"] .paw-overview-appointment-status {
@@ -845,8 +883,8 @@ html[dir="rtl"] .paw-overview-reminder-status {
 @media (max-width: 480px) {
 
     .paw-mypets-hero {
-        min-height: 245px;
-        padding: 22px 19px;
+        min-height: 310px;
+        padding: 22px 19px 112px;
         align-items: flex-start;
     }
 
@@ -856,19 +894,22 @@ html[dir="rtl"] .paw-overview-reminder-status {
     }
 
     .paw-mypets-hero-content > p {
-        max-width: 290px;
+        max-width: 100%;
     }
 
     .paw-mypets-hero-image {
-        right: 0;
+        right: 4px;
         bottom: 0;
         top: auto;
-        width: 48%;
-        height: 62%;
-        opacity: .38;
+        width: 37%;
+        height: 34%;
+        opacity: 1;
+        z-index: 1;
     }
 
     .paw-mypets-hero-bottom {
+        position: relative;
+        z-index: 2;
         flex-wrap: wrap;
         gap: 13px;
         margin-top: 18px;
@@ -1010,8 +1051,8 @@ html[dir="rtl"] .paw-overview-reminder-status {
 @media (max-width: 360px) {
 
     .paw-mypets-hero {
-        min-height: 250px;
-        padding: 19px 15px;
+        min-height: 315px;
+        padding: 19px 15px 100px;
     }
 
     .paw-mypets-hero-content {
@@ -1019,8 +1060,19 @@ html[dir="rtl"] .paw-overview-reminder-status {
     }
 
     .paw-mypets-hero-image {
-        width: 45%;
-        height: 55%;
+        right: 3px;
+        bottom: 0;
+        top: auto;
+        width: 38%;
+        height: 82px;
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .paw-mypets-hero-bottom {
+        position: relative;
+        z-index: 2;
+        gap: 10px;
     }
 
     .paw-mypets-hero-bottom {
@@ -2026,11 +2078,12 @@ html[dir="rtl"] .paw-mypets-form-actions {
 
     .paw-medical-hero-image {
         top: auto;
-        right: 0;
+        right: 3px;
         bottom: 0;
-        width: 145px;
-        height: 145px;
-        opacity: 0.55;
+        width: 125px;
+        height: 110px;
+        opacity: 1;
+        z-index: 1;
     }
 
     .paw-medical-hero-summary {
@@ -2229,7 +2282,8 @@ html[dir="rtl"] .paw-mypets-form-actions {
     }
 
     .paw-medical-hero {
-        padding: 20px 15px;
+        min-height: 400px;
+        padding: 20px 15px 145px;
     }
 
     .paw-medical-hero-content h2 {
@@ -2241,9 +2295,13 @@ html[dir="rtl"] .paw-mypets-form-actions {
     }
 
     .paw-medical-hero-image {
-        width: 120px;
-        height: 125px;
-        opacity: 0.42;
+        top: auto;
+        right: 3px;
+        bottom: 0;
+        width: 112px;
+        height: 115px;
+        opacity: 1;
+        z-index: 1;
     }
 
     .paw-medical-hero-summary {
