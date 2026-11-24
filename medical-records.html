@@ -1,0 +1,1253 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawsHeal | Dashboard</title>
+    <!-- ==================== WEBSITE FAVICON ==================== -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/res-dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="paw-dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="paw-dashboard-sidebar" id="pawDashboardSidebar">
+
+        <!-- LOGO -->
+        <div class="paw-sidebar-logo">
+            <a href="index.html">
+                <img src="images/logo.png"
+                     class="paw-sidebar-logo-light"
+                     alt="PawsHeal Logo">
+
+                <img src="images/logo-dark.png"
+                     class="paw-sidebar-logo-dark"
+                     alt="PawsHeal Logo">
+            </a>
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="paw-sidebar-navigation">
+
+            <span class="paw-sidebar-label">MAIN MENU</span>
+
+            <ul class="paw-sidebar-menu">
+
+                <li class="paw-sidebar-item">
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="my-pets.html">
+                        <i class="fas fa-paw"></i>
+                        <span>My Pets</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="appointments.html">
+                        <i class="far fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item active">
+                    <a href="medical-records.html">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Medical Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="prescriptions.html">
+                        <i class="fas fa-prescription"></i>
+                        <span>Prescriptions</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="vaccination-records.html">
+                        <i class="fas fa-syringe"></i>
+                        <span>Vaccination Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="payments.html">
+                        <i class="fas fa-wallet"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            
+
+            
+
+        </nav>
+
+
+        <!-- SIDEBAR LOGOUT -->
+        <div class="paw-sidebar-bottom">
+
+            <button type="button"
+                    class="paw-sidebar-logout"
+                    id="pawLogoutButton">
+
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="paw-dashboard-overlay"
+         id="pawDashboardOverlay"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="paw-dashboard-main">
+
+
+        <!-- FIXED HEADER -->
+        <header class="paw-dashboard-header">
+
+            <!-- HEADER LEFT -->
+            <div class="paw-header-left">
+
+                <button type="button"
+                        class="paw-dashboard-menu-toggle"
+                        id="pawDashboardMenuToggle"
+                        aria-label="Toggle navigation">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+                <div class="paw-header-heading">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's your pet care summary.</p>
+                </div>
+
+            </div>
+
+
+            <!-- HEADER RIGHT -->
+            <div class="paw-header-right">
+
+
+                <!-- NOTIFICATIONS -->
+                <div class="paw-header-notification-wrapper">
+
+                    <button type="button"
+                            class="paw-header-notification"
+                            aria-label="Notifications">
+
+                        <i class="far fa-bell"></i>
+
+                        <span class="paw-notification-badge">3</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- DARK MODE -->
+                <button type="button"
+                        class="paw-header-theme-toggle"
+                        id="pawDashboardThemeToggle"
+                        aria-label="Toggle dark mode">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- RTL MODE -->
+                <button type="button"
+                        class="paw-header-rtl-toggle"
+                        id="pawDashboardRtlToggle"
+                        aria-label="Toggle RTL direction">
+
+                    <i class="fas fa-right-left"></i>
+
+                </button>
+
+
+                <!-- MEMBER PROFILE -->
+                <div class="paw-header-profile">
+
+                    <img src="images/member-profile.jpg"
+                         alt="Member Profile">
+
+                    <div class="paw-header-profile-info">
+                        <h4>Alex Morgan</h4>
+                        <span>Pet Parent</span>
+                    </div>
+
+                    <i class="fas fa-chevron-down paw-profile-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        
+<!-- ==========================================
+     PAWSHEAL - MEDICAL RECORDS PAGE
+========================================== -->
+
+<main class="paw-dashboard-content paw-medical-page">
+
+
+    <!-- ==========================================
+         MEDICAL RECORDS HERO
+    ========================================== -->
+
+    <section class="paw-medical-hero">
+
+        <div class="paw-medical-hero-content">
+
+            <span class="paw-medical-eyebrow">
+                PET MEDICAL RECORDS
+            </span>
+
+            <h2>Complete Health History for Your Pets</h2>
+
+            <p>
+                View consultations, diagnoses, treatments,
+                medications, and lab reports in one place.
+            </p>
+
+        </div>
+
+        <div class="paw-medical-hero-image">
+            <img src="images/medical-records-hero.png"
+                 alt="Golden retriever and cat">
+        </div>
+
+        <div class="paw-medical-hero-summary">
+
+            <div class="paw-medical-hero-count">
+
+                <i class="far fa-file-alt"></i>
+
+                <div>
+                    <span>Total Records</span>
+                    <strong id="pawMedicalHeroCount">12</strong>
+                </div>
+
+            </div>
+
+            <button type="button"
+                    class="paw-medical-add-btn"
+                    id="pawAddRecordButton">
+                <i class="fas fa-plus"></i>
+                Add Record
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         MEDICAL SUMMARY CARDS
+    ========================================== -->
+
+    <section class="paw-medical-stats">
+
+        <div class="paw-medical-stat-card records">
+
+            <div class="paw-medical-stat-icon">
+                <i class="far fa-file-alt"></i>
+            </div>
+
+            <div class="paw-medical-stat-info">
+                <span>Total Records</span>
+                <strong id="pawMedicalTotalRecords">12</strong>
+            </div>
+
+        </div>
+
+
+        <div class="paw-medical-stat-card checkups">
+
+            <div class="paw-medical-stat-icon">
+                <i class="fas fa-stethoscope"></i>
+            </div>
+
+            <div class="paw-medical-stat-info">
+                <span>Recent Checkups</span>
+                <strong>04</strong>
+            </div>
+
+        </div>
+
+
+        <div class="paw-medical-stat-card treatments">
+
+            <div class="paw-medical-stat-icon">
+                <i class="fas fa-pills"></i>
+            </div>
+
+            <div class="paw-medical-stat-info">
+                <span>Treatments</span>
+                <strong>05</strong>
+            </div>
+
+        </div>
+
+
+        <div class="paw-medical-stat-card reports">
+
+            <div class="paw-medical-stat-icon">
+                <i class="fas fa-flask"></i>
+            </div>
+
+            <div class="paw-medical-stat-info">
+                <span>Lab Reports</span>
+                <strong>03</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         MEDICAL RECORDS WORKSPACE
+    ========================================== -->
+
+    <section class="paw-medical-workspace">
+
+
+        <!-- ======================================
+             LEFT - RECORDS LIST
+        ======================================= -->
+
+        <aside class="paw-medical-sidebar-panel">
+
+            <!-- PET SELECTOR -->
+
+            <div class="paw-medical-pet-selector">
+
+                <label for="pawMedicalPetSelect">
+                    Select Pet
+                </label>
+
+                <div class="paw-medical-select-wrapper">
+
+                    <i class="fas fa-paw"></i>
+
+                    <select id="pawMedicalPetSelect">
+                        <option value="Buddy">Buddy</option>
+                        <option value="Luna">Luna</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="paw-medical-search">
+
+                <i class="fas fa-search"></i>
+
+                <input type="search"
+                       id="pawMedicalSearch"
+                       placeholder="Search medical records..."
+                       aria-label="Search medical records">
+
+            </div>
+
+
+            <!-- RECORDS HEADING -->
+
+            <div class="paw-medical-list-heading">
+
+                <h3>
+                    Medical Records
+                    <span id="pawMedicalSelectedPet">(Buddy)</span>
+                </h3>
+
+            </div>
+
+
+            <!-- RECORD LIST -->
+
+            <div class="paw-medical-record-list"
+                 id="pawMedicalRecordList">
+
+
+                <!-- RECORD 1 -->
+
+                <button type="button"
+                        class="paw-medical-record-item active"
+                        data-record-id="1">
+
+                    <span class="paw-medical-record-icon checkup">
+                        <i class="fas fa-stethoscope"></i>
+                    </span>
+
+                    <span class="paw-medical-record-info">
+                        <strong>General Checkup</strong>
+                        <small>Nov 12, 2026</small>
+                    </span>
+
+                    <span class="paw-medical-record-type checkup">
+                        Checkup
+                    </span>
+
+                    <i class="fas fa-chevron-right paw-medical-record-arrow"></i>
+
+                </button>
+
+
+                <!-- RECORD 2 -->
+
+                <button type="button"
+                        class="paw-medical-record-item"
+                        data-record-id="2">
+
+                    <span class="paw-medical-record-icon dental">
+                        <i class="fas fa-tooth"></i>
+                    </span>
+
+                    <span class="paw-medical-record-info">
+                        <strong>Dental Cleaning</strong>
+                        <small>Aug 20, 2026</small>
+                    </span>
+
+                    <span class="paw-medical-record-type treatment">
+                        Treatment
+                    </span>
+
+                    <i class="fas fa-chevron-right paw-medical-record-arrow"></i>
+
+                </button>
+
+
+                <!-- RECORD 3 -->
+
+                <button type="button"
+                        class="paw-medical-record-item"
+                        data-record-id="3">
+
+                    <span class="paw-medical-record-icon consultation">
+                        <i class="fas fa-notes-medical"></i>
+                    </span>
+
+                    <span class="paw-medical-record-info">
+                        <strong>Skin Consultation</strong>
+                        <small>Aug 15, 2026</small>
+                    </span>
+
+                    <span class="paw-medical-record-type consultation">
+                        Consultation
+                    </span>
+
+                    <i class="fas fa-chevron-right paw-medical-record-arrow"></i>
+
+                </button>
+
+
+                <!-- RECORD 4 -->
+
+                <button type="button"
+                        class="paw-medical-record-item"
+                        data-record-id="4">
+
+                    <span class="paw-medical-record-icon lab">
+                        <i class="fas fa-flask"></i>
+                    </span>
+
+                    <span class="paw-medical-record-info">
+                        <strong>Lab Test â€“ Blood Work</strong>
+                        <small>Jul 28, 2026</small>
+                    </span>
+
+                    <span class="paw-medical-record-type lab">
+                        Lab Report
+                    </span>
+
+                    <i class="fas fa-chevron-right paw-medical-record-arrow"></i>
+
+                </button>
+
+
+                <!-- RECORD 5 -->
+
+                <button type="button"
+                        class="paw-medical-record-item"
+                        data-record-id="5">
+
+                    <span class="paw-medical-record-icon vaccination">
+                        <i class="fas fa-syringe"></i>
+                    </span>
+
+                    <span class="paw-medical-record-info">
+                        <strong>Vaccination</strong>
+                        <small>Jun 10, 2026</small>
+                    </span>
+
+                    <span class="paw-medical-record-type checkup">
+                        Vaccination
+                    </span>
+
+                    <i class="fas fa-chevron-right paw-medical-record-arrow"></i>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ======================================
+             RIGHT - MEDICAL RECORD DETAILS
+        ======================================= -->
+
+        <div class="paw-medical-details-column">
+
+
+            <!-- SELECTED RECORD DETAILS -->
+
+            <section class="paw-medical-detail-panel">
+
+                <div class="paw-medical-detail-heading">
+
+                    <div class="paw-medical-detail-title">
+
+                        <span class="paw-medical-detail-main-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </span>
+
+                        <div>
+                            <h3 id="pawMedicalDetailTitle">
+                                General Checkup
+                            </h3>
+
+                            <p id="pawMedicalDetailSubtitle">
+                                Buddy Â· Nov 12, 2026 at 10:00 AM
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- RECORD ACTIONS -->
+
+                    <div class="paw-medical-detail-actions">
+
+                        <button type="button"
+                                id="pawEditMedicalRecord"
+                                aria-label="Edit medical record">
+                            <i class="fas fa-pen"></i>
+                            Edit
+                        </button>
+
+                        <button type="button"
+                                id="pawDownloadMedicalRecord"
+                                aria-label="Download medical record">
+                            <i class="fas fa-download"></i>
+                            Download
+                        </button>
+
+                        <button type="button"
+                                id="pawPrintMedicalRecord"
+                                aria-label="Print medical record">
+                            <i class="fas fa-print"></i>
+                            Print
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RECORD INFORMATION -->
+
+                <div class="paw-medical-detail-body">
+
+
+                    <!-- VETERINARIAN INFORMATION -->
+
+                    <div class="paw-medical-detail-profile">
+
+                        <div class="paw-medical-pet-photo">
+                            <img src="images/my-pets-buddy.jpg"
+                                 alt="Buddy the Golden Retriever"
+                                 id="pawMedicalPetImage">
+                        </div>
+
+
+                        <div class="paw-medical-profile-info">
+
+                            <div class="paw-medical-info-row">
+
+                                <i class="far fa-user"></i>
+
+                                <div>
+                                    <strong>Veterinarian</strong>
+                                    <span id="pawMedicalVet">
+                                        Dr. Sarah Williams
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="paw-medical-info-row">
+
+                                <i class="fas fa-paw"></i>
+
+                                <div>
+                                    <strong>Pet</strong>
+                                    <span id="pawMedicalPetName">
+                                        Buddy (Dog)
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="paw-medical-info-row">
+
+                                <i class="far fa-file-alt"></i>
+
+                                <div>
+                                    <strong>Record Type</strong>
+                                    <span id="pawMedicalRecordType">
+                                        Checkup
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DIAGNOSIS AND TREATMENT -->
+
+                    <div class="paw-medical-diagnosis">
+
+                        <div class="paw-medical-info-row">
+
+                            <i class="fas fa-heartbeat"></i>
+
+                            <div>
+                                <strong>Diagnosis</strong>
+                                <span id="pawMedicalDiagnosis">
+                                    Overall healthy, no major concerns.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="paw-medical-info-row">
+
+                            <i class="far fa-calendar-check"></i>
+
+                            <div>
+                                <strong>Treatment</strong>
+                                <span id="pawMedicalTreatment">
+                                    Routine checkup and health evaluation.
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="paw-medical-info-row">
+
+                            <i class="fas fa-pills"></i>
+
+                            <div>
+                                <strong>Prescribed Medicines</strong>
+                                <span id="pawMedicalMedicines">
+                                    None
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="paw-medical-info-row">
+
+                            <i class="fas fa-file-medical"></i>
+
+                            <div>
+                                <strong>Veterinarian Notes</strong>
+                                <span id="pawMedicalNotes">
+                                    Maintain a balanced diet and regular exercise.
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================
+                 LOWER SECTION
+            =================================== -->
+
+            <section class="paw-medical-lower-grid">
+
+
+                <!-- MEDICAL HISTORY TIMELINE -->
+
+                <div class="paw-medical-timeline-panel">
+
+                    <div class="paw-medical-section-heading">
+
+                        <span class="paw-medical-section-icon">
+                            <i class="far fa-clock"></i>
+                        </span>
+
+                        <div>
+                            <h3>Medical History Timeline</h3>
+                            <p>Track your pet's previous medical visits</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="paw-medical-timeline">
+
+
+                        <!-- TIMELINE 1 -->
+
+                        <div class="paw-medical-timeline-item">
+
+                            <span class="paw-medical-timeline-dot"></span>
+
+                            <div class="paw-medical-timeline-date">
+                                Nov 12, 2026
+                            </div>
+
+                            <div class="paw-medical-timeline-content">
+
+                                <span class="paw-medical-timeline-icon checkup">
+                                    <i class="fas fa-stethoscope"></i>
+                                </span>
+
+                                <div>
+                                    <strong>General Checkup</strong>
+                                    <p>Overall healthy, no issues.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TIMELINE 2 -->
+
+                        <div class="paw-medical-timeline-item">
+
+                            <span class="paw-medical-timeline-dot"></span>
+
+                            <div class="paw-medical-timeline-date">
+                                Aug 20, 2026
+                            </div>
+
+                            <div class="paw-medical-timeline-content">
+
+                                <span class="paw-medical-timeline-icon dental">
+                                    <i class="fas fa-tooth"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Dental Cleaning</strong>
+                                    <p>Plaque removed, dental health improved.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TIMELINE 3 -->
+
+                        <div class="paw-medical-timeline-item">
+
+                            <span class="paw-medical-timeline-dot"></span>
+
+                            <div class="paw-medical-timeline-date">
+                                Aug 15, 2026
+                            </div>
+
+                            <div class="paw-medical-timeline-content">
+
+                                <span class="paw-medical-timeline-icon consultation">
+                                    <i class="fas fa-notes-medical"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Skin Consultation</strong>
+                                    <p>Mild allergies, prescribed care.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TIMELINE 4 -->
+
+                        <div class="paw-medical-timeline-item">
+
+                            <span class="paw-medical-timeline-dot"></span>
+
+                            <div class="paw-medical-timeline-date">
+                                Jun 10, 2026
+                            </div>
+
+                            <div class="paw-medical-timeline-content">
+
+                                <span class="paw-medical-timeline-icon vaccination">
+                                    <i class="fas fa-syringe"></i>
+                                </span>
+
+                                <div>
+                                    <strong>Vaccination</strong>
+                                    <p>Annual vaccination (Rabies).</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DOCUMENTS AND REPORTS -->
+
+                <div class="paw-medical-documents-panel">
+
+                    <div class="paw-medical-section-heading">
+
+                        <span class="paw-medical-section-icon">
+                            <i class="fas fa-folder-open"></i>
+                        </span>
+
+                        <div>
+                            <h3>Documents & Reports</h3>
+                            <p>Your pet's medical documents</p>
+                        </div>
+
+                    </div>
+
+
+                    <!-- UPLOAD REPORT -->
+
+                    <div class="paw-medical-upload-area">
+
+                        <label for="pawMedicalReportUpload"
+                               class="paw-medical-upload-btn">
+
+                            <i class="fas fa-upload"></i>
+                            Upload Report
+
+                        </label>
+
+                        <input type="file"
+                               id="pawMedicalReportUpload"
+                               accept=".pdf,.jpg,.jpeg,.png"
+                               hidden>
+
+                    </div>
+
+
+                    <!-- DOCUMENT LIST -->
+
+                    <div class="paw-medical-document-list">
+
+
+                        <!-- DOCUMENT 1 -->
+
+                        <div class="paw-medical-document-item">
+
+                            <span class="paw-medical-pdf-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+
+                            <div class="paw-medical-document-info">
+                                <strong>Checkup Report â€“ Nov 12, 2026</strong>
+                                <span>PDF Â· 1.2 MB</span>
+                            </div>
+
+                            <div class="paw-medical-document-actions">
+
+                                <button type="button"
+                                        aria-label="Download checkup report"
+                                        class="paw-medical-document-download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+
+                                <button type="button"
+                                        aria-label="View checkup report"
+                                        class="paw-medical-document-view">
+                                    <i class="far fa-eye"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DOCUMENT 2 -->
+
+                        <div class="paw-medical-document-item">
+
+                            <span class="paw-medical-pdf-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+
+                            <div class="paw-medical-document-info">
+                                <strong>Lab Report â€“ Jul 28, 2026</strong>
+                                <span>PDF Â· 2.4 MB</span>
+                            </div>
+
+                            <div class="paw-medical-document-actions">
+
+                                <button type="button"
+                                        aria-label="Download lab report"
+                                        class="paw-medical-document-download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+
+                                <button type="button"
+                                        aria-label="View lab report"
+                                        class="paw-medical-document-view">
+                                    <i class="far fa-eye"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DOCUMENT 3 -->
+
+                        <div class="paw-medical-document-item">
+
+                            <span class="paw-medical-pdf-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+
+                            <div class="paw-medical-document-info">
+                                <strong>Prescription â€“ Aug 15, 2026</strong>
+                                <span>PDF Â· 0.9 MB</span>
+                            </div>
+
+                            <div class="paw-medical-document-actions">
+
+                                <button type="button"
+                                        aria-label="Download prescription"
+                                        class="paw-medical-document-download">
+                                    <i class="fas fa-download"></i>
+                                </button>
+
+                                <button type="button"
+                                        aria-label="View prescription"
+                                        class="paw-medical-document-view">
+                                    <i class="far fa-eye"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         ADD / EDIT MEDICAL RECORD MODAL
+    ========================================== -->
+
+    <div class="paw-medical-modal"
+         id="pawMedicalRecordModal"
+         aria-hidden="true">
+
+        <div class="paw-medical-modal-overlay"
+             id="pawMedicalModalOverlay"></div>
+
+        <div class="paw-medical-modal-card">
+
+            <button type="button"
+                    class="paw-medical-modal-close"
+                    id="pawMedicalModalClose"
+                    aria-label="Close form">
+                <i class="fas fa-times"></i>
+            </button>
+
+
+            <div class="paw-medical-modal-heading">
+
+                <span class="paw-medical-modal-icon">
+                    <i class="fas fa-file-medical"></i>
+                </span>
+
+                <h3 id="pawMedicalModalTitle">
+                    Add Medical Record
+                </h3>
+
+                <p>
+                    Enter your pet's medical visit information.
+                </p>
+
+            </div>
+
+
+            <form id="pawMedicalRecordForm">
+
+                <input type="hidden"
+                       id="pawMedicalRecordId">
+
+
+                <div class="paw-medical-modal-form-grid">
+
+                    <div class="paw-medical-modal-form-group">
+
+                        <label for="pawMedicalFormPet">
+                            Select Pet <span>*</span>
+                        </label>
+
+                        <select id="pawMedicalFormPet" required>
+                            <option value="">Select pet</option>
+                            <option value="Buddy">Buddy</option>
+                            <option value="Luna">Luna</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="paw-medical-modal-form-group">
+
+                        <label for="pawMedicalFormType">
+                            Record Type <span>*</span>
+                        </label>
+
+                        <select id="pawMedicalFormType" required>
+                            <option value="">Select type</option>
+                            <option value="Checkup">Checkup</option>
+                            <option value="Treatment">Treatment</option>
+                            <option value="Consultation">Consultation</option>
+                            <option value="Lab Report">Lab Report</option>
+                            <option value="Vaccination">Vaccination</option>
+                            <option value="Dental Care">Dental Care</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="paw-medical-modal-form-group">
+
+                        <label for="pawMedicalFormTitle">
+                            Record Title <span>*</span>
+                        </label>
+
+                        <input type="text"
+                               id="pawMedicalFormTitle"
+                               placeholder="Enter record title"
+                               required>
+
+                    </div>
+
+
+                    <div class="paw-medical-modal-form-group">
+
+                        <label for="pawMedicalFormDate">
+                            Visit Date <span>*</span>
+                        </label>
+
+                        <input type="date"
+                               id="pawMedicalFormDate"
+                               required>
+
+                    </div>
+
+
+                    <div class="paw-medical-modal-form-group">
+
+                        <label for="pawMedicalFormVet">
+                            Veterinarian
+                        </label>
+
+                        <input type="text"
+                               id="pawMedicalFormVet"
+                               placeholder="Enter veterinarian name">
+
+                    </div>
+
+
+                    <div class="paw-medical-modal-form-group">
+
+                        <label for="pawMedicalFormMedicine">
+                            Prescribed Medicines
+                        </label>
+
+                        <input type="text"
+                               id="pawMedicalFormMedicine"
+                               placeholder="Enter medicines">
+
+                    </div>
+
+
+                    <div class="paw-medical-modal-form-group full">
+
+                        <label for="pawMedicalFormDiagnosis">
+                            Diagnosis
+                        </label>
+
+                        <textarea id="pawMedicalFormDiagnosis"
+                                  rows="2"
+                                  placeholder="Enter diagnosis"></textarea>
+
+                    </div>
+
+
+                    <div class="paw-medical-modal-form-group full">
+
+                        <label for="pawMedicalFormTreatment">
+                            Treatment Details
+                        </label>
+
+                        <textarea id="pawMedicalFormTreatment"
+                                  rows="2"
+                                  placeholder="Enter treatment details"></textarea>
+
+                    </div>
+
+
+                    <div class="paw-medical-modal-form-group full">
+
+                        <label for="pawMedicalFormNotes">
+                            Veterinarian Notes
+                        </label>
+
+                        <textarea id="pawMedicalFormNotes"
+                                  rows="3"
+                                  placeholder="Enter additional notes"></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <div class="paw-medical-modal-actions">
+
+                    <button type="button"
+                            class="paw-medical-modal-reset"
+                            id="pawMedicalModalCancel">
+                        Cancel
+                    </button>
+
+                    <button type="submit"
+                            class="paw-medical-modal-submit">
+                        <i class="fas fa-save"></i>
+                        Save Record
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</main>
+</div>
+
+</div>
+
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="paw-logout-modal" id="pawLogoutModal">
+
+    <div class="paw-logout-modal-overlay"
+         id="pawLogoutModalOverlay"></div>
+
+    <div class="paw-logout-card">
+
+        <div class="paw-logout-icon">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+
+        <h2>Confirm Logout</h2>
+
+        <p>
+            Are you sure you want to log out of your PawsHeal account?
+        </p>
+
+        <div class="paw-logout-actions">
+
+            <button type="button"
+                    class="paw-logout-cancel"
+                    id="pawLogoutCancel">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="paw-logout-confirm"
+                    id="pawLogoutConfirm">
+                Yes, Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

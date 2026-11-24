@@ -1,0 +1,1750 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawsHeal | Dashboard</title>
+    <!-- ==================== WEBSITE FAVICON ==================== -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/res-dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="paw-dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="paw-dashboard-sidebar" id="pawDashboardSidebar">
+
+        <!-- LOGO -->
+        <div class="paw-sidebar-logo">
+            <a href="index.html">
+                <img src="images/logo.png"
+                     class="paw-sidebar-logo-light"
+                     alt="PawsHeal Logo">
+
+                <img src="images/logo-dark.png"
+                     class="paw-sidebar-logo-dark"
+                     alt="PawsHeal Logo">
+            </a>
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="paw-sidebar-navigation">
+
+            <span class="paw-sidebar-label">MAIN MENU</span>
+
+            <ul class="paw-sidebar-menu">
+
+                <li class="paw-sidebar-item">
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="my-pets.html">
+                        <i class="fas fa-paw"></i>
+                        <span>My Pets</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="appointments.html">
+                        <i class="far fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="medical-records.html">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Medical Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="prescriptions.html">
+                        <i class="fas fa-prescription"></i>
+                        <span>Prescriptions</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="vaccination-records.html">
+                        <i class="fas fa-syringe"></i>
+                        <span>Vaccination Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item active">
+                    <a href="payments.html">
+                        <i class="fas fa-wallet"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            
+
+            
+
+        </nav>
+
+
+        <!-- SIDEBAR LOGOUT -->
+        <div class="paw-sidebar-bottom">
+
+            <button type="button"
+                    class="paw-sidebar-logout"
+                    id="pawLogoutButton">
+
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="paw-dashboard-overlay"
+         id="pawDashboardOverlay"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="paw-dashboard-main">
+
+
+        <!-- FIXED HEADER -->
+        <header class="paw-dashboard-header">
+
+            <!-- HEADER LEFT -->
+            <div class="paw-header-left">
+
+                <button type="button"
+                        class="paw-dashboard-menu-toggle"
+                        id="pawDashboardMenuToggle"
+                        aria-label="Toggle navigation">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+                <div class="paw-header-heading">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's your pet care summary.</p>
+                </div>
+
+            </div>
+
+
+            <!-- HEADER RIGHT -->
+            <div class="paw-header-right">
+
+
+                <!-- NOTIFICATIONS -->
+                <div class="paw-header-notification-wrapper">
+
+                    <button type="button"
+                            class="paw-header-notification"
+                            aria-label="Notifications">
+
+                        <i class="far fa-bell"></i>
+
+                        <span class="paw-notification-badge">3</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- DARK MODE -->
+                <button type="button"
+                        class="paw-header-theme-toggle"
+                        id="pawDashboardThemeToggle"
+                        aria-label="Toggle dark mode">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- RTL MODE -->
+                <button type="button"
+                        class="paw-header-rtl-toggle"
+                        id="pawDashboardRtlToggle"
+                        aria-label="Toggle RTL direction">
+
+                    <i class="fas fa-right-left"></i>
+
+                </button>
+
+
+                <!-- MEMBER PROFILE -->
+                <div class="paw-header-profile">
+
+                    <img src="images/member-profile.jpg"
+                         alt="Member Profile">
+
+                    <div class="paw-header-profile-info">
+                        <h4>Alex Morgan</h4>
+                        <span>Pet Parent</span>
+                    </div>
+
+                    <i class="fas fa-chevron-down paw-profile-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- ==========================================
+     PAWSHEAL - PAYMENTS PAGE
+     PART 1 - HTML
+========================================== -->
+
+<main class="paw-dashboard-content paw-payments-page">
+
+
+    <!-- ==========================================
+         1. PAYMENTS HERO
+    ========================================== -->
+
+    <section class="paw-payment-hero">
+
+        <div class="paw-payment-hero-content">
+
+            <span class="paw-payment-hero-icon">
+                <i class="fas fa-credit-card"></i>
+            </span>
+
+            <div>
+                <h2>Payments</h2>
+
+                <p>
+                    Manage your bills, payments and transaction
+                    history in one place.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="paw-payment-hero-image">
+
+            <img src="images/my-pets-buddy.jpg"
+                 alt="Golden Retriever">
+
+            <img src="images/my-pets-luna.jpg"
+                 alt="Cat">
+
+        </div>
+
+        <div class="paw-payment-hero-shield">
+            <i class="fas fa-shield-alt"></i>
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         2. PAYMENT SUMMARY
+    ========================================== -->
+
+    <section class="paw-payment-summary">
+
+
+        <div class="paw-payment-summary-card paid">
+
+            <span class="paw-payment-summary-icon">
+                <i class="fas fa-wallet"></i>
+            </span>
+
+            <div>
+                <strong id="pawPaymentTotalPaid">â‚¹7,850</strong>
+                <span>Total Paid</span>
+                <small>This Year</small>
+            </div>
+
+        </div>
+
+
+        <div class="paw-payment-summary-card pending">
+
+            <span class="paw-payment-summary-icon">
+                <i class="fas fa-file-invoice"></i>
+            </span>
+
+            <div>
+                <strong id="pawPaymentPending">â‚¹2,400</strong>
+                <span>Pending Payments</span>
+                <small id="pawPaymentPendingCount">2 Invoices</small>
+            </div>
+
+        </div>
+
+
+        <div class="paw-payment-summary-card upcoming">
+
+            <span class="paw-payment-summary-icon">
+                <i class="far fa-calendar-alt"></i>
+            </span>
+
+            <div>
+                <strong id="pawPaymentUpcoming">â‚¹1,200</strong>
+                <span>Upcoming Bills</span>
+                <small>Next 30 Days</small>
+            </div>
+
+        </div>
+
+
+        <div class="paw-payment-summary-card refunds">
+
+            <span class="paw-payment-summary-icon">
+                <i class="fas fa-history"></i>
+            </span>
+
+            <div>
+                <strong id="pawPaymentRefunds">â‚¹500</strong>
+                <span>Refunds</span>
+                <small>1 Transaction</small>
+            </div>
+
+        </div>
+
+
+        <button type="button"
+                class="paw-payment-main-pay-button"
+                id="pawPaymentMainPayButton">
+
+            <i class="far fa-credit-card"></i>
+            Pay Now
+
+        </button>
+
+    </section>
+
+
+    <!-- ==========================================
+         3. PAYMENT METHODS + OUTSTANDING PAYMENTS
+    ========================================== -->
+
+    <section class="paw-payment-methods-grid">
+
+
+        <!-- PAYMENT METHODS -->
+
+        <div class="paw-payment-methods-card">
+
+
+            <div class="paw-payment-section-header">
+
+                <div class="paw-payment-section-title">
+
+                    <span>
+                        <i class="far fa-credit-card"></i>
+                    </span>
+
+                    <h3>Payment Methods</h3>
+
+                </div>
+
+
+                <button type="button"
+                        id="pawAddPaymentMethodButton">
+
+                    <i class="fas fa-plus"></i>
+                    Add Method
+
+                </button>
+
+            </div>
+
+
+            <div class="paw-payment-method-list"
+                 id="pawPaymentMethodList">
+
+
+                <!-- VISA -->
+
+                <div class="paw-payment-method-item">
+
+                    <span class="paw-payment-method-brand visa">
+                        VISA
+                    </span>
+
+                    <div class="paw-payment-method-info">
+
+                        <strong>â€¢â€¢â€¢â€¢ 4582</strong>
+
+                        <small>Expires 08/27</small>
+
+                    </div>
+
+                    <span class="paw-payment-default">
+                        Default
+                    </span>
+
+                    <button type="button"
+                            class="paw-payment-method-more"
+                            data-method-id="1"
+                            aria-label="Visa payment options">
+
+                        <i class="fas fa-ellipsis-v"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- UPI -->
+
+                <div class="paw-payment-method-item">
+
+                    <span class="paw-payment-method-brand upi">
+                        UPI
+                    </span>
+
+                    <div class="paw-payment-method-info">
+
+                        <strong>priya@upi</strong>
+
+                        <small>UPI Account</small>
+
+                    </div>
+
+                    <button type="button"
+                            class="paw-payment-method-more"
+                            data-method-id="2"
+                            aria-label="UPI payment options">
+
+                        <i class="fas fa-ellipsis-v"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- MASTERCARD -->
+
+                <div class="paw-payment-method-item">
+
+                    <span class="paw-payment-method-brand mastercard">
+                        <i class="fab fa-cc-mastercard"></i>
+                    </span>
+
+                    <div class="paw-payment-method-info">
+
+                        <strong>â€¢â€¢â€¢â€¢ 2034</strong>
+
+                        <small>Expires 11/26</small>
+
+                    </div>
+
+                    <button type="button"
+                            class="paw-payment-method-more"
+                            data-method-id="3"
+                            aria-label="Mastercard payment options">
+
+                        <i class="fas fa-ellipsis-v"></i>
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- OUTSTANDING PAYMENTS -->
+
+        <div class="paw-payment-outstanding-card">
+
+
+            <div class="paw-payment-section-header">
+
+                <div class="paw-payment-section-title">
+
+                    <span class="warning">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+
+                    <h3>Outstanding Payments</h3>
+
+                </div>
+
+
+                <button type="button"
+                        id="pawPaymentViewAllOutstanding">
+
+                    View All
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+
+            <div class="paw-payment-outstanding-list"
+                 id="pawOutstandingPaymentList">
+
+
+                <!-- PENDING CONSULTATION -->
+
+                <div class="paw-payment-outstanding-item"
+                     data-payment-id="101">
+
+                    <span class="paw-payment-outstanding-icon consultation">
+                        <i class="fas fa-stethoscope"></i>
+                    </span>
+
+                    <div class="paw-payment-outstanding-info">
+
+                        <strong>Consultation â€“ Buddy</strong>
+
+                        <p>General Checkup Â· 25 Nov 2026</p>
+
+                    </div>
+
+                    <div class="paw-payment-outstanding-amount">
+
+                        <strong>â‚¹1,500</strong>
+
+                        <span class="paw-payment-status pending">
+                            Pending
+                        </span>
+
+                    </div>
+
+                    <button type="button"
+                            class="paw-payment-pay-button"
+                            data-pay-id="101">
+
+                        Pay Now
+
+                    </button>
+
+                </div>
+
+
+                <!-- PENDING VACCINATION -->
+
+                <div class="paw-payment-outstanding-item"
+                     data-payment-id="102">
+
+                    <span class="paw-payment-outstanding-icon vaccination">
+                        <i class="fas fa-syringe"></i>
+                    </span>
+
+                    <div class="paw-payment-outstanding-info">
+
+                        <strong>Vaccination â€“ Luna</strong>
+
+                        <p>Rabies Vaccine Â· 28 Nov 2026</p>
+
+                    </div>
+
+                    <div class="paw-payment-outstanding-amount">
+
+                        <strong>â‚¹900</strong>
+
+                        <span class="paw-payment-status pending">
+                            Pending
+                        </span>
+
+                    </div>
+
+                    <button type="button"
+                            class="paw-payment-pay-button"
+                            data-pay-id="102">
+
+                        Pay Now
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ==========================================
+         4. TRANSACTIONS & PAYMENT HISTORY
+    ========================================== -->
+
+    <section class="paw-payment-transactions-card"
+             id="pawPaymentTransactionsCard">
+
+
+        <!-- TABS + FILTERS -->
+
+        <div class="paw-payment-transactions-header">
+
+
+            <div class="paw-payment-tabs"
+                 role="tablist">
+
+                <button type="button"
+                        class="paw-payment-tab active"
+                        data-payment-tab="transactions"
+                        role="tab"
+                        aria-selected="true">
+
+                    Recent Transactions
+
+                </button>
+
+
+                <button type="button"
+                        class="paw-payment-tab"
+                        data-payment-tab="history"
+                        role="tab"
+                        aria-selected="false">
+
+                    Payment History
+
+                </button>
+
+
+                <button type="button"
+                        class="paw-payment-tab"
+                        data-payment-tab="invoices"
+                        role="tab"
+                        aria-selected="false">
+
+                    Invoices & Receipts
+
+                </button>
+
+            </div>
+
+
+            <div class="paw-payment-filters">
+
+                <select id="pawPaymentPetFilter"
+                        aria-label="Filter by pet">
+
+                    <option value="all">All Pets</option>
+                    <option value="Buddy">Buddy</option>
+                    <option value="Luna">Luna</option>
+
+                </select>
+
+
+                <select id="pawPaymentStatusFilter"
+                        aria-label="Filter by payment status">
+
+                    <option value="all">All Status</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Failed">Failed</option>
+                    <option value="Refunded">Refunded</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- RECENT TRANSACTIONS TAB -->
+
+        <div class="paw-payment-tab-content active"
+             id="pawPaymentTransactionsTab"
+             role="tabpanel">
+
+
+            <div class="paw-payment-table-wrapper">
+
+                <table class="paw-payment-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Transaction ID</th>
+                            <th>Date</th>
+                            <th>Pet</th>
+                            <th>Service</th>
+                            <th>Amount</th>
+                            <th>Payment Method</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="pawPaymentTransactionList">
+
+
+                        <!-- TRANSACTION 1 -->
+
+                        <tr data-payment-pet="Buddy"
+                            data-payment-status="Paid">
+
+                            <td>
+                                <span class="paw-payment-transaction-id">
+                                    <i class="far fa-credit-card"></i>
+                                    #PAW782945
+                                </span>
+                            </td>
+
+                            <td>20 Nov 2026</td>
+
+                            <td>
+                                <span class="paw-payment-pet-name">
+                                    <i class="fas fa-paw"></i>
+                                    Buddy
+                                </span>
+                            </td>
+
+                            <td>Consultation (Follow-up)</td>
+
+                            <td><strong>â‚¹1,200</strong></td>
+
+                            <td>
+                                <span class="paw-payment-table-method visa">
+                                    VISA
+                                </span>
+                                â€¢â€¢â€¢â€¢ 4582
+                            </td>
+
+                            <td>
+                                <span class="paw-payment-status paid">
+                                    <i class="fas fa-check"></i>
+                                    Paid
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="paw-payment-row-actions">
+
+                                    <button type="button"
+                                            data-payment-action="view"
+                                            data-payment-id="201"
+                                            aria-label="View transaction">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-payment-action="download"
+                                            data-payment-id="201"
+                                            aria-label="Download receipt">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-payment-action="print"
+                                            data-payment-id="201"
+                                            aria-label="Print receipt">
+                                        <i class="fas fa-print"></i>
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- TRANSACTION 2 -->
+
+                        <tr data-payment-pet="Luna"
+                            data-payment-status="Paid">
+
+                            <td>
+                                <span class="paw-payment-transaction-id">
+                                    <i class="far fa-credit-card"></i>
+                                    #PAW782901
+                                </span>
+                            </td>
+
+                            <td>15 Nov 2026</td>
+
+                            <td>
+                                <span class="paw-payment-pet-name">
+                                    <i class="fas fa-paw"></i>
+                                    Luna
+                                </span>
+                            </td>
+
+                            <td>Vaccination (FVRCP)</td>
+
+                            <td><strong>â‚¹1,200</strong></td>
+
+                            <td>
+                                <span class="paw-payment-table-method upi">
+                                    UPI
+                                </span>
+                                priya@upi
+                            </td>
+
+                            <td>
+                                <span class="paw-payment-status paid">
+                                    <i class="fas fa-check"></i>
+                                    Paid
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="paw-payment-row-actions">
+
+                                    <button type="button"
+                                            data-payment-action="view"
+                                            data-payment-id="202"
+                                            aria-label="View transaction">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-payment-action="download"
+                                            data-payment-id="202"
+                                            aria-label="Download receipt">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-payment-action="print"
+                                            data-payment-id="202"
+                                            aria-label="Print receipt">
+                                        <i class="fas fa-print"></i>
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- TRANSACTION 3 -->
+
+                        <tr data-payment-pet="Buddy"
+                            data-payment-status="Paid">
+
+                            <td>
+                                <span class="paw-payment-transaction-id">
+                                    <i class="far fa-credit-card"></i>
+                                    #PAW782877
+                                </span>
+                            </td>
+
+                            <td>10 Nov 2026</td>
+
+                            <td>
+                                <span class="paw-payment-pet-name">
+                                    <i class="fas fa-paw"></i>
+                                    Buddy
+                                </span>
+                            </td>
+
+                            <td>Blood Test</td>
+
+                            <td><strong>â‚¹2,500</strong></td>
+
+                            <td>
+                                <span class="paw-payment-table-method mastercard">
+                                    <i class="fab fa-cc-mastercard"></i>
+                                </span>
+                                â€¢â€¢â€¢â€¢ 2034
+                            </td>
+
+                            <td>
+                                <span class="paw-payment-status paid">
+                                    <i class="fas fa-check"></i>
+                                    Paid
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="paw-payment-row-actions">
+
+                                    <button type="button"
+                                            data-payment-action="view"
+                                            data-payment-id="203"
+                                            aria-label="View transaction">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-payment-action="download"
+                                            data-payment-id="203"
+                                            aria-label="Download receipt">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-payment-action="print"
+                                            data-payment-id="203"
+                                            aria-label="Print receipt">
+                                        <i class="fas fa-print"></i>
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- TRANSACTION 4 -->
+
+                        <tr data-payment-pet="Buddy"
+                            data-payment-status="Failed">
+
+                            <td>
+                                <span class="paw-payment-transaction-id">
+                                    <i class="far fa-credit-card"></i>
+                                    #PAW782831
+                                </span>
+                            </td>
+
+                            <td>05 Nov 2026</td>
+
+                            <td>
+                                <span class="paw-payment-pet-name">
+                                    <i class="fas fa-paw"></i>
+                                    Buddy
+                                </span>
+                            </td>
+
+                            <td>X-Ray</td>
+
+                            <td><strong>â‚¹1,800</strong></td>
+
+                            <td>
+                                <span class="paw-payment-table-method upi">
+                                    UPI
+                                </span>
+                                priya@upi
+                            </td>
+
+                            <td>
+                                <span class="paw-payment-status failed">
+                                    <i class="fas fa-times-circle"></i>
+                                    Failed
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="paw-payment-row-actions">
+
+                                    <button type="button"
+                                            data-payment-action="view"
+                                            data-payment-id="204"
+                                            aria-label="View transaction">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-payment-action="download"
+                                            data-payment-id="204"
+                                            aria-label="Download receipt">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-payment-action="print"
+                                            data-payment-id="204"
+                                            aria-label="Print receipt">
+                                        <i class="fas fa-print"></i>
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+
+                        <!-- TRANSACTION 5 -->
+
+                        <tr data-payment-pet="Luna"
+                            data-payment-status="Paid">
+
+                            <td>
+                                <span class="paw-payment-transaction-id">
+                                    <i class="far fa-credit-card"></i>
+                                    #PAW782799
+                                </span>
+                            </td>
+
+                            <td>02 Nov 2026</td>
+
+                            <td>
+                                <span class="paw-payment-pet-name">
+                                    <i class="fas fa-paw"></i>
+                                    Luna
+                                </span>
+                            </td>
+
+                            <td>Consultation</td>
+
+                            <td><strong>â‚¹500</strong></td>
+
+                            <td>
+                                <span class="paw-payment-table-method visa">
+                                    VISA
+                                </span>
+                                â€¢â€¢â€¢â€¢ 4582
+                            </td>
+
+                            <td>
+                                <span class="paw-payment-status paid">
+                                    <i class="fas fa-check"></i>
+                                    Paid
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="paw-payment-row-actions">
+
+                                    <button type="button"
+                                            data-payment-action="view"
+                                            data-payment-id="205"
+                                            aria-label="View transaction">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-payment-action="download"
+                                            data-payment-id="205"
+                                            aria-label="Download receipt">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-payment-action="print"
+                                            data-payment-id="205"
+                                            aria-label="Print receipt">
+                                        <i class="fas fa-print"></i>
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAYMENT HISTORY TAB -->
+
+        <div class="paw-payment-tab-content"
+             id="pawPaymentHistoryTab"
+             role="tabpanel"
+             hidden>
+
+
+            <div class="paw-payment-history-summary">
+
+                <div>
+                    <span>Total Transactions</span>
+                    <strong id="pawPaymentHistoryCount">05</strong>
+                </div>
+
+                <div>
+                    <span>Successful Payments</span>
+                    <strong id="pawPaymentHistorySuccessful">04</strong>
+                </div>
+
+                <div>
+                    <span>Failed Payments</span>
+                    <strong id="pawPaymentHistoryFailed">01</strong>
+                </div>
+
+            </div>
+
+
+            <div class="paw-payment-history-list"
+                 id="pawPaymentHistoryList">
+
+                <!-- JavaScript renders payment history here -->
+
+            </div>
+
+        </div>
+
+
+        <!-- INVOICES & RECEIPTS TAB -->
+
+        <div class="paw-payment-tab-content"
+             id="pawPaymentInvoicesTab"
+             role="tabpanel"
+             hidden>
+
+
+            <div class="paw-payment-invoice-header">
+
+                <div>
+                    <h3>Invoices & Receipts</h3>
+
+                    <p>
+                        Access your payment invoices and receipts
+                        whenever you need them.
+                    </p>
+                </div>
+
+                <select id="pawInvoiceStatusFilter"
+                        aria-label="Filter invoices">
+
+                    <option value="all">All Documents</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Pending">Pending</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="paw-payment-invoice-list"
+                 id="pawPaymentInvoiceList">
+
+
+                <div class="paw-payment-invoice-item"
+                     data-invoice-status="Paid">
+
+                    <span class="paw-payment-invoice-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+
+                    <div class="paw-payment-invoice-info">
+
+                        <strong>INV-2026-001</strong>
+
+                        <p>Buddy Â· General Consultation</p>
+
+                        <small>20 Nov 2026 Â· â‚¹1,200</small>
+
+                    </div>
+
+                    <span class="paw-payment-status paid">
+                        Paid
+                    </span>
+
+                    <div class="paw-payment-invoice-actions">
+
+                        <button type="button"
+                                data-invoice-action="view"
+                                data-invoice-id="INV-2026-001"
+                                aria-label="View invoice">
+                            <i class="far fa-eye"></i>
+                        </button>
+
+                        <button type="button"
+                                data-invoice-action="download"
+                                data-invoice-id="INV-2026-001"
+                                aria-label="Download invoice">
+                            <i class="fas fa-download"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="paw-payment-invoice-item"
+                     data-invoice-status="Paid">
+
+                    <span class="paw-payment-invoice-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+
+                    <div class="paw-payment-invoice-info">
+
+                        <strong>INV-2026-002</strong>
+
+                        <p>Luna Â· Vaccination</p>
+
+                        <small>15 Nov 2026 Â· â‚¹1,200</small>
+
+                    </div>
+
+                    <span class="paw-payment-status paid">
+                        Paid
+                    </span>
+
+                    <div class="paw-payment-invoice-actions">
+
+                        <button type="button"
+                                data-invoice-action="view"
+                                data-invoice-id="INV-2026-002"
+                                aria-label="View invoice">
+                            <i class="far fa-eye"></i>
+                        </button>
+
+                        <button type="button"
+                                data-invoice-action="download"
+                                data-invoice-id="INV-2026-002"
+                                aria-label="Download invoice">
+                            <i class="fas fa-download"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="paw-payment-invoice-item"
+                     data-invoice-status="Pending">
+
+                    <span class="paw-payment-invoice-icon pending">
+                        <i class="fas fa-file-invoice"></i>
+                    </span>
+
+                    <div class="paw-payment-invoice-info">
+
+                        <strong>INV-2026-003</strong>
+
+                        <p>Buddy Â· General Checkup</p>
+
+                        <small>25 Nov 2026 Â· â‚¹1,500</small>
+
+                    </div>
+
+                    <span class="paw-payment-status pending">
+                        Pending
+                    </span>
+
+                    <div class="paw-payment-invoice-actions">
+
+                        <button type="button"
+                                data-invoice-action="view"
+                                data-invoice-id="INV-2026-003"
+                                aria-label="View invoice">
+                            <i class="far fa-eye"></i>
+                        </button>
+
+                        <button type="button"
+                                data-invoice-action="download"
+                                data-invoice-id="INV-2026-003"
+                                aria-label="Download invoice">
+                            <i class="fas fa-download"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- TABLE EMPTY STATE -->
+
+        <div class="paw-payment-empty"
+             id="pawPaymentEmpty"
+             hidden>
+
+            <i class="fas fa-receipt"></i>
+
+            <p>No payment records found.</p>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ==========================================
+         5. PAYMENT DETAILS MODAL
+    ========================================== -->
+
+    <div class="paw-payment-modal"
+         id="pawPaymentDetailsModal"
+         aria-hidden="true">
+
+
+        <div class="paw-payment-modal-overlay"
+             id="pawPaymentDetailsOverlay"></div>
+
+
+        <div class="paw-payment-modal-card">
+
+
+            <button type="button"
+                    class="paw-payment-modal-close"
+                    id="pawPaymentDetailsClose"
+                    aria-label="Close payment details">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+
+            <div class="paw-payment-modal-heading">
+
+                <span>
+                    <i class="fas fa-receipt"></i>
+                </span>
+
+                <h3>Payment Details</h3>
+
+                <p>Transaction information and receipt details.</p>
+
+            </div>
+
+
+            <div class="paw-payment-receipt-status"
+                 id="pawPaymentDetailsStatus">
+
+                <i class="fas fa-check-circle"></i>
+                Paid Successfully
+
+            </div>
+
+
+            <div class="paw-payment-receipt-amount">
+
+                <span>Amount Paid</span>
+
+                <strong id="pawPaymentDetailsAmount">
+                    â‚¹1,200
+                </strong>
+
+            </div>
+
+
+            <div class="paw-payment-details-list">
+
+                <div>
+                    <span>Transaction ID</span>
+                    <strong id="pawPaymentDetailsId">#PAW782945</strong>
+                </div>
+
+                <div>
+                    <span>Payment Date</span>
+                    <strong id="pawPaymentDetailsDate">20 Nov 2026</strong>
+                </div>
+
+                <div>
+                    <span>Pet Name</span>
+                    <strong id="pawPaymentDetailsPet">Buddy</strong>
+                </div>
+
+                <div>
+                    <span>Service</span>
+                    <strong id="pawPaymentDetailsService">
+                        Consultation
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Payment Method</span>
+                    <strong id="pawPaymentDetailsMethod">
+                        VISA â€¢â€¢â€¢â€¢ 4582
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Payment Status</span>
+                    <strong id="pawPaymentDetailsPaymentStatus">
+                        Paid
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="paw-payment-modal-actions">
+
+                <button type="button"
+                        id="pawPaymentDetailsPrint">
+
+                    <i class="fas fa-print"></i>
+                    Print
+
+                </button>
+
+                <button type="button"
+                        id="pawPaymentDetailsDownload">
+
+                    <i class="fas fa-download"></i>
+                    Download Receipt
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         6. ADD PAYMENT METHOD MODAL
+    ========================================== -->
+
+    <div class="paw-payment-method-modal"
+         id="pawAddMethodModal"
+         aria-hidden="true">
+
+
+        <div class="paw-payment-method-overlay"
+             id="pawAddMethodOverlay"></div>
+
+
+        <div class="paw-payment-method-modal-card">
+
+
+            <button type="button"
+                    class="paw-payment-modal-close"
+                    id="pawAddMethodClose"
+                    aria-label="Close add payment method">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+
+            <div class="paw-payment-modal-heading">
+
+                <span>
+                    <i class="far fa-credit-card"></i>
+                </span>
+
+                <h3>Add Payment Method</h3>
+
+                <p>Choose how you would like to save a payment method.</p>
+
+            </div>
+
+
+            <form id="pawAddPaymentMethodForm">
+
+
+                <div class="paw-payment-form-group">
+
+                    <label for="pawPaymentMethodType">
+                        Payment Method <span>*</span>
+                    </label>
+
+                    <select id="pawPaymentMethodType" required>
+
+                        <option value="">Select payment method</option>
+                        <option value="Card">Credit / Debit Card</option>
+                        <option value="UPI">UPI</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CARD FIELDS -->
+
+                <div id="pawPaymentCardFields"
+                     class="paw-payment-card-fields">
+
+
+                    <div class="paw-payment-form-group">
+
+                        <label for="pawPaymentCardName">
+                            Name on Card
+                        </label>
+
+                        <input type="text"
+                               id="pawPaymentCardName"
+                               placeholder="Cardholder name">
+
+                    </div>
+
+
+                    <div class="paw-payment-form-group">
+
+                        <label for="pawPaymentCardNumber">
+                            Card Number
+                        </label>
+
+                        <input type="text"
+                               id="pawPaymentCardNumber"
+                               placeholder="Enter card number"
+                               inputmode="numeric"
+                               maxlength="19">
+
+                    </div>
+
+
+                    <div class="paw-payment-card-row">
+
+                        <div class="paw-payment-form-group">
+
+                            <label for="pawPaymentCardExpiry">
+                                Expiry Date
+                            </label>
+
+                            <input type="text"
+                                   id="pawPaymentCardExpiry"
+                                   placeholder="MM/YY"
+                                   maxlength="5">
+
+                        </div>
+
+
+                        <div class="paw-payment-form-group">
+
+                            <label for="pawPaymentCardCvv">
+                                CVV
+                            </label>
+
+                            <input type="password"
+                                   id="pawPaymentCardCvv"
+                                   placeholder="CVV"
+                                   maxlength="4"
+                                   inputmode="numeric">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UPI FIELD -->
+
+                <div class="paw-payment-form-group"
+                     id="pawPaymentUpiField"
+                     hidden>
+
+                    <label for="pawPaymentUpiId">
+                        UPI ID
+                    </label>
+
+                    <input type="text"
+                           id="pawPaymentUpiId"
+                           placeholder="example@upi">
+
+                </div>
+
+
+                <label class="paw-payment-default-checkbox">
+
+                    <input type="checkbox"
+                           id="pawPaymentSetDefault">
+
+                    <span>Set as default payment method</span>
+
+                </label>
+
+
+                <div class="paw-payment-form-actions">
+
+                    <button type="button"
+                            id="pawAddMethodCancel">
+                        Cancel
+                    </button>
+
+                    <button type="submit">
+                        <i class="fas fa-plus"></i>
+                        Add Method
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         7. PAY NOW MODAL
+    ========================================== -->
+
+    <div class="paw-payment-pay-modal"
+         id="pawPaymentPayModal"
+         aria-hidden="true">
+
+
+        <div class="paw-payment-pay-overlay"
+             id="pawPaymentPayOverlay"></div>
+
+
+        <div class="paw-payment-pay-card">
+
+
+            <button type="button"
+                    class="paw-payment-modal-close"
+                    id="pawPaymentPayClose"
+                    aria-label="Close payment window">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+
+            <div class="paw-payment-modal-heading">
+
+                <span>
+                    <i class="fas fa-lock"></i>
+                </span>
+
+                <h3>Complete Your Payment</h3>
+
+                <p>Review your payment details before proceeding.</p>
+
+            </div>
+
+
+            <div class="paw-payment-pay-summary">
+
+                <div>
+                    <span>Invoice</span>
+                    <strong id="pawPaymentPayInvoice">INV-2026-003</strong>
+                </div>
+
+                <div>
+                    <span>Pet</span>
+                    <strong id="pawPaymentPayPet">Buddy</strong>
+                </div>
+
+                <div>
+                    <span>Service</span>
+                    <strong id="pawPaymentPayService">
+                        General Checkup
+                    </strong>
+                </div>
+
+                <div class="amount">
+                    <span>Total Amount</span>
+                    <strong id="pawPaymentPayAmount">â‚¹1,500</strong>
+                </div>
+
+            </div>
+
+
+            <form id="pawPaymentPayForm">
+
+
+                <div class="paw-payment-form-group">
+
+                    <label for="pawPaymentPayMethod">
+                        Choose Payment Method
+                    </label>
+
+                    <select id="pawPaymentPayMethod" required>
+
+                        <option value="">Select payment method</option>
+
+                        <option value="VISA â€¢â€¢â€¢â€¢ 4582">
+                            VISA â€¢â€¢â€¢â€¢ 4582
+                        </option>
+
+                        <option value="UPI priya@upi">
+                            UPI â€“ priya@upi
+                        </option>
+
+                        <option value="Mastercard â€¢â€¢â€¢â€¢ 2034">
+                            Mastercard â€¢â€¢â€¢â€¢ 2034
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="paw-payment-secure-note">
+
+                    <i class="fas fa-shield-alt"></i>
+
+                    Secure payment processing
+
+                </div>
+
+
+                <button type="submit"
+                        class="paw-payment-confirm-button">
+
+                    <i class="fas fa-lock"></i>
+                    Confirm Payment
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</main>
+</div>
+
+</div>
+
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="paw-logout-modal" id="pawLogoutModal">
+
+    <div class="paw-logout-modal-overlay"
+         id="pawLogoutModalOverlay"></div>
+
+    <div class="paw-logout-card">
+
+        <div class="paw-logout-icon">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+
+        <h2>Confirm Logout</h2>
+
+        <p>
+            Are you sure you want to log out of your PawsHeal account?
+        </p>
+
+        <div class="paw-logout-actions">
+
+            <button type="button"
+                    class="paw-logout-cancel"
+                    id="pawLogoutCancel">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="paw-logout-confirm"
+                    id="pawLogoutConfirm">
+                Yes, Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

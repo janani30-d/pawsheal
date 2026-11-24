@@ -1,0 +1,1591 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawsHeal | Dashboard</title>
+    <!-- ==================== WEBSITE FAVICON ==================== -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/res-dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="paw-dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="paw-dashboard-sidebar" id="pawDashboardSidebar">
+
+        <!-- LOGO -->
+        <div class="paw-sidebar-logo">
+            <a href="index.html">
+                <img src="images/logo.png"
+                     class="paw-sidebar-logo-light"
+                     alt="PawsHeal Logo">
+
+                <img src="images/logo-dark.png"
+                     class="paw-sidebar-logo-dark"
+                     alt="PawsHeal Logo">
+            </a>
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="paw-sidebar-navigation">
+
+            <span class="paw-sidebar-label">MAIN MENU</span>
+
+            <ul class="paw-sidebar-menu">
+
+                <li class="paw-sidebar-item">
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="my-pets.html">
+                        <i class="fas fa-paw"></i>
+                        <span>My Pets</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="appointments.html">
+                        <i class="far fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="medical-records.html">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Medical Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="prescriptions.html">
+                        <i class="fas fa-prescription"></i>
+                        <span>Prescriptions</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item active">
+                    <a href="vaccination-records.html">
+                        <i class="fas fa-syringe"></i>
+                        <span>Vaccination Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="payments.html">
+                        <i class="fas fa-wallet"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            
+
+            
+
+        </nav>
+
+
+        <!-- SIDEBAR LOGOUT -->
+        <div class="paw-sidebar-bottom">
+
+            <button type="button"
+                    class="paw-sidebar-logout"
+                    id="pawLogoutButton">
+
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="paw-dashboard-overlay"
+         id="pawDashboardOverlay"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="paw-dashboard-main">
+
+
+        <!-- FIXED HEADER -->
+        <header class="paw-dashboard-header">
+
+            <!-- HEADER LEFT -->
+            <div class="paw-header-left">
+
+                <button type="button"
+                        class="paw-dashboard-menu-toggle"
+                        id="pawDashboardMenuToggle"
+                        aria-label="Toggle navigation">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+                <div class="paw-header-heading">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's your pet care summary.</p>
+                </div>
+
+            </div>
+
+
+            <!-- HEADER RIGHT -->
+            <div class="paw-header-right">
+
+
+                <!-- NOTIFICATIONS -->
+                <div class="paw-header-notification-wrapper">
+
+                    <button type="button"
+                            class="paw-header-notification"
+                            aria-label="Notifications">
+
+                        <i class="far fa-bell"></i>
+
+                        <span class="paw-notification-badge">3</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- DARK MODE -->
+                <button type="button"
+                        class="paw-header-theme-toggle"
+                        id="pawDashboardThemeToggle"
+                        aria-label="Toggle dark mode">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- RTL MODE -->
+                <button type="button"
+                        class="paw-header-rtl-toggle"
+                        id="pawDashboardRtlToggle"
+                        aria-label="Toggle RTL direction">
+
+                    <i class="fas fa-right-left"></i>
+
+                </button>
+
+
+                <!-- MEMBER PROFILE -->
+                <div class="paw-header-profile">
+
+                    <img src="images/member-profile.jpg"
+                         alt="Member Profile">
+
+                    <div class="paw-header-profile-info">
+                        <h4>Alex Morgan</h4>
+                        <span>Pet Parent</span>
+                    </div>
+
+                    <i class="fas fa-chevron-down paw-profile-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- ==========================================
+     PAWSHEAL - VACCINATION RECORDS
+     PART 1 - HTML
+========================================== -->
+
+<main class="paw-dashboard-content paw-vaccination-page">
+
+    <!-- ==========================================
+         1. VACCINATION HERO
+    ========================================== -->
+
+    <section class="paw-vax-hero">
+
+        <div class="paw-vax-hero-content">
+
+            <span class="paw-vax-hero-icon">
+                <i class="fas fa-syringe"></i>
+            </span>
+
+            <div>
+                <h2>Vaccination Records</h2>
+
+                <p>
+                    Keep your pets safe and healthy with up-to-date
+                    vaccinations. Track, manage and never miss a due date.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="paw-vax-hero-image">
+            <img src="images/my-pets-buddy.jpg"
+                 alt="Golden Retriever">
+
+            <img src="images/my-pets-luna.jpg"
+                 alt="Cat">
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         2. VACCINATION SUMMARY
+    ========================================== -->
+
+    <section class="paw-vax-summary">
+
+        <div class="paw-vax-summary-card total">
+
+            <span class="paw-vax-summary-icon">
+                <i class="fas fa-shield-alt"></i>
+            </span>
+
+            <div>
+                <strong id="pawVaxTotal">08</strong>
+                <span>Total Vaccines</span>
+            </div>
+
+        </div>
+
+        <div class="paw-vax-summary-card completed">
+
+            <span class="paw-vax-summary-icon">
+                <i class="fas fa-check-circle"></i>
+            </span>
+
+            <div>
+                <strong id="pawVaxCompleted">06</strong>
+                <span>Completed</span>
+            </div>
+
+        </div>
+
+        <div class="paw-vax-summary-card upcoming">
+
+            <span class="paw-vax-summary-icon">
+                <i class="far fa-calendar-alt"></i>
+            </span>
+
+            <div>
+                <strong id="pawVaxUpcoming">02</strong>
+                <span>Upcoming</span>
+            </div>
+
+        </div>
+
+        <div class="paw-vax-summary-card overdue">
+
+            <span class="paw-vax-summary-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </span>
+
+            <div>
+                <strong id="pawVaxOverdue">00</strong>
+                <span>Overdue</span>
+            </div>
+
+        </div>
+
+        <button type="button"
+                class="paw-vax-add-button"
+                id="pawVaxAddButton">
+
+            <i class="fas fa-plus"></i>
+            Add Vaccination
+
+        </button>
+
+    </section>
+
+    <!-- ==========================================
+         3. PET OVERVIEW + VACCINATION RECORDS
+    ========================================== -->
+
+    <section class="paw-vax-main-grid">
+
+        <!-- PET OVERVIEW -->
+
+        <div class="paw-vax-pet-card">
+
+            <div class="paw-vax-section-heading">
+
+                <span>
+                    <i class="fas fa-paw"></i>
+                </span>
+
+                <h3>Pet Overview</h3>
+
+            </div>
+
+            <!-- PET SWITCHER -->
+
+            <div class="paw-vax-pet-tabs">
+
+                <button type="button"
+                        class="paw-vax-pet-tab active"
+                        data-vax-pet="Buddy">
+
+                    <i class="fas fa-paw"></i>
+                    Buddy
+
+                </button>
+
+                <button type="button"
+                        class="paw-vax-pet-tab"
+                        data-vax-pet="Luna">
+
+                    <i class="fas fa-cat"></i>
+                    Luna
+
+                </button>
+
+            </div>
+
+            <!-- SELECTED PET -->
+
+            <div class="paw-vax-selected-pet">
+
+                <img src="images/my-pets-buddy.jpg"
+                     alt="Buddy"
+                     id="pawVaxPetImage">
+
+                <div class="paw-vax-pet-information">
+
+                    <h4 id="pawVaxPetName">Buddy</h4>
+
+                    <p id="pawVaxPetBreed">
+                        Golden Retriever
+                    </p>
+
+                    <span id="pawVaxPetAge">
+                        <i class="fas fa-mars"></i>
+                        3 Years 4 Months
+                    </span>
+
+                    <span class="paw-vax-health-status"
+                          id="pawVaxPetStatus">
+
+                        <i class="fas fa-check-circle"></i>
+                        Up to date
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- VACCINATION PROGRESS -->
+
+            <div class="paw-vax-progress-section">
+
+                <h3>Vaccination Progress</h3>
+
+                <div class="paw-vax-progress-content">
+
+                    <div class="paw-vax-progress-circle">
+
+                        <svg viewBox="0 0 160 160">
+
+                            <circle
+                                class="paw-vax-progress-track"
+                                cx="80"
+                                cy="80"
+                                r="65">
+                            </circle>
+
+                            <circle
+                                class="paw-vax-progress-value"
+                                id="pawVaxProgressCircle"
+                                cx="80"
+                                cy="80"
+                                r="65">
+                            </circle>
+
+                        </svg>
+
+                        <div class="paw-vax-progress-number">
+
+                            <strong id="pawVaxProgressPercentage">
+                                75%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="paw-vax-progress-text">
+
+                        <strong id="pawVaxProgressCount">
+                            3 of 4
+                        </strong>
+
+                        <span>Vaccines completed</span>
+
+                    </div>
+
+                </div>
+
+                <div class="paw-vax-progress-breakdown">
+
+                    <div>
+
+                        <span>
+                            <i class="fas fa-check-circle"></i>
+                            Completed
+                        </span>
+
+                        <strong id="pawVaxPetCompleted">3</strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            <i class="fas fa-clock"></i>
+                            Upcoming
+                        </span>
+
+                        <strong id="pawVaxPetUpcoming">1</strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            <i class="fas fa-exclamation-circle"></i>
+                            Overdue
+                        </span>
+
+                        <strong id="pawVaxPetOverdue">0</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- VACCINATION RECORDS TABLE -->
+
+        <div class="paw-vax-records-card">
+
+            <div class="paw-vax-records-header">
+
+                <div class="paw-vax-section-heading">
+
+                    <span>
+                        <i class="fas fa-clipboard-list"></i>
+                    </span>
+
+                    <h3>Vaccination Records</h3>
+
+                </div>
+
+                <div class="paw-vax-record-controls">
+
+                    <input type="search"
+                           id="pawVaxSearch"
+                           placeholder="Search vaccine..."
+                           aria-label="Search vaccination records">
+
+                    <select id="pawVaxStatusFilter"
+                            aria-label="Filter vaccination status">
+
+                        <option value="all">All Vaccines</option>
+                        <option value="Completed">Completed</option>
+                        <option value="Upcoming">Upcoming</option>
+                        <option value="Overdue">Overdue</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="paw-vax-table-wrapper">
+
+                <table class="paw-vax-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>Vaccine Name</th>
+                            <th>Date Given</th>
+                            <th>Next Due</th>
+                            <th>Veterinarian</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="pawVaxRecordList">
+
+                        <!-- RABIES -->
+
+                        <tr data-vax-pet="Buddy"
+                            data-vax-status="Completed">
+
+                            <td>
+                                <span class="paw-vax-table-name">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Rabies
+                                </span>
+                            </td>
+
+                            <td>10 Jun 2025</td>
+
+                            <td>10 Jun 2026</td>
+
+                            <td>Dr. Emily Carter</td>
+
+                            <td>
+                                <span class="paw-vax-status completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    Completed
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="paw-vax-actions">
+
+                                    <button type="button"
+                                            data-vax-action="view"
+                                            aria-label="View Rabies record">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-vax-action="download"
+                                            aria-label="Download Rabies record">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-vax-action="more"
+                                            aria-label="More Rabies actions">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+                        <!-- DHPP -->
+
+                        <tr data-vax-pet="Buddy"
+                            data-vax-status="Completed">
+
+                            <td>
+                                <span class="paw-vax-table-name">
+                                    <i class="fas fa-syringe"></i>
+                                    DHPP (Distemper)
+                                </span>
+                            </td>
+
+                            <td>10 Jun 2025</td>
+
+                            <td>10 Jun 2026</td>
+
+                            <td>Dr. Emily Carter</td>
+
+                            <td>
+                                <span class="paw-vax-status completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    Completed
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="paw-vax-actions">
+
+                                    <button type="button"
+                                            data-vax-action="view"
+                                            aria-label="View DHPP record">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-vax-action="download"
+                                            aria-label="Download DHPP record">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-vax-action="more"
+                                            aria-label="More DHPP actions">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+                        <!-- LEPTOSPIROSIS -->
+
+                        <tr data-vax-pet="Buddy"
+                            data-vax-status="Completed">
+
+                            <td>
+                                <span class="paw-vax-table-name">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Leptospirosis
+                                </span>
+                            </td>
+
+                            <td>15 Jul 2025</td>
+
+                            <td>15 Jul 2026</td>
+
+                            <td>Dr. Sarah Williams</td>
+
+                            <td>
+                                <span class="paw-vax-status completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    Completed
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="paw-vax-actions">
+
+                                    <button type="button"
+                                            data-vax-action="view"
+                                            aria-label="View Leptospirosis record">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-vax-action="download"
+                                            aria-label="Download Leptospirosis record">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-vax-action="more"
+                                            aria-label="More Leptospirosis actions">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+                        <!-- BORDETELLA -->
+
+                        <tr data-vax-pet="Buddy"
+                            data-vax-status="Upcoming">
+
+                            <td>
+                                <span class="paw-vax-table-name">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Bordetella
+                                </span>
+                            </td>
+
+                            <td>20 Aug 2025</td>
+
+                            <td>20 Feb 2026</td>
+
+                            <td>Dr. Sarah Williams</td>
+
+                            <td>
+                                <span class="paw-vax-status upcoming">
+                                    <i class="far fa-clock"></i>
+                                    Upcoming
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="paw-vax-actions">
+
+                                    <button type="button"
+                                            data-vax-action="view"
+                                            aria-label="View Bordetella record">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-vax-action="download"
+                                            aria-label="Download Bordetella record">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-vax-action="more"
+                                            aria-label="More Bordetella actions">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+                        <!-- LYME DISEASE -->
+
+                        <tr data-vax-pet="Buddy"
+                            data-vax-status="Upcoming">
+
+                            <td>
+                                <span class="paw-vax-table-name">
+                                    <i class="fas fa-shield-alt"></i>
+                                    Lyme Disease
+                                </span>
+                            </td>
+
+                            <td>20 Aug 2025</td>
+
+                            <td>20 Aug 2026</td>
+
+                            <td>Dr. Meera Iyer</td>
+
+                            <td>
+                                <span class="paw-vax-status upcoming">
+                                    <i class="far fa-clock"></i>
+                                    Upcoming
+                                </span>
+                            </td>
+
+                            <td>
+                                <div class="paw-vax-actions">
+
+                                    <button type="button"
+                                            data-vax-action="view"
+                                            aria-label="View Lyme Disease record">
+                                        <i class="far fa-eye"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-vax-action="download"
+                                            aria-label="Download Lyme Disease record">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+
+                                    <button type="button"
+                                            data-vax-action="more"
+                                            aria-label="More Lyme Disease actions">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+
+                                </div>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="paw-vax-table-empty"
+                 id="pawVaxTableEmpty"
+                 hidden>
+
+                <i class="fas fa-search"></i>
+
+                <p>No vaccination records found.</p>
+
+            </div>
+
+            <div class="paw-vax-record-footer">
+
+                <span id="pawVaxRecordCount">
+                    Showing 5 vaccination records
+                </span>
+
+                <button type="button"
+                        id="pawVaxViewAll">
+
+                    View All
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         4. TIMELINE + UPCOMING VACCINATIONS
+    ========================================== -->
+
+    <section class="paw-vax-bottom-grid">
+
+        <!-- VACCINATION TIMELINE -->
+
+        <div class="paw-vax-timeline-card">
+
+            <div class="paw-vax-bottom-header">
+
+                <div class="paw-vax-section-heading">
+
+                    <span>
+                        <i class="fas fa-clock"></i>
+                    </span>
+
+                    <h3>Vaccination Timeline</h3>
+
+                </div>
+
+                <div class="paw-vax-timeline-pet-tabs">
+
+                    <button type="button"
+                            class="active"
+                            data-timeline-pet="Buddy">
+                        Buddy
+                    </button>
+
+                    <button type="button"
+                            data-timeline-pet="Luna">
+                        Luna
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="paw-vax-timeline-list"
+                 id="pawVaxTimelineList">
+
+                <div class="paw-vax-timeline-item completed">
+
+                    <span class="paw-vax-timeline-marker">
+                        <i class="fas fa-shield-alt"></i>
+                    </span>
+
+                    <div class="paw-vax-timeline-information">
+
+                        <strong>Rabies</strong>
+
+                        <span>10 Jun 2025</span>
+
+                        <small>Dr. Emily Carter</small>
+
+                    </div>
+
+                    <span class="paw-vax-status completed">
+                        Completed
+                    </span>
+
+                </div>
+
+                <div class="paw-vax-timeline-item completed">
+
+                    <span class="paw-vax-timeline-marker">
+                        <i class="fas fa-shield-alt"></i>
+                    </span>
+
+                    <div class="paw-vax-timeline-information">
+
+                        <strong>DHPP (Distemper)</strong>
+
+                        <span>10 Jun 2025</span>
+
+                        <small>Dr. Emily Carter</small>
+
+                    </div>
+
+                    <span class="paw-vax-status completed">
+                        Completed
+                    </span>
+
+                </div>
+
+                <div class="paw-vax-timeline-item completed">
+
+                    <span class="paw-vax-timeline-marker">
+                        <i class="fas fa-shield-alt"></i>
+                    </span>
+
+                    <div class="paw-vax-timeline-information">
+
+                        <strong>Leptospirosis</strong>
+
+                        <span>15 Jul 2025</span>
+
+                        <small>Dr. Sarah Williams</small>
+
+                    </div>
+
+                    <span class="paw-vax-status completed">
+                        Completed
+                    </span>
+
+                </div>
+
+                <div class="paw-vax-timeline-item upcoming">
+
+                    <span class="paw-vax-timeline-marker">
+                        <i class="fas fa-syringe"></i>
+                    </span>
+
+                    <div class="paw-vax-timeline-information">
+
+                        <strong>Bordetella</strong>
+
+                        <span>20 Aug 2025</span>
+
+                        <small>Dr. Sarah Williams</small>
+
+                    </div>
+
+                    <span class="paw-vax-status upcoming">
+                        Upcoming
+                    </span>
+
+                </div>
+
+                <div class="paw-vax-timeline-item upcoming">
+
+                    <span class="paw-vax-timeline-marker">
+                        <i class="fas fa-syringe"></i>
+                    </span>
+
+                    <div class="paw-vax-timeline-information">
+
+                        <strong>Lyme Disease</strong>
+
+                        <span>20 Aug 2025</span>
+
+                        <small>Dr. Meera Iyer</small>
+
+                    </div>
+
+                    <span class="paw-vax-status upcoming">
+                        Upcoming
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- UPCOMING VACCINATIONS -->
+
+        <div class="paw-vax-upcoming-card">
+
+            <div class="paw-vax-bottom-header">
+
+                <div class="paw-vax-section-heading">
+
+                    <span>
+                        <i class="far fa-calendar-check"></i>
+                    </span>
+
+                    <h3>Upcoming Vaccinations</h3>
+
+                </div>
+
+                <button type="button"
+                        id="pawVaxUpcomingViewAll">
+                    View All
+                </button>
+
+            </div>
+
+            <div class="paw-vax-upcoming-list"
+                 id="pawVaxUpcomingList">
+
+                <div class="paw-vax-upcoming-item">
+
+                    <span class="paw-vax-upcoming-date">
+                        <small>FEB</small>
+                        <strong>20</strong>
+                    </span>
+
+                    <span class="paw-vax-upcoming-icon">
+                        <i class="fas fa-syringe"></i>
+                    </span>
+
+                    <div class="paw-vax-upcoming-information">
+
+                        <strong>Bordetella</strong>
+
+                        <p>Buddy Â· 1 year</p>
+
+                        <small>Dr. Sarah Williams</small>
+
+                    </div>
+
+                    <span class="paw-vax-status upcoming">
+                        Upcoming
+                    </span>
+
+                </div>
+
+                <div class="paw-vax-upcoming-item overdue">
+
+                    <span class="paw-vax-upcoming-date">
+                        <small>AUG</small>
+                        <strong>20</strong>
+                    </span>
+
+                    <span class="paw-vax-upcoming-icon">
+                        <i class="fas fa-syringe"></i>
+                    </span>
+
+                    <div class="paw-vax-upcoming-information">
+
+                        <strong>Lyme Disease</strong>
+
+                        <p>Buddy Â· 1 year</p>
+
+                        <small>Dr. Meera Iyer</small>
+
+                    </div>
+
+                    <span class="paw-vax-status overdue">
+                        Overdue
+                    </span>
+
+                </div>
+
+                <div class="paw-vax-upcoming-item">
+
+                    <span class="paw-vax-upcoming-date">
+                        <small>SEP</small>
+                        <strong>12</strong>
+                    </span>
+
+                    <span class="paw-vax-upcoming-icon">
+                        <i class="fas fa-syringe"></i>
+                    </span>
+
+                    <div class="paw-vax-upcoming-information">
+
+                        <strong>FVRCP (Cat)</strong>
+
+                        <p>Luna Â· 1 year</p>
+
+                        <small>Dr. Meera Iyer</small>
+
+                    </div>
+
+                    <span class="paw-vax-status upcoming">
+                        Upcoming
+                    </span>
+
+                </div>
+
+                <div class="paw-vax-upcoming-item">
+
+                    <span class="paw-vax-upcoming-date">
+                        <small>NOV</small>
+                        <strong>15</strong>
+                    </span>
+
+                    <span class="paw-vax-upcoming-icon">
+                        <i class="fas fa-syringe"></i>
+                    </span>
+
+                    <div class="paw-vax-upcoming-information">
+
+                        <strong>Rabies</strong>
+
+                        <p>Luna Â· 1 year</p>
+
+                        <small>Dr. Sarah Williams</small>
+
+                    </div>
+
+                    <span class="paw-vax-status upcoming">
+                        Upcoming
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         5. VACCINATION CERTIFICATES & DOCUMENTS
+    ========================================== -->
+
+    <section class="paw-vax-documents-card">
+
+        <div class="paw-vax-bottom-header">
+
+            <div class="paw-vax-section-heading">
+
+                <span>
+                    <i class="far fa-file-alt"></i>
+                </span>
+
+                <h3>Vaccination Certificates & Documents</h3>
+
+            </div>
+
+        </div>
+
+        <div class="paw-vax-documents-content">
+
+            <!-- UPLOAD AREA -->
+
+            <div class="paw-vax-upload-area">
+
+                <span>
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </span>
+
+                <h4>Upload Vaccination Document</h4>
+
+                <p>PDF, JPG, PNG (Max 5MB)</p>
+
+                <label for="pawVaxDocumentUpload"
+                       class="paw-vax-choose-file">
+
+                    <i class="fas fa-folder-open"></i>
+                    Choose File
+
+                </label>
+
+                <input type="file"
+                       id="pawVaxDocumentUpload"
+                       accept=".pdf,.jpg,.jpeg,.png"
+                       multiple
+                       hidden>
+
+            </div>
+
+            <!-- DOCUMENT LIST -->
+
+            <div class="paw-vax-document-list"
+                 id="pawVaxDocumentList">
+
+                <div class="paw-vax-document-item">
+
+                    <span class="paw-vax-document-icon pdf">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+
+                    <div class="paw-vax-document-information">
+
+                        <strong>Buddy_Vaccination_Certificate.pdf</strong>
+
+                        <small>1.2 MB Â· Aug 20, 2025</small>
+
+                    </div>
+
+                    <div class="paw-vax-document-actions">
+
+                        <button type="button"
+                                aria-label="Download certificate">
+                            <i class="fas fa-download"></i>
+                        </button>
+
+                        <button type="button"
+                                aria-label="View certificate">
+                            <i class="far fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="paw-vax-document-item">
+
+                    <span class="paw-vax-document-icon pdf">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+
+                    <div class="paw-vax-document-information">
+
+                        <strong>Luna_Vaccination_Record.pdf</strong>
+
+                        <small>980 KB Â· Jul 12, 2025</small>
+
+                    </div>
+
+                    <div class="paw-vax-document-actions">
+
+                        <button type="button"
+                                aria-label="Download certificate">
+                            <i class="fas fa-download"></i>
+                        </button>
+
+                        <button type="button"
+                                aria-label="View certificate">
+                            <i class="far fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================================
+         6. ADD / EDIT VACCINATION MODAL
+    ========================================== -->
+
+    <div class="paw-vax-modal"
+         id="pawVaxModal"
+         aria-hidden="true">
+
+        <div class="paw-vax-modal-overlay"
+             id="pawVaxModalOverlay"></div>
+
+        <div class="paw-vax-modal-card">
+
+            <button type="button"
+                    class="paw-vax-modal-close"
+                    id="pawVaxModalClose"
+                    aria-label="Close modal">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+            <div class="paw-vax-modal-heading">
+
+                <span>
+                    <i class="fas fa-syringe"></i>
+                </span>
+
+                <h3 id="pawVaxModalTitle">
+                    Add Vaccination
+                </h3>
+
+                <p>
+                    Add your pet's vaccination details and next due date.
+                </p>
+
+            </div>
+
+            <form id="pawVaxForm">
+
+                <input type="hidden"
+                       id="pawVaxFormId">
+
+                <div class="paw-vax-form-grid">
+
+                    <div class="paw-vax-form-group">
+
+                        <label for="pawVaxFormPet">
+                            Select Pet <span>*</span>
+                        </label>
+
+                        <select id="pawVaxFormPet" required>
+
+                            <option value="">Choose pet</option>
+                            <option value="Buddy">Buddy</option>
+                            <option value="Luna">Luna</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="paw-vax-form-group">
+
+                        <label for="pawVaxFormName">
+                            Vaccine Name <span>*</span>
+                        </label>
+
+                        <input type="text"
+                               id="pawVaxFormName"
+                               placeholder="Enter vaccine name"
+                               required>
+
+                    </div>
+
+                    <div class="paw-vax-form-group">
+
+                        <label for="pawVaxFormDate">
+                            Vaccination Date <span>*</span>
+                        </label>
+
+                        <input type="date"
+                               id="pawVaxFormDate"
+                               required>
+
+                    </div>
+
+                    <div class="paw-vax-form-group">
+
+                        <label for="pawVaxFormDueDate">
+                            Next Due Date <span>*</span>
+                        </label>
+
+                        <input type="date"
+                               id="pawVaxFormDueDate"
+                               required>
+
+                    </div>
+
+                    <div class="paw-vax-form-group">
+
+                        <label for="pawVaxFormVet">
+                            Veterinarian <span>*</span>
+                        </label>
+
+                        <input type="text"
+                               id="pawVaxFormVet"
+                               placeholder="Enter veterinarian name"
+                               required>
+
+                    </div>
+
+                    <div class="paw-vax-form-group">
+
+                        <label for="pawVaxFormBatch">
+                            Batch Number
+                        </label>
+
+                        <input type="text"
+                               id="pawVaxFormBatch"
+                               placeholder="Enter batch number">
+
+                    </div>
+
+                    <div class="paw-vax-form-group">
+
+                        <label for="pawVaxFormStatus">
+                            Vaccination Status
+                        </label>
+
+                        <select id="pawVaxFormStatus">
+
+                            <option value="Completed">Completed</option>
+                            <option value="Upcoming">Upcoming</option>
+                            <option value="Overdue">Overdue</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="paw-vax-form-group">
+
+                        <label for="pawVaxFormCertificate">
+                            Certificate
+                        </label>
+
+                        <input type="file"
+                               id="pawVaxFormCertificate"
+                               accept=".pdf,.jpg,.jpeg,.png">
+
+                    </div>
+
+                    <div class="paw-vax-form-group full">
+
+                        <label for="pawVaxFormNotes">
+                            Additional Notes
+                        </label>
+
+                        <textarea id="pawVaxFormNotes"
+                                  rows="3"
+                                  placeholder="Enter additional vaccination notes"></textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="paw-vax-form-actions">
+
+                    <button type="button"
+                            class="paw-vax-cancel-button"
+                            id="pawVaxModalCancel">
+                        Cancel
+                    </button>
+
+                    <button type="submit"
+                            class="paw-vax-save-button">
+
+                        <i class="fas fa-save"></i>
+                        Save Vaccination
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         7. VACCINATION DETAILS MODAL
+    ========================================== -->
+
+    <div class="paw-vax-details-modal"
+         id="pawVaxDetailsModal"
+         aria-hidden="true">
+
+        <div class="paw-vax-details-overlay"
+             id="pawVaxDetailsOverlay"></div>
+
+        <div class="paw-vax-details-card">
+
+            <button type="button"
+                    id="pawVaxDetailsClose"
+                    class="paw-vax-details-close"
+                    aria-label="Close details">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+            <div class="paw-vax-details-heading">
+
+                <span>
+                    <i class="fas fa-shield-alt"></i>
+                </span>
+
+                <div>
+                    <h3 id="pawVaxDetailsName">Rabies</h3>
+                    <p>Vaccination Details</p>
+                </div>
+
+            </div>
+
+            <div class="paw-vax-details-content">
+
+                <div>
+                    <span>Pet Name</span>
+                    <strong id="pawVaxDetailsPet">Buddy</strong>
+                </div>
+
+                <div>
+                    <span>Vaccination Date</span>
+                    <strong id="pawVaxDetailsDate">10 Jun 2025</strong>
+                </div>
+
+                <div>
+                    <span>Next Due Date</span>
+                    <strong id="pawVaxDetailsDue">10 Jun 2026</strong>
+                </div>
+
+                <div>
+                    <span>Veterinarian</span>
+                    <strong id="pawVaxDetailsVet">Dr. Emily Carter</strong>
+                </div>
+
+                <div>
+                    <span>Batch Number</span>
+                    <strong id="pawVaxDetailsBatch">Not available</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong id="pawVaxDetailsStatus">Completed</strong>
+                </div>
+
+                <div class="full">
+                    <span>Additional Notes</span>
+                    <p id="pawVaxDetailsNotes">
+                        No additional notes available.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="paw-vax-details-actions">
+
+                <button type="button"
+                        id="pawVaxDetailsEdit">
+                    <i class="fas fa-pen"></i>
+                    Edit Record
+                </button>
+
+                <button type="button"
+                        id="pawVaxDetailsDownload">
+                    <i class="fas fa-download"></i>
+                    Download
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+</div>
+
+</div>
+
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="paw-logout-modal" id="pawLogoutModal">
+
+    <div class="paw-logout-modal-overlay"
+         id="pawLogoutModalOverlay"></div>
+
+    <div class="paw-logout-card">
+
+        <div class="paw-logout-icon">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+
+        <h2>Confirm Logout</h2>
+
+        <p>
+            Are you sure you want to log out of your PawsHeal account?
+        </p>
+
+        <div class="paw-logout-actions">
+
+            <button type="button"
+                    class="paw-logout-cancel"
+                    id="pawLogoutCancel">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="paw-logout-confirm"
+                    id="pawLogoutConfirm">
+                Yes, Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

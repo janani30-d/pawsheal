@@ -1,0 +1,664 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawsHeal | Dashboard</title>
+    <!-- ==================== WEBSITE FAVICON ==================== -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/res-dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="paw-dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="paw-dashboard-sidebar" id="pawDashboardSidebar">
+
+        <!-- LOGO -->
+        <div class="paw-sidebar-logo">
+            <a href="index.html">
+                <img src="images/logo.png"
+                     class="paw-sidebar-logo-light"
+                     alt="PawsHeal Logo">
+
+                <img src="images/logo-dark.png"
+                     class="paw-sidebar-logo-dark"
+                     alt="PawsHeal Logo">
+            </a>
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="paw-sidebar-navigation">
+
+            <span class="paw-sidebar-label">MAIN MENU</span>
+
+            <ul class="paw-sidebar-menu">
+
+                <li class="paw-sidebar-item active">
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="my-pets.html">
+                        <i class="fas fa-paw"></i>
+                        <span>My Pets</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="appointments.html">
+                        <i class="far fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="medical-records.html">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Medical Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="prescriptions.html">
+                        <i class="fas fa-prescription"></i>
+                        <span>Prescriptions</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="vaccination-records.html">
+                        <i class="fas fa-syringe"></i>
+                        <span>Vaccination Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="payments.html">
+                        <i class="fas fa-wallet"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            
+
+            
+
+        </nav>
+
+
+        <!-- SIDEBAR LOGOUT -->
+        <div class="paw-sidebar-bottom">
+
+            <button type="button"
+                    class="paw-sidebar-logout"
+                    id="pawLogoutButton">
+
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="paw-dashboard-overlay"
+         id="pawDashboardOverlay"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="paw-dashboard-main">
+
+
+        <!-- FIXED HEADER -->
+        <header class="paw-dashboard-header">
+
+            <!-- HEADER LEFT -->
+            <div class="paw-header-left">
+
+                <button type="button"
+                        class="paw-dashboard-menu-toggle"
+                        id="pawDashboardMenuToggle"
+                        aria-label="Toggle navigation">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+                <div class="paw-header-heading">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's your pet care summary.</p>
+                </div>
+
+            </div>
+
+
+            <!-- HEADER RIGHT -->
+            <div class="paw-header-right">
+
+
+                <!-- NOTIFICATIONS -->
+                <div class="paw-header-notification-wrapper">
+
+                    <button type="button"
+                            class="paw-header-notification"
+                            aria-label="Notifications">
+
+                        <i class="far fa-bell"></i>
+
+                        <span class="paw-notification-badge">3</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- DARK MODE -->
+                <button type="button"
+                        class="paw-header-theme-toggle"
+                        id="pawDashboardThemeToggle"
+                        aria-label="Toggle dark mode">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- RTL MODE -->
+                <button type="button"
+                        class="paw-header-rtl-toggle"
+                        id="pawDashboardRtlToggle"
+                        aria-label="Toggle RTL direction">
+
+                    <i class="fas fa-right-left"></i>
+
+                </button>
+
+
+                <!-- MEMBER PROFILE -->
+                <div class="paw-header-profile">
+
+                    <img src="images/member-profile.jpg"
+                         alt="Member Profile">
+
+                    <div class="paw-header-profile-info">
+                        <h4>Alex Morgan</h4>
+                        <span>Pet Parent</span>
+                    </div>
+
+                    <i class="fas fa-chevron-down paw-profile-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+       
+
+            
+<main class="paw-dashboard-content">
+
+    <!-- =====================================
+         SECTION 01 - WELCOME BANNER
+    ====================================== -->
+
+    <section class="paw-overview-welcome">
+
+        <div class="paw-overview-welcome-content">
+
+            <div class="paw-overview-date">
+                <i class="far fa-calendar-alt"></i>
+                <span>Monday, November 23, 2026</span>
+            </div>
+
+            <h2>Welcome Back, Alex!</h2>
+
+            <p>
+                Keep track of your petsâ€™ health, appointments
+                and vaccinations all in one place.
+            </p>
+
+            <a href="appointments.html" class="paw-overview-book-btn">
+                <i class="far fa-calendar-check"></i>
+                <span>Book Appointment</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="paw-overview-welcome-image">
+            <img src="images/dashboard-welcome-pets.png"
+                 alt="Golden retriever and cat">
+        </div>
+
+        <div class="paw-overview-paw-decoration paw-overview-paw-one">
+            <i class="fas fa-paw"></i>
+        </div>
+
+        <div class="paw-overview-paw-decoration paw-overview-paw-two">
+            <i class="fas fa-paw"></i>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 02 - PET CARE STATISTICS
+    ====================================== -->
+
+    <section class="paw-overview-stats">
+
+        <!-- Total Pets -->
+        <div class="paw-overview-stat-card paw-overview-stat-pets">
+
+            <div class="paw-overview-stat-icon">
+                <i class="fas fa-paw"></i>
+            </div>
+
+            <div class="paw-overview-stat-info">
+                <h3>Total Pets</h3>
+                <strong>2</strong>
+            </div>
+
+        </div>
+
+
+        <!-- Upcoming Appointments -->
+        <div class="paw-overview-stat-card paw-overview-stat-appointments">
+
+            <div class="paw-overview-stat-icon">
+                <i class="far fa-calendar-check"></i>
+            </div>
+
+            <div class="paw-overview-stat-info">
+                <h3>Upcoming Appointments</h3>
+                <strong>1</strong>
+            </div>
+
+        </div>
+
+
+        <!-- Medical Records -->
+        <div class="paw-overview-stat-card paw-overview-stat-records">
+
+            <div class="paw-overview-stat-icon">
+                <i class="fas fa-notes-medical"></i>
+            </div>
+
+            <div class="paw-overview-stat-info">
+                <h3>Medical Records</h3>
+                <strong>6</strong>
+            </div>
+
+        </div>
+
+
+        <!-- Vaccinations Due -->
+        <div class="paw-overview-stat-card paw-overview-stat-vaccines">
+
+            <div class="paw-overview-stat-icon">
+                <i class="fas fa-syringe"></i>
+            </div>
+
+            <div class="paw-overview-stat-info">
+                <h3>Vaccinations Due</h3>
+                <strong>1</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 03 - MY PETS
+    ====================================== -->
+
+    <section class="paw-overview-panel paw-overview-pets">
+
+        <div class="paw-overview-panel-header">
+
+            <h2>My Pets</h2>
+
+            <a href="my-pets.html">
+                View All
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="paw-overview-pet-list">
+
+            <!-- PET 01 -->
+            <article class="paw-overview-pet-card">
+
+                <div class="paw-overview-pet-image">
+                    <img src="images/dashboard-buddy.jpg"
+                         alt="Buddy the golden retriever">
+                </div>
+
+                <div class="paw-overview-pet-info">
+
+                    <h3>
+                        Buddy
+                        <i class="fas fa-mars paw-overview-male"></i>
+                    </h3>
+
+                    <p>Golden Retriever</p>
+                    <span>3 Years Old</span>
+
+                    <div class="paw-overview-health-status">
+                        <i class="fas fa-heart"></i>
+                        Healthy
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PET 02 -->
+            <article class="paw-overview-pet-card">
+
+                <div class="paw-overview-pet-image">
+                    <img src="images/dashboard-luna.jpg"
+                         alt="Luna the domestic cat">
+                </div>
+
+                <div class="paw-overview-pet-info">
+
+                    <h3>
+                        Luna
+                        <i class="fas fa-venus paw-overview-female"></i>
+                    </h3>
+
+                    <p>Domestic Cat</p>
+                    <span>2 Years Old</span>
+
+                    <div class="paw-overview-health-status">
+                        <i class="fas fa-heart"></i>
+                        Healthy
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 04 - UPCOMING APPOINTMENTS
+    ====================================== -->
+
+    <section class="paw-overview-panel paw-overview-appointments">
+
+        <div class="paw-overview-panel-header">
+
+            <h2>Upcoming Appointments</h2>
+
+            <a href="appointments.html">
+                View All
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="paw-overview-appointment-card">
+
+            <div class="paw-overview-appointment-date">
+                <span>DEC</span>
+                <strong>02</strong>
+            </div>
+
+            <div class="paw-overview-appointment-details">
+
+                <h3>Buddy - Regular Checkup</h3>
+
+                <div class="paw-overview-appointment-meta">
+
+                    <span>
+                        <i class="far fa-clock"></i>
+                        10:00 AM
+                    </span>
+
+                    <span>
+                        <i class="far fa-user"></i>
+                        Dr. Emily Carter
+                    </span>
+
+                </div>
+
+            </div>
+
+            <span class="paw-overview-appointment-status">
+                Confirmed
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 05 - RECENT MEDICAL ACTIVITY
+    ====================================== -->
+
+    <section class="paw-overview-panel paw-overview-activity">
+
+        <div class="paw-overview-panel-header">
+
+            <h2>Recent Medical Activity</h2>
+
+            <a href="medical-records.html">
+                View All
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="paw-overview-activity-list">
+
+            <!-- Activity 01 -->
+            <div class="paw-overview-activity-item">
+
+                <div class="paw-overview-activity-icon">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+
+                <div class="paw-overview-activity-info">
+                    <h3>General Checkup</h3>
+                    <p>Jan 20, 2025 <span>-</span> Buddy</p>
+                </div>
+
+                <a href="medical-records.html"
+                   aria-label="View general checkup">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+
+            </div>
+
+
+            <!-- Activity 02 -->
+            <div class="paw-overview-activity-item">
+
+                <div class="paw-overview-activity-icon">
+                    <i class="fas fa-syringe"></i>
+                </div>
+
+                <div class="paw-overview-activity-info">
+                    <h3>Vaccination - Rabies</h3>
+                    <p>Jan 10, 2025 <span>-</span> Luna</p>
+                </div>
+
+                <a href="vaccination-records.html"
+                   aria-label="View vaccination record">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+
+            </div>
+
+
+            <!-- Activity 03 -->
+            <div class="paw-overview-activity-item">
+
+                <div class="paw-overview-activity-icon">
+                    <i class="fas fa-prescription"></i>
+                </div>
+
+                <div class="paw-overview-activity-info">
+                    <h3>Prescription Updated</h3>
+                    <p>Jan 08, 2025 <span>-</span> Buddy</p>
+                </div>
+
+                <a href="prescriptions.html"
+                   aria-label="View prescription">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================
+         SECTION 06 - HEALTH REMINDERS
+    ====================================== -->
+
+    <section class="paw-overview-panel paw-overview-reminders">
+
+        <div class="paw-overview-panel-header">
+
+            <h2>Health Reminders</h2>
+
+            <a href="vaccination-records.html">
+                View All
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="paw-overview-reminder-list">
+
+            <!-- Reminder 01 -->
+            <div class="paw-overview-reminder-card">
+
+                <div class="paw-overview-reminder-icon paw-overview-reminder-vaccine">
+                    <i class="fas fa-syringe"></i>
+                </div>
+
+                <div class="paw-overview-reminder-info">
+                    <h3>Vaccination Due</h3>
+                    <p>Luna - FVRCP</p>
+                </div>
+
+                <span class="paw-overview-reminder-status paw-overview-due-soon">
+                    Due Soon
+                </span>
+
+            </div>
+
+
+            <!-- Reminder 02 -->
+            <div class="paw-overview-reminder-card">
+
+                <div class="paw-overview-reminder-icon paw-overview-reminder-checkup">
+                    <i class="far fa-calendar-check"></i>
+                </div>
+
+                <div class="paw-overview-reminder-info">
+                    <h3>Routine Checkup</h3>
+                    <p>Buddy - Annual Health Check</p>
+                </div>
+
+                <span class="paw-overview-reminder-status paw-overview-due-later">
+                    Upcoming
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+        
+    </div>
+
+</div>
+
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="paw-logout-modal" id="pawLogoutModal">
+
+    <div class="paw-logout-modal-overlay"
+         id="pawLogoutModalOverlay"></div>
+
+    <div class="paw-logout-card">
+
+        <div class="paw-logout-icon">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+
+        <h2>Confirm Logout</h2>
+
+        <p>
+            Are you sure you want to log out of your PawsHeal account?
+        </p>
+
+        <div class="paw-logout-actions">
+
+            <button type="button"
+                    class="paw-logout-cancel"
+                    id="pawLogoutCancel">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="paw-logout-confirm"
+                    id="pawLogoutConfirm">
+                Yes, Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

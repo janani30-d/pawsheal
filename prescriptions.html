@@ -1,0 +1,1340 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawsHeal | Dashboard</title>
+    <!-- ==================== WEBSITE FAVICON ==================== -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/res-dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="paw-dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="paw-dashboard-sidebar" id="pawDashboardSidebar">
+
+        <!-- LOGO -->
+        <div class="paw-sidebar-logo">
+            <a href="index.html">
+                <img src="images/logo.png"
+                     class="paw-sidebar-logo-light"
+                     alt="PawsHeal Logo">
+
+                <img src="images/logo-dark.png"
+                     class="paw-sidebar-logo-dark"
+                     alt="PawsHeal Logo">
+            </a>
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="paw-sidebar-navigation">
+
+            <span class="paw-sidebar-label">MAIN MENU</span>
+
+            <ul class="paw-sidebar-menu">
+
+                <li class="paw-sidebar-item">
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="my-pets.html">
+                        <i class="fas fa-paw"></i>
+                        <span>My Pets</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="appointments.html">
+                        <i class="far fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="medical-records.html">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Medical Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item active">
+                    <a href="prescriptions.html">
+                        <i class="fas fa-prescription"></i>
+                        <span>Prescriptions</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="vaccination-records.html">
+                        <i class="fas fa-syringe"></i>
+                        <span>Vaccination Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="payments.html">
+                        <i class="fas fa-wallet"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            
+
+            
+
+        </nav>
+
+
+        <!-- SIDEBAR LOGOUT -->
+        <div class="paw-sidebar-bottom">
+
+            <button type="button"
+                    class="paw-sidebar-logout"
+                    id="pawLogoutButton">
+
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="paw-dashboard-overlay"
+         id="pawDashboardOverlay"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="paw-dashboard-main">
+
+
+        <!-- FIXED HEADER -->
+        <header class="paw-dashboard-header">
+
+            <!-- HEADER LEFT -->
+            <div class="paw-header-left">
+
+                <button type="button"
+                        class="paw-dashboard-menu-toggle"
+                        id="pawDashboardMenuToggle"
+                        aria-label="Toggle navigation">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+                <div class="paw-header-heading">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's your pet care summary.</p>
+                </div>
+
+            </div>
+
+
+            <!-- HEADER RIGHT -->
+            <div class="paw-header-right">
+
+
+                <!-- NOTIFICATIONS -->
+                <div class="paw-header-notification-wrapper">
+
+                    <button type="button"
+                            class="paw-header-notification"
+                            aria-label="Notifications">
+
+                        <i class="far fa-bell"></i>
+
+                        <span class="paw-notification-badge">3</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- DARK MODE -->
+                <button type="button"
+                        class="paw-header-theme-toggle"
+                        id="pawDashboardThemeToggle"
+                        aria-label="Toggle dark mode">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- RTL MODE -->
+                <button type="button"
+                        class="paw-header-rtl-toggle"
+                        id="pawDashboardRtlToggle"
+                        aria-label="Toggle RTL direction">
+
+                    <i class="fas fa-right-left"></i>
+
+                </button>
+
+
+                <!-- MEMBER PROFILE -->
+                <div class="paw-header-profile">
+
+                    <img src="images/member-profile.jpg"
+                         alt="Member Profile">
+
+                    <div class="paw-header-profile-info">
+                        <h4>Alex Morgan</h4>
+                        <span>Pet Parent</span>
+                    </div>
+
+                    <i class="fas fa-chevron-down paw-profile-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- ==========================================
+     PAWSHEAL - PRESCRIPTIONS PAGE
+========================================== -->
+
+
+<!-- ==========================================
+     PAWSHEAL - PRESCRIPTIONS PAGE
+     PART 1 - HTML
+========================================== -->
+
+<main class="paw-dashboard-content paw-prescriptions-page">
+
+
+    <!-- ==========================================
+         1. PRESCRIPTION HERO BANNER
+    ========================================== -->
+
+    <section class="paw-rx-hero">
+
+        <div class="paw-rx-hero-content">
+
+            <span class="paw-rx-hero-icon">
+                <i class="fas fa-prescription"></i>
+            </span>
+
+            <div>
+                <h2>Prescriptions</h2>
+                <p>
+                    Manage prescriptions, medications and treatment
+                    plans for your pets.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="paw-rx-hero-image">
+
+            <img src="images/my-pets-buddy.jpg"
+                 alt="Buddy the dog">
+
+            <img src="images/my-pets-luna.jpg"
+                 alt="Luna the cat">
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         2. PRESCRIPTION NAVIGATION TABS
+    ========================================== -->
+
+    <section class="paw-rx-navigation">
+
+        <div class="paw-rx-tabs">
+
+            <button type="button"
+                    class="paw-rx-tab active"
+                    data-rx-tab="overview">
+
+                <i class="fas fa-th-large"></i>
+                Overview
+
+            </button>
+
+            <button type="button"
+                    class="paw-rx-tab"
+                    data-rx-tab="prescriptions">
+
+                <i class="fas fa-prescription"></i>
+                Prescriptions
+
+            </button>
+
+            <button type="button"
+                    class="paw-rx-tab"
+                    data-rx-tab="schedule">
+
+                <i class="far fa-calendar-alt"></i>
+                Medication Schedule
+
+            </button>
+
+            <button type="button"
+                    class="paw-rx-tab"
+                    data-rx-tab="reminders">
+
+                <i class="far fa-bell"></i>
+                Reminders
+
+            </button>
+
+            <button type="button"
+                    class="paw-rx-tab"
+                    data-rx-tab="documents">
+
+                <i class="far fa-file-alt"></i>
+                Documents
+
+            </button>
+
+        </div>
+
+        <button type="button"
+                class="paw-rx-add-button"
+                id="pawRxAddButton">
+
+            <i class="fas fa-plus"></i>
+            Add Prescription
+
+        </button>
+
+    </section>
+
+
+    <!-- ==========================================
+         3. MAIN PRESCRIPTION DASHBOARD
+    ========================================== -->
+
+    <section class="paw-rx-dashboard">
+
+
+        <!-- ======================================
+             LEFT COLUMN - PET & TREATMENT PROGRESS
+        ======================================= -->
+
+        <aside class="paw-rx-pet-column">
+
+
+            <!-- PET SELECTOR -->
+
+            <div class="paw-rx-pet-card">
+
+                <div class="paw-rx-section-heading">
+
+                    <span>
+                        <i class="fas fa-paw"></i>
+                    </span>
+
+                    <h3>Select Pet</h3>
+
+                </div>
+
+
+                <div class="paw-rx-pet-selector">
+
+                    <label for="pawRxPetSelect">
+                        Choose your pet
+                    </label>
+
+                    <select id="pawRxPetSelect">
+
+                        <option value="Buddy">Buddy (Dog)</option>
+                        <option value="Luna">Luna (Cat)</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="paw-rx-selected-pet">
+
+                    <img src="images/my-pets-buddy.jpg"
+                         alt="Buddy"
+                         id="pawRxSelectedPetImage">
+
+                    <div>
+                        <strong id="pawRxSelectedPetName">
+                            Buddy
+                        </strong>
+
+                        <span id="pawRxSelectedPetBreed">
+                            Golden Retriever
+                        </span>
+                    </div>
+
+                    <span class="paw-rx-pet-status">
+                        <i class="fas fa-heart"></i>
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- TREATMENT PROGRESS -->
+
+            <div class="paw-rx-progress-card">
+
+                <div class="paw-rx-section-heading">
+
+                    <span>
+                        <i class="fas fa-chart-pie"></i>
+                    </span>
+
+                    <h3>Treatment Progress</h3>
+
+                </div>
+
+
+                <div class="paw-rx-progress-circle">
+
+                    <svg viewBox="0 0 180 180"
+                         class="paw-rx-progress-svg">
+
+                        <circle
+                            class="paw-rx-progress-track"
+                            cx="90"
+                            cy="90"
+                            r="72">
+                        </circle>
+
+                        <circle
+                            class="paw-rx-progress-value"
+                            id="pawRxProgressCircle"
+                            cx="90"
+                            cy="90"
+                            r="72">
+                        </circle>
+
+                    </svg>
+
+                    <div class="paw-rx-progress-number">
+
+                        <strong id="pawRxProgressPercentage">
+                            71%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="paw-rx-progress-description">
+
+                    <strong>Overall Treatment Progress</strong>
+
+                    <p id="pawRxProgressDescription">
+                        5 of 7 medicines completed
+                    </p>
+
+                </div>
+
+
+                <div class="paw-rx-progress-breakdown">
+
+                    <div class="paw-rx-progress-row">
+
+                        <span class="paw-rx-progress-dot active"></span>
+
+                        <span>Active Treatments</span>
+
+                        <strong id="pawRxActiveCount">2</strong>
+
+                    </div>
+
+
+                    <div class="paw-rx-progress-row">
+
+                        <span class="paw-rx-progress-dot completed"></span>
+
+                        <span>Completed Treatments</span>
+
+                        <strong id="pawRxCompletedCount">5</strong>
+
+                    </div>
+
+
+                    <div class="paw-rx-progress-row">
+
+                        <span class="paw-rx-progress-dot upcoming"></span>
+
+                        <span>Upcoming Medicines</span>
+
+                        <strong id="pawRxUpcomingCount">1</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+
+        <!-- ======================================
+             RIGHT COLUMN - PRESCRIPTION CONTENT
+        ======================================= -->
+
+        <div class="paw-rx-main-column">
+
+
+            <!-- ==================================
+                 4. PRESCRIPTION SUMMARY
+            =================================== -->
+
+            <section class="paw-rx-summary-grid">
+
+
+                <div class="paw-rx-summary-card total">
+
+                    <span class="paw-rx-summary-icon">
+                        <i class="fas fa-prescription"></i>
+                    </span>
+
+                    <div>
+                        <strong id="pawRxTotalCount">07</strong>
+                        <span>Total Prescriptions</span>
+                    </div>
+
+                </div>
+
+
+                <div class="paw-rx-summary-card active">
+
+                    <span class="paw-rx-summary-icon">
+                        <i class="fas fa-pills"></i>
+                    </span>
+
+                    <div>
+                        <strong id="pawRxActiveMedicineCount">05</strong>
+                        <span>Active Medicines</span>
+                    </div>
+
+                </div>
+
+
+                <div class="paw-rx-summary-card completed">
+
+                    <span class="paw-rx-summary-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </span>
+
+                    <div>
+                        <strong id="pawRxCompletedMedicineCount">05</strong>
+                        <span>Completed</span>
+                    </div>
+
+                </div>
+
+
+                <div class="paw-rx-summary-card expiring">
+
+                    <span class="paw-rx-summary-icon">
+                        <i class="far fa-calendar-alt"></i>
+                    </span>
+
+                    <div>
+                        <strong id="pawRxExpiringCount">01</strong>
+                        <span>Expiring Soon</span>
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ==================================
+                 5. CURRENT PRESCRIPTION + SCHEDULE
+            =================================== -->
+
+            <section class="paw-rx-current-grid">
+
+
+                <!-- CURRENT PRESCRIPTION -->
+
+                <div class="paw-rx-current-card">
+
+
+                    <div class="paw-rx-current-header">
+
+                        <div class="paw-rx-current-heading">
+
+                            <span class="paw-rx-current-icon">
+                                <i class="fas fa-pills"></i>
+                            </span>
+
+                            <div>
+                                <h3>Current Prescription</h3>
+                                <span class="paw-rx-status active"
+                                      id="pawRxDetailStatus">
+                                    Active
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="paw-rx-current-actions">
+
+                            <button type="button"
+                                    id="pawRxDownloadButton"
+                                    aria-label="Download prescription">
+                                <i class="fas fa-download"></i>
+                            </button>
+
+                            <button type="button"
+                                    id="pawRxPrintButton"
+                                    aria-label="Print prescription">
+                                <i class="fas fa-print"></i>
+                            </button>
+
+                            <button type="button"
+                                    id="pawRxEditButton"
+                                    aria-label="Edit prescription">
+                                <i class="fas fa-pen"></i>
+                            </button>
+
+                            <button type="button"
+                                    id="pawRxMoreButton"
+                                    aria-label="More options">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRESCRIPTION INFORMATION -->
+
+                    <div class="paw-rx-current-information">
+
+
+                        <div class="paw-rx-medicine-profile">
+
+                            <img src="images/my-pets-buddy.jpg"
+                                 alt="Buddy"
+                                 id="pawRxPrescriptionPetImage">
+
+                            <div class="paw-rx-medicine-profile-info">
+
+                                <h4 id="pawRxPrescriptionTitle">
+                                    Skin Treatment
+                                </h4>
+
+                                <p id="pawRxPrescriptionPet">
+                                    Buddy (Dog) &nbsp; | &nbsp; Aug 15, 2026
+                                </p>
+
+                                <div class="paw-rx-vet-info">
+
+                                    <i class="fas fa-user-md"></i>
+
+                                    <div>
+                                        <small>Veterinarian</small>
+
+                                        <strong id="pawRxVeterinarian">
+                                            Dr. Emily Carter
+                                        </strong>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MEDICINE DETAILS -->
+
+                        <div class="paw-rx-medicine-details">
+
+
+                            <div class="paw-rx-detail-row">
+
+                                <span>
+                                    <i class="fas fa-prescription-bottle-alt"></i>
+                                    Medicine
+                                </span>
+
+                                <strong id="pawRxMedicineName">
+                                    Cetirizine 10 mg
+                                </strong>
+
+                            </div>
+
+
+                            <div class="paw-rx-detail-row">
+
+                                <span>
+                                    <i class="fas fa-capsules"></i>
+                                    Dosage
+                                </span>
+
+                                <strong id="pawRxDosage">
+                                    1 tablet
+                                </strong>
+
+                            </div>
+
+
+                            <div class="paw-rx-detail-row">
+
+                                <span>
+                                    <i class="far fa-clock"></i>
+                                    Frequency
+                                </span>
+
+                                <strong id="pawRxFrequency">
+                                    Twice daily
+                                </strong>
+
+                            </div>
+
+
+                            <div class="paw-rx-detail-row">
+
+                                <span>
+                                    <i class="far fa-calendar-check"></i>
+                                    Duration
+                                </span>
+
+                                <strong id="pawRxDuration">
+                                    7 days
+                                </strong>
+
+                            </div>
+
+
+                            <div class="paw-rx-instruction-row">
+
+                                <i class="fas fa-info-circle"></i>
+
+                                <div>
+                                    <strong>Instructions</strong>
+
+                                    <p id="pawRxInstructions">
+                                        Give after food. Ensure fresh water
+                                        is always available.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- MEDICATION SCHEDULE -->
+
+                <div class="paw-rx-schedule-card">
+
+
+                    <div class="paw-rx-section-heading">
+
+                        <span>
+                            <i class="far fa-calendar-check"></i>
+                        </span>
+
+                        <h3>Medication Schedule</h3>
+
+                    </div>
+
+
+                    <div class="paw-rx-schedule-list"
+                         id="pawRxScheduleList">
+
+
+                        <!-- MORNING -->
+
+                        <div class="paw-rx-schedule-item morning">
+
+                            <span class="paw-rx-schedule-icon">
+                                <i class="fas fa-sun"></i>
+                            </span>
+
+                            <div class="paw-rx-schedule-content">
+
+                                <strong>Morning â€“ 8:00 AM</strong>
+
+                                <p>
+                                    Cetirizine 10 mg (1 tablet)
+                                </p>
+
+                            </div>
+
+                            <span class="paw-rx-dose-check completed">
+                                <i class="fas fa-check"></i>
+                            </span>
+
+                        </div>
+
+
+                        <!-- AFTERNOON -->
+
+                        <div class="paw-rx-schedule-item afternoon">
+
+                            <span class="paw-rx-schedule-icon">
+                                <i class="fas fa-sun"></i>
+                            </span>
+
+                            <div class="paw-rx-schedule-content">
+
+                                <strong>Afternoon â€“ 2:00 PM</strong>
+
+                                <p>
+                                    As needed (If advised)
+                                </p>
+
+                            </div>
+
+                            <span class="paw-rx-dose-check pending">
+                                <i class="far fa-circle"></i>
+                            </span>
+
+                        </div>
+
+
+                        <!-- EVENING -->
+
+                        <div class="paw-rx-schedule-item evening">
+
+                            <span class="paw-rx-schedule-icon">
+                                <i class="fas fa-moon"></i>
+                            </span>
+
+                            <div class="paw-rx-schedule-content">
+
+                                <strong>Evening â€“ 8:00 PM</strong>
+
+                                <p>
+                                    Cetirizine 10 mg (1 tablet)
+                                </p>
+
+                            </div>
+
+                            <span class="paw-rx-dose-check completed">
+                                <i class="fas fa-check"></i>
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button type="button"
+                            class="paw-rx-view-schedule"
+                            data-rx-tab-link="schedule">
+
+                        View Full Schedule
+                        <i class="fas fa-arrow-right"></i>
+
+                    </button>
+
+
+                </div>
+
+
+            </section>
+
+
+            <!-- ==================================
+                 6. REMINDERS + DOCUMENTS
+            =================================== -->
+
+            <section class="paw-rx-bottom-grid">
+
+
+                <!-- UPCOMING REMINDERS -->
+
+                <div class="paw-rx-reminders-card">
+
+
+                    <div class="paw-rx-bottom-heading">
+
+                        <div class="paw-rx-section-heading">
+
+                            <span>
+                                <i class="far fa-bell"></i>
+                            </span>
+
+                            <h3>Upcoming Reminders</h3>
+
+                        </div>
+
+                        <button type="button"
+                                data-rx-tab-link="reminders">
+                            View All
+                        </button>
+
+                    </div>
+
+
+                    <div class="paw-rx-reminder-list"
+                         id="pawRxReminderList">
+
+
+                        <div class="paw-rx-reminder-item">
+
+                            <span class="paw-rx-reminder-icon">
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+
+                            <div>
+                                <strong>Today, 8:00 PM</strong>
+                                <p>Give Cetirizine 10 mg</p>
+                            </div>
+
+                            <span class="paw-rx-reminder-bell">
+                                <i class="fas fa-bell"></i>
+                            </span>
+
+                        </div>
+
+
+                        <div class="paw-rx-reminder-item">
+
+                            <span class="paw-rx-reminder-icon">
+                                <i class="far fa-calendar-alt"></i>
+                            </span>
+
+                            <div>
+                                <strong>Tomorrow, 8:00 AM</strong>
+                                <p>Give Cetirizine 10 mg</p>
+                            </div>
+
+                            <span class="paw-rx-reminder-bell">
+                                <i class="fas fa-bell"></i>
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRESCRIPTION DOCUMENTS -->
+
+                <div class="paw-rx-documents-card">
+
+
+                    <div class="paw-rx-bottom-heading">
+
+                        <div class="paw-rx-section-heading">
+
+                            <span>
+                                <i class="far fa-file-alt"></i>
+                            </span>
+
+                            <h3>Prescription Documents</h3>
+
+                        </div>
+
+
+                        <label for="pawRxDocumentUpload"
+                               class="paw-rx-upload-button">
+
+                            <i class="fas fa-upload"></i>
+                            Upload
+
+                        </label>
+
+                        <input type="file"
+                               id="pawRxDocumentUpload"
+                               accept=".pdf,.jpg,.jpeg,.png"
+                               multiple
+                               hidden>
+
+                    </div>
+
+
+                    <div class="paw-rx-document-list"
+                         id="pawRxDocumentList">
+
+
+                        <div class="paw-rx-document-item">
+
+                            <span class="paw-rx-document-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+
+                            <div class="paw-rx-document-info">
+
+                                <strong>Buddy_Skin_Treatment.pdf</strong>
+
+                                <span>1.2 MB Â· Aug 15, 2026</span>
+
+                            </div>
+
+                            <div class="paw-rx-document-actions">
+
+                                <button type="button"
+                                        aria-label="Preview document">
+                                    <i class="far fa-eye"></i>
+                                </button>
+
+                                <button type="button"
+                                        aria-label="Download document">
+                                    <i class="fas fa-download"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="paw-rx-document-item">
+
+                            <span class="paw-rx-document-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+
+                            <div class="paw-rx-document-info">
+
+                                <strong>Skin_Notes.pdf</strong>
+
+                                <span>845 KB Â· Aug 15, 2026</span>
+
+                            </div>
+
+                            <div class="paw-rx-document-actions">
+
+                                <button type="button"
+                                        aria-label="Preview document">
+                                    <i class="far fa-eye"></i>
+                                </button>
+
+                                <button type="button"
+                                        aria-label="Download document">
+                                    <i class="fas fa-download"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         7. ADD / EDIT PRESCRIPTION MODAL
+    ========================================== -->
+
+    <div class="paw-rx-modal"
+         id="pawRxModal"
+         aria-hidden="true">
+
+
+        <div class="paw-rx-modal-overlay"
+             id="pawRxModalOverlay"></div>
+
+
+        <div class="paw-rx-modal-card">
+
+
+            <button type="button"
+                    class="paw-rx-modal-close"
+                    id="pawRxModalClose"
+                    aria-label="Close modal">
+
+                <i class="fas fa-times"></i>
+
+            </button>
+
+
+            <div class="paw-rx-modal-heading">
+
+                <span>
+                    <i class="fas fa-prescription"></i>
+                </span>
+
+                <h3 id="pawRxModalTitle">
+                    Add New Prescription
+                </h3>
+
+                <p>
+                    Enter the medication details provided by your veterinarian.
+                </p>
+
+            </div>
+
+
+            <form id="pawRxForm">
+
+                <input type="hidden"
+                       id="pawRxFormId">
+
+
+                <div class="paw-rx-form-grid">
+
+
+                    <div class="paw-rx-form-group">
+
+                        <label for="pawRxFormPet">
+                            Select Pet <span>*</span>
+                        </label>
+
+                        <select id="pawRxFormPet" required>
+
+                            <option value="">Choose pet</option>
+                            <option value="Buddy">Buddy</option>
+                            <option value="Luna">Luna</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="paw-rx-form-group">
+
+                        <label for="pawRxFormTitle">
+                            Prescription Title <span>*</span>
+                        </label>
+
+                        <input type="text"
+                               id="pawRxFormTitle"
+                               placeholder="Enter prescription title"
+                               required>
+
+                    </div>
+
+
+                    <div class="paw-rx-form-group">
+
+                        <label for="pawRxFormMedicine">
+                            Medicine Name <span>*</span>
+                        </label>
+
+                        <input type="text"
+                               id="pawRxFormMedicine"
+                               placeholder="Enter medicine name"
+                               required>
+
+                    </div>
+
+
+                    <div class="paw-rx-form-group">
+
+                        <label for="pawRxFormDosage">
+                            Dosage <span>*</span>
+                        </label>
+
+                        <input type="text"
+                               id="pawRxFormDosage"
+                               placeholder="Enter dosage"
+                               required>
+
+                    </div>
+
+
+                    <div class="paw-rx-form-group">
+
+                        <label for="pawRxFormFrequency">
+                            Frequency <span>*</span>
+                        </label>
+
+                        <select id="pawRxFormFrequency" required>
+
+                            <option value="">Select frequency</option>
+                            <option value="Once daily">Once daily</option>
+                            <option value="Twice daily">Twice daily</option>
+                            <option value="Three times daily">Three times daily</option>
+                            <option value="As prescribed">As prescribed</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="paw-rx-form-group">
+
+                        <label for="pawRxFormDuration">
+                            Duration <span>*</span>
+                        </label>
+
+                        <input type="text"
+                               id="pawRxFormDuration"
+                               placeholder="e.g. 7 days"
+                               required>
+
+                    </div>
+
+
+                    <div class="paw-rx-form-group">
+
+                        <label for="pawRxFormDate">
+                            Prescribed Date <span>*</span>
+                        </label>
+
+                        <input type="date"
+                               id="pawRxFormDate"
+                               required>
+
+                    </div>
+
+
+                    <div class="paw-rx-form-group">
+
+                        <label for="pawRxFormVet">
+                            Veterinarian
+                        </label>
+
+                        <input type="text"
+                               id="pawRxFormVet"
+                               placeholder="Veterinarian name">
+
+                    </div>
+
+
+                    <div class="paw-rx-form-group full">
+
+                        <label for="pawRxFormInstructions">
+                            Medicine Instructions
+                        </label>
+
+                        <textarea id="pawRxFormInstructions"
+                                  rows="3"
+                                  placeholder="Enter medicine instructions"></textarea>
+
+                    </div>
+
+
+                    <div class="paw-rx-form-group full">
+
+                        <label for="pawRxFormNotes">
+                            Veterinarian Notes
+                        </label>
+
+                        <textarea id="pawRxFormNotes"
+                                  rows="3"
+                                  placeholder="Enter veterinarian notes"></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="paw-rx-form-actions">
+
+                    <button type="button"
+                            class="paw-rx-cancel-button"
+                            id="pawRxModalCancel">
+                        Cancel
+                    </button>
+
+                    <button type="submit"
+                            class="paw-rx-save-button">
+                        <i class="fas fa-save"></i>
+                        Save Prescription
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+</main>
+
+ </div>
+
+</div>
+
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="paw-logout-modal" id="pawLogoutModal">
+
+    <div class="paw-logout-modal-overlay"
+         id="pawLogoutModalOverlay"></div>
+
+    <div class="paw-logout-card">
+
+        <div class="paw-logout-icon">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+
+        <h2>Confirm Logout</h2>
+
+        <p>
+            Are you sure you want to log out of your PawsHeal account?
+        </p>
+
+        <div class="paw-logout-actions">
+
+            <button type="button"
+                    class="paw-logout-cancel"
+                    id="pawLogoutCancel">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="paw-logout-confirm"
+                    id="pawLogoutConfirm">
+                Yes, Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

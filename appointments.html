@@ -1,0 +1,939 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawsHeal | Dashboard</title>
+    <!-- ==================== WEBSITE FAVICON ==================== -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/res-dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="paw-dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="paw-dashboard-sidebar" id="pawDashboardSidebar">
+
+        <!-- LOGO -->
+        <div class="paw-sidebar-logo">
+            <a href="index.html">
+                <img src="images/logo.png"
+                     class="paw-sidebar-logo-light"
+                     alt="PawsHeal Logo">
+
+                <img src="images/logo-dark.png"
+                     class="paw-sidebar-logo-dark"
+                     alt="PawsHeal Logo">
+            </a>
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="paw-sidebar-navigation">
+
+            <span class="paw-sidebar-label">MAIN MENU</span>
+
+            <ul class="paw-sidebar-menu">
+
+                <li class="paw-sidebar-item">
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="my-pets.html">
+                        <i class="fas fa-paw"></i>
+                        <span>My Pets</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item active">
+                    <a href="appointments.html">
+                        <i class="far fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="medical-records.html">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Medical Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="prescriptions.html">
+                        <i class="fas fa-prescription"></i>
+                        <span>Prescriptions</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="vaccination-records.html">
+                        <i class="fas fa-syringe"></i>
+                        <span>Vaccination Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="payments.html">
+                        <i class="fas fa-wallet"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            
+
+            
+
+        </nav>
+
+
+        <!-- SIDEBAR LOGOUT -->
+        <div class="paw-sidebar-bottom">
+
+            <button type="button"
+                    class="paw-sidebar-logout"
+                    id="pawLogoutButton">
+
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="paw-dashboard-overlay"
+         id="pawDashboardOverlay"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="paw-dashboard-main">
+
+
+        <!-- FIXED HEADER -->
+        <header class="paw-dashboard-header">
+
+            <!-- HEADER LEFT -->
+            <div class="paw-header-left">
+
+                <button type="button"
+                        class="paw-dashboard-menu-toggle"
+                        id="pawDashboardMenuToggle"
+                        aria-label="Toggle navigation">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+                <div class="paw-header-heading">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's your pet care summary.</p>
+                </div>
+
+            </div>
+
+
+            <!-- HEADER RIGHT -->
+            <div class="paw-header-right">
+
+
+                <!-- NOTIFICATIONS -->
+                <div class="paw-header-notification-wrapper">
+
+                    <button type="button"
+                            class="paw-header-notification"
+                            aria-label="Notifications">
+
+                        <i class="far fa-bell"></i>
+
+                        <span class="paw-notification-badge">3</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- DARK MODE -->
+                <button type="button"
+                        class="paw-header-theme-toggle"
+                        id="pawDashboardThemeToggle"
+                        aria-label="Toggle dark mode">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- RTL MODE -->
+                <button type="button"
+                        class="paw-header-rtl-toggle"
+                        id="pawDashboardRtlToggle"
+                        aria-label="Toggle RTL direction">
+
+                    <i class="fas fa-right-left"></i>
+
+                </button>
+
+
+                <!-- MEMBER PROFILE -->
+                <div class="paw-header-profile">
+
+                    <img src="images/member-profile.jpg"
+                         alt="Member Profile">
+
+                    <div class="paw-header-profile-info">
+                        <h4>Alex Morgan</h4>
+                        <span>Pet Parent</span>
+                    </div>
+
+                    <i class="fas fa-chevron-down paw-profile-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+       
+
+            
+
+
+<!-- ==========================================
+     PAWSHEAL - APPOINTMENTS PAGE
+========================================== -->
+
+<main class="paw-dashboard-content paw-appointments-page">
+
+    <!-- ==========================================
+         APPOINTMENTS HERO
+    ========================================== -->
+
+    <section class="paw-appointment-hero">
+
+        <div class="paw-appointment-hero-content">
+
+            <span class="paw-appointment-eyebrow">
+                PET APPOINTMENTS
+            </span>
+
+            <h2>Keep Your Petâ€™s Health on Schedule</h2>
+
+            <p>
+                Book, manage, and track all your veterinary
+                appointments in one place.
+            </p>
+
+        </div>
+
+        <div class="paw-appointment-hero-image">
+            <img src="images/appointments-hero.png"
+                 alt="Golden retriever and cat">
+        </div>
+
+        <div class="paw-appointment-next">
+
+            <div class="paw-appointment-next-icon">
+                <i class="far fa-calendar-alt"></i>
+            </div>
+
+            <div class="paw-appointment-next-info">
+                <span>Next Appointment</span>
+                <strong>Dec 12, 2026 at 10:00 AM</strong>
+                <small>Buddy Â· General Checkup</small>
+            </div>
+
+            <button type="button"
+                    class="paw-appointment-hero-btn"
+                    onclick="document.getElementById('pawBookAppointment').scrollIntoView({behavior:'smooth'})">
+                <i class="fas fa-plus"></i>
+                Book Appointment
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         APPOINTMENT SUMMARY
+    ========================================== -->
+
+    <section class="paw-appointment-stats">
+
+        <div class="paw-appointment-stat-card upcoming">
+
+            <div class="paw-appointment-stat-icon">
+                <i class="far fa-calendar-alt"></i>
+            </div>
+
+            <div class="paw-appointment-stat-info">
+                <span>Upcoming Appointments</span>
+                <strong>02</strong>
+            </div>
+
+        </div>
+
+
+        <div class="paw-appointment-stat-card completed">
+
+            <div class="paw-appointment-stat-icon">
+                <i class="far fa-check-circle"></i>
+            </div>
+
+            <div class="paw-appointment-stat-info">
+                <span>Completed Appointments</span>
+                <strong>08</strong>
+            </div>
+
+        </div>
+
+
+        <div class="paw-appointment-stat-card cancelled">
+
+            <div class="paw-appointment-stat-icon">
+                <i class="far fa-times-circle"></i>
+            </div>
+
+            <div class="paw-appointment-stat-info">
+                <span>Cancelled Appointments</span>
+                <strong>01</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         APPOINTMENTS MAIN WORKSPACE
+    ========================================== -->
+
+    <section class="paw-appointment-workspace">
+
+
+        <!-- LEFT CONTENT -->
+
+        <div class="paw-appointment-left-column">
+
+
+            <!-- MY APPOINTMENTS -->
+
+            <div class="paw-appointment-list-panel">
+
+                <div class="paw-appointment-panel-heading">
+
+                    <div>
+                        <h3>My Appointments</h3>
+                        <p>Your scheduled and past vet visits</p>
+                    </div>
+
+                    <div class="paw-appointment-filters">
+
+                        <select id="pawAppointmentStatusFilter">
+                            <option value="all">All Appointments</option>
+                            <option value="upcoming">Upcoming</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+
+                        <select id="pawAppointmentDateFilter">
+                            <option value="all">All Dates</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- APPOINTMENT LIST -->
+
+                <div class="paw-appointment-list">
+
+
+                    <!-- APPOINTMENT 1 -->
+
+                    <article class="paw-appointment-item upcoming">
+
+                        <div class="paw-appointment-pet-image">
+                            <img src="images/my-pets-buddy.jpg"
+                                 alt="Buddy">
+                        </div>
+
+                        <div class="paw-appointment-pet-info">
+                            <strong>Buddy</strong>
+                            <span>General Checkup</span>
+                        </div>
+
+                        <div class="paw-appointment-date">
+                            <strong>
+                                <i class="far fa-calendar-alt"></i>
+                                Dec 12, 2026
+                            </strong>
+                            <span>10:00 AM</span>
+                        </div>
+
+                        <div class="paw-appointment-vet">
+                            <strong>
+                                <i class="fas fa-user-md"></i>
+                                Dr. Sarah Williams
+                            </strong>
+                            <span>Veterinarian</span>
+                        </div>
+
+                        <span class="paw-appointment-status upcoming">
+                            Upcoming
+                        </span>
+
+                        <button type="button"
+                                class="paw-appointment-view-btn"
+                                data-appointment="1"
+                                aria-label="View Buddy appointment">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- APPOINTMENT 2 -->
+
+                    <article class="paw-appointment-item upcoming">
+
+                        <div class="paw-appointment-pet-image">
+                            <img src="images/my-pets-luna.jpg"
+                                 alt="Luna">
+                        </div>
+
+                        <div class="paw-appointment-pet-info">
+                            <strong>Luna</strong>
+                            <span>Vaccination</span>
+                        </div>
+
+                        <div class="paw-appointment-date">
+                            <strong>
+                                <i class="far fa-calendar-alt"></i>
+                                Dec 08, 2026
+                            </strong>
+                            <span>02:30 PM</span>
+                        </div>
+
+                        <div class="paw-appointment-vet">
+                            <strong>
+                                <i class="fas fa-user-md"></i>
+                                Dr. Michael Brown
+                            </strong>
+                            <span>Veterinarian</span>
+                        </div>
+
+                        <span class="paw-appointment-status upcoming">
+                            Upcoming
+                        </span>
+
+                        <button type="button"
+                                class="paw-appointment-view-btn"
+                                data-appointment="2"
+                                aria-label="View Luna appointment">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- APPOINTMENT 3 -->
+
+                    <article class="paw-appointment-item completed">
+
+                        <div class="paw-appointment-pet-image">
+                            <img src="images/my-pets-buddy.jpg"
+                                 alt="Buddy">
+                        </div>
+
+                        <div class="paw-appointment-pet-info">
+                            <strong>Buddy</strong>
+                            <span>Dental Cleaning</span>
+                        </div>
+
+                        <div class="paw-appointment-date">
+                            <strong>
+                                <i class="far fa-calendar-alt"></i>
+                                Nov 20, 2026
+                            </strong>
+                            <span>11:00 AM</span>
+                        </div>
+
+                        <div class="paw-appointment-vet">
+                            <strong>
+                                <i class="fas fa-user-md"></i>
+                                Dr. Sarah Williams
+                            </strong>
+                            <span>Veterinarian</span>
+                        </div>
+
+                        <span class="paw-appointment-status completed">
+                            Completed
+                        </span>
+
+                        <button type="button"
+                                class="paw-appointment-view-btn"
+                                data-appointment="3"
+                                aria-label="View Buddy appointment">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                    </article>
+
+
+                    <!-- APPOINTMENT 4 -->
+
+                    <article class="paw-appointment-item completed">
+
+                        <div class="paw-appointment-pet-image">
+                            <img src="images/my-pets-luna.jpg"
+                                 alt="Luna">
+                        </div>
+
+                        <div class="paw-appointment-pet-info">
+                            <strong>Luna</strong>
+                            <span>General Checkup</span>
+                        </div>
+
+                        <div class="paw-appointment-date">
+                            <strong>
+                                <i class="far fa-calendar-alt"></i>
+                                Oct 10, 2026
+                            </strong>
+                            <span>03:00 PM</span>
+                        </div>
+
+                        <div class="paw-appointment-vet">
+                            <strong>
+                                <i class="fas fa-user-md"></i>
+                                Dr. Emily Carter
+                            </strong>
+                            <span>Veterinarian</span>
+                        </div>
+
+                        <span class="paw-appointment-status completed">
+                            Completed
+                        </span>
+
+                        <button type="button"
+                                class="paw-appointment-view-btn"
+                                data-appointment="4"
+                                aria-label="View Luna appointment">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 APPOINTMENT HISTORY
+            ========================================== -->
+
+            <div class="paw-appointment-history-panel">
+
+                <div class="paw-appointment-history-heading">
+
+                    <div class="paw-appointment-history-title">
+
+                        <span class="paw-appointment-history-icon">
+                            <i class="fas fa-history"></i>
+                        </span>
+
+                        <div>
+                            <h3>Appointment History</h3>
+                            <p>View your past visits and consultation details</p>
+                        </div>
+
+                    </div>
+
+                    <button type="button"
+                            class="paw-appointment-history-view"
+                            id="pawViewAllHistory">
+                        View All
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="paw-appointment-history-list">
+
+                    <article class="paw-appointment-history-item">
+
+                        <div class="paw-appointment-pet-image">
+                            <img src="images/my-pets-buddy.jpg"
+                                 alt="Buddy">
+                        </div>
+
+                        <div class="paw-appointment-pet-info">
+                            <strong>Buddy</strong>
+                            <span>Skin Consultation</span>
+                        </div>
+
+                        <div class="paw-appointment-date">
+                            <strong>
+                                <i class="far fa-calendar-alt"></i>
+                                Aug 15, 2026
+                            </strong>
+                            <span>10:30 AM</span>
+                        </div>
+
+                        <div class="paw-appointment-vet">
+                            <strong>
+                                <i class="fas fa-user-md"></i>
+                                Dr. Michael Brown
+                            </strong>
+                            <span>Veterinarian</span>
+                        </div>
+
+                        <span class="paw-appointment-status completed">
+                            Completed
+                        </span>
+
+                        <button type="button"
+                                class="paw-appointment-view-btn"
+                                data-appointment="5"
+                                aria-label="View appointment history">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==========================================
+             RIGHT COLUMN - BOOK APPOINTMENT
+        ========================================== -->
+
+        <aside class="paw-appointment-book-panel"
+               id="pawBookAppointment">
+
+            <div class="paw-appointment-book-heading">
+
+                <span class="paw-appointment-book-icon">
+                    <i class="far fa-calendar-plus"></i>
+                </span>
+
+                <div>
+                    <h3>Book New Appointment</h3>
+                    <p>Schedule a visit for your pet</p>
+                </div>
+
+            </div>
+
+
+            <!-- BOOKING FORM -->
+
+            <form id="pawAppointmentBookingForm"
+                  class="paw-appointment-book-form">
+
+
+                <!-- PET + SERVICE -->
+
+                <div class="paw-appointment-form-row">
+
+                    <div class="paw-appointment-form-group">
+
+                        <label for="pawAppointmentPet">
+                            Select Pet <span>*</span>
+                        </label>
+
+                        <div class="paw-appointment-input-wrapper">
+                            <i class="fas fa-paw"></i>
+
+                            <select id="pawAppointmentPet" required>
+                                <option value="">Select your pet</option>
+                                <option value="Buddy">Buddy</option>
+                                <option value="Luna">Luna</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="paw-appointment-form-group">
+
+                        <label for="pawAppointmentService">
+                            Service <span>*</span>
+                        </label>
+
+                        <div class="paw-appointment-input-wrapper">
+                            <i class="fas fa-stethoscope"></i>
+
+                            <select id="pawAppointmentService" required>
+                                <option value="">Select service</option>
+                                <option value="General Checkup">General Checkup</option>
+                                <option value="Vaccination">Vaccination</option>
+                                <option value="Dental Care">Dental Care</option>
+                                <option value="Surgery Consultation">Surgery Consultation</option>
+                                <option value="Pet Grooming">Pet Grooming</option>
+                                <option value="Emergency Care">Emergency Care</option>
+                                <option value="Nutrition Consultation">Nutrition Consultation</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- VETERINARIAN + DATE -->
+
+                <div class="paw-appointment-form-row">
+
+                    <div class="paw-appointment-form-group">
+
+                        <label for="pawAppointmentVet">
+                            Veterinarian <span>*</span>
+                        </label>
+
+                        <div class="paw-appointment-input-wrapper">
+                            <i class="far fa-user"></i>
+
+                            <select id="pawAppointmentVet" required>
+                                <option value="">Select veterinarian</option>
+                                <option value="Dr. Sarah Williams">
+                                    Dr. Sarah Williams
+                                </option>
+                                <option value="Dr. Michael Brown">
+                                    Dr. Michael Brown
+                                </option>
+                                <option value="Dr. Emily Carter">
+                                    Dr. Emily Carter
+                                </option>
+                                <option value="Any Available Veterinarian">
+                                    Any Available Veterinarian
+                                </option>
+                            </select>
+                        </div>
+
+                    </div>
+
+
+                    <div class="paw-appointment-form-group">
+
+                        <label for="pawAppointmentDate">
+                            Preferred Date <span>*</span>
+                        </label>
+
+                        <div class="paw-appointment-input-wrapper">
+                            <i class="far fa-calendar-alt"></i>
+
+                            <input type="date"
+                                   id="pawAppointmentDate"
+                                   required>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TIME SLOT -->
+
+                <div class="paw-appointment-form-group">
+
+                    <label for="pawAppointmentTime">
+                        Time Slot <span>*</span>
+                    </label>
+
+                    <div class="paw-appointment-input-wrapper">
+                        <i class="far fa-clock"></i>
+
+                        <select id="pawAppointmentTime" required>
+                            <option value="">Select time slot</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="12:00 PM">12:00 PM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="05:00 PM">05:00 PM</option>
+                        </select>
+                    </div>
+
+                </div>
+
+
+                <!-- ADDITIONAL NOTES -->
+
+                <div class="paw-appointment-form-group">
+
+                    <label for="pawAppointmentNotes">
+                        Notes (Optional)
+                    </label>
+
+                    <div class="paw-appointment-notes-wrapper">
+                        <i class="far fa-file-alt"></i>
+
+                        <textarea id="pawAppointmentNotes"
+                                  rows="4"
+                                  placeholder="Any additional information about your pet..."></textarea>
+                    </div>
+
+                </div>
+
+
+                <!-- SUBMIT BUTTON -->
+
+                <button type="submit"
+                        class="paw-appointment-submit-btn">
+
+                    <i class="far fa-calendar-check"></i>
+                    Book Appointment
+
+                </button>
+
+            </form>
+
+        </aside>
+
+    </section>
+
+
+    <!-- ==========================================
+         APPOINTMENT DETAILS MODAL
+    ========================================== -->
+
+    <div class="paw-appointment-modal"
+         id="pawAppointmentDetailsModal"
+         aria-hidden="true">
+
+        <div class="paw-appointment-modal-overlay"
+             id="pawAppointmentModalOverlay"></div>
+
+        <div class="paw-appointment-modal-card">
+
+            <button type="button"
+                    class="paw-appointment-modal-close"
+                    id="pawAppointmentModalClose"
+                    aria-label="Close appointment details">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="paw-appointment-modal-heading">
+                <span class="paw-appointment-modal-icon">
+                    <i class="far fa-calendar-check"></i>
+                </span>
+
+                <h3>Appointment Details</h3>
+                <p>Review your veterinary appointment information.</p>
+            </div>
+
+            <div class="paw-appointment-modal-content"
+                 id="pawAppointmentModalContent">
+
+                <!-- Appointment details populated using JavaScript -->
+
+            </div>
+
+            <div class="paw-appointment-modal-actions">
+
+                <button type="button"
+                        id="pawRescheduleAppointment"
+                        class="paw-appointment-reschedule-btn">
+                    <i class="far fa-calendar-alt"></i>
+                    Reschedule
+                </button>
+
+                <button type="button"
+                        id="pawCancelAppointment"
+                        class="paw-appointment-cancel-btn">
+                    <i class="fas fa-times"></i>
+                    Cancel Appointment
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</main>
+
+
+        
+    </div>
+
+</div>
+
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="paw-logout-modal" id="pawLogoutModal">
+
+    <div class="paw-logout-modal-overlay"
+         id="pawLogoutModalOverlay"></div>
+
+    <div class="paw-logout-card">
+
+        <div class="paw-logout-icon">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+
+        <h2>Confirm Logout</h2>
+
+        <p>
+            Are you sure you want to log out of your PawsHeal account?
+        </p>
+
+        <div class="paw-logout-actions">
+
+            <button type="button"
+                    class="paw-logout-cancel"
+                    id="pawLogoutCancel">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="paw-logout-confirm"
+                    id="pawLogoutConfirm">
+                Yes, Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

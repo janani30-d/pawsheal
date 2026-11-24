@@ -1,0 +1,392 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | PawsHeal Veterinary Clinic</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Register CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+         PAWSHEAL REGISTER PAGE
+    ====================================== -->
+
+    <main class="paw-register-page">
+
+        <!-- TOP CONTROLS -->
+        <div class="paw-register-controls">
+
+            <!-- DARK MODE -->
+            <button type="button"
+                class="paw-register-theme-toggle"
+                id="pawRegisterThemeToggle"
+                aria-label="Toggle dark mode"
+                title="Dark Mode">
+
+                <i class="fas fa-moon"></i>
+
+            </button>
+
+            <!-- RTL MODE -->
+            <button type="button"
+                class="paw-register-rtl-toggle"
+                id="pawRegisterRtlToggle"
+                aria-label="Toggle RTL direction"
+                title="RTL">
+
+                <i class="fas fa-right-left"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- REGISTER WRAPPER -->
+        <div class="paw-register-wrapper">
+
+            <div class="paw-register-card">
+
+
+                <!-- LOGO -->
+                <div class="paw-register-logo">
+
+                    <a href="index.html" aria-label="PawsHeal Home">
+
+                        <!-- LIGHT MODE LOGO -->
+                        <img src="images/logo.png"
+                            class="paw-register-logo-light"
+                            alt="PawsHeal Logo">
+
+                        <!-- DARK MODE LOGO -->
+                        <img src="images/logo-dark.png"
+                            class="paw-register-logo-dark"
+                            alt="PawsHeal Logo">
+
+                    </a>
+
+                </div>
+
+
+                <!-- REGISTER HEADING -->
+                <div class="paw-register-heading">
+
+                    <span class="paw-register-eyebrow">
+                        JOIN OUR PAWSHEAL FAMILY
+                    </span>
+
+                    <h1>Create Your Account</h1>
+
+                    <p>
+                        Register today to manage your pet's health
+                        and stay connected with our veterinary team.
+                    </p>
+
+                </div>
+
+
+                <!-- REGISTER FORM -->
+                <form class="paw-register-form" id="pawRegisterForm">
+
+
+                    <!-- FULL NAME -->
+                    <div class="paw-register-field">
+
+                        <label for="pawRegisterName">
+                            Full Name
+                        </label>
+
+                        <div class="paw-register-input-box">
+
+                            <i class="far fa-user paw-register-input-icon"></i>
+
+                            <input type="text"
+                                id="pawRegisterName"
+                                name="fullName"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+                    <div class="paw-register-field">
+
+                        <label for="pawRegisterEmail">
+                            Email Address
+                        </label>
+
+                        <div class="paw-register-input-box">
+
+                            <i class="far fa-envelope paw-register-input-icon"></i>
+
+                            <input type="email"
+                                id="pawRegisterEmail"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHONE NUMBER -->
+                    <div class="paw-register-field">
+
+                        <label for="pawRegisterPhone">
+                            Phone Number
+                        </label>
+
+                        <div class="paw-register-input-box">
+
+                            <i class="fas fa-phone paw-register-input-icon"></i>
+
+                            <input type="tel"
+                                id="pawRegisterPhone"
+                                name="phone"
+                                placeholder="Enter your phone number"
+                                autocomplete="tel"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="paw-register-field">
+
+                        <label for="pawRegisterPassword">
+                            Password
+                        </label>
+
+                        <div class="paw-register-input-box">
+
+                            <i class="fas fa-lock paw-register-input-icon"></i>
+
+                            <input type="password"
+                                id="pawRegisterPassword"
+                                name="password"
+                                placeholder="Create a password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required>
+
+                            <!-- PASSWORD VISIBILITY -->
+                            <button type="button"
+                                class="paw-register-password-toggle"
+                                id="pawRegisterPasswordToggle"
+                                aria-label="Show password">
+
+                                <i class="far fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CONFIRM PASSWORD -->
+                    <div class="paw-register-field">
+
+                        <label for="pawRegisterConfirmPassword">
+                            Confirm Password
+                        </label>
+
+                        <div class="paw-register-input-box">
+
+                            <i class="fas fa-lock paw-register-input-icon"></i>
+
+                            <input type="password"
+                                id="pawRegisterConfirmPassword"
+                                name="confirmPassword"
+                                placeholder="Confirm your password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required>
+
+                            <!-- CONFIRM PASSWORD VISIBILITY -->
+                            <button type="button"
+                                class="paw-register-password-toggle"
+                                id="pawRegisterConfirmToggle"
+                                aria-label="Show confirm password">
+
+                                <i class="far fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TERMS & CONDITIONS -->
+                    <div class="paw-register-terms">
+
+                        <label class="paw-register-terms-label">
+
+                            <input type="checkbox"
+                                id="pawRegisterTerms"
+                                name="terms"
+                                required>
+
+                            <span class="paw-register-checkmark"></span>
+
+                            <span>
+                                I agree to the
+                                <a href="terms.html">Terms & Conditions</a>
+                                and
+                                <a href="privacy.html">Privacy Policy</a>.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- REGISTER BUTTON -->
+                    <button type="submit" class="paw-register-submit">
+
+                        Create Account
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+
+                <!-- SOCIAL DIVIDER -->
+                <div class="paw-register-divider">
+
+                    <span></span>
+
+                    <p>Or Sign Up With</p>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- SOCIAL REGISTER -->
+                <div class="paw-register-social">
+
+
+                    <!-- FACEBOOK -->
+                    <button type="button"
+                        class="paw-register-social-btn paw-register-facebook"
+                        aria-label="Sign up with Facebook">
+
+                        <svg viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+
+                            <path fill="#1877F2"
+                                d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.093 10.125 24v-8.438H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.695 4.533-4.695 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.49 0-1.955.93-1.955 1.884v2.266h3.328l-.532 3.49h-2.796V24C19.612 23.093 24 18.1 24 12.073Z"/>
+
+                        </svg>
+
+                        <span>Facebook</span>
+
+                    </button>
+
+
+                    <!-- APPLE -->
+                    <button type="button"
+                        class="paw-register-social-btn paw-register-apple"
+                        aria-label="Sign up with Apple">
+
+                        <i class="fa-brands fa-apple"></i>
+
+                        <span>Apple</span>
+
+                    </button>
+
+
+                    <!-- GOOGLE -->
+                    <button type="button"
+                        class="paw-register-social-btn paw-register-google"
+                        aria-label="Sign up with Google">
+
+                        <svg viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+
+                            <path fill="#4285F4"
+                                d="M43.6 24.5c0-1.4-.1-2.7-.4-4H24v7.6h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.6c3.9-3.6 6.1-8.8 6.1-14.9Z"/>
+
+                            <path fill="#34A853"
+                                d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.6-5.1c-1.8 1.2-4 1.9-6.9 1.9-5.3 0-9.8-3.6-11.4-8.4H5.8v5.3A20 20 0 0 0 24 44Z"/>
+
+                            <path fill="#FBBC05"
+                                d="M12.6 27.6a12 12 0 0 1 0-7.2v-5.3H5.8a20 20 0 0 0 0 17.8l6.8-5.3Z"/>
+
+                            <path fill="#EA4335"
+                                d="M24 11.9c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 5.9 29.5 4 24 4A20 20 0 0 0 5.8 15.1l6.8 5.3c1.6-4.9 6.1-8.5 11.4-8.5Z"/>
+
+                        </svg>
+
+                        <span>Google</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- LOGIN LINK -->
+                <div class="paw-register-login">
+
+                    <p>
+                        Already have an account?
+
+                        <a href="login.html">
+                            Login Here
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <!-- BACK TO HOME -->
+                <div class="paw-register-home">
+
+                    <a href="index.html">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- REGISTER JAVASCRIPT -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

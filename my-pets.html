@@ -1,0 +1,721 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawsHeal | Dashboard</title>
+    <!-- ==================== WEBSITE FAVICON ==================== -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/res-dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="paw-dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="paw-dashboard-sidebar" id="pawDashboardSidebar">
+
+        <!-- LOGO -->
+        <div class="paw-sidebar-logo">
+            <a href="index.html">
+                <img src="images/logo.png"
+                     class="paw-sidebar-logo-light"
+                     alt="PawsHeal Logo">
+
+                <img src="images/logo-dark.png"
+                     class="paw-sidebar-logo-dark"
+                     alt="PawsHeal Logo">
+            </a>
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="paw-sidebar-navigation">
+
+            <span class="paw-sidebar-label">MAIN MENU</span>
+
+            <ul class="paw-sidebar-menu">
+
+                <li class="paw-sidebar-item">
+                    <a href="dashboard.html">
+                        <i class="fas fa-th-large"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item active">
+                    <a href="my-pets.html">
+                        <i class="fas fa-paw"></i>
+                        <span>My Pets</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="appointments.html">
+                        <i class="far fa-calendar-check"></i>
+                        <span>Appointments</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="medical-records.html">
+                        <i class="fas fa-file-medical"></i>
+                        <span>Medical Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="prescriptions.html">
+                        <i class="fas fa-prescription"></i>
+                        <span>Prescriptions</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="vaccination-records.html">
+                        <i class="fas fa-syringe"></i>
+                        <span>Vaccination Records</span>
+                    </a>
+                </li>
+
+                <li class="paw-sidebar-item">
+                    <a href="payments.html">
+                        <i class="fas fa-wallet"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+
+            </ul>
+
+
+            
+
+            
+
+        </nav>
+
+
+        <!-- SIDEBAR LOGOUT -->
+        <div class="paw-sidebar-bottom">
+
+            <button type="button"
+                    class="paw-sidebar-logout"
+                    id="pawLogoutButton">
+
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="paw-dashboard-overlay"
+         id="pawDashboardOverlay"></div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="paw-dashboard-main">
+
+
+        <!-- FIXED HEADER -->
+        <header class="paw-dashboard-header">
+
+            <!-- HEADER LEFT -->
+            <div class="paw-header-left">
+
+                <button type="button"
+                        class="paw-dashboard-menu-toggle"
+                        id="pawDashboardMenuToggle"
+                        aria-label="Toggle navigation">
+
+                    <i class="fas fa-bars"></i>
+
+                </button>
+
+                <div class="paw-header-heading">
+                    <h1>Dashboard Overview</h1>
+                    <p>Welcome back! Here's your pet care summary.</p>
+                </div>
+
+            </div>
+
+
+            <!-- HEADER RIGHT -->
+            <div class="paw-header-right">
+
+
+                <!-- NOTIFICATIONS -->
+                <div class="paw-header-notification-wrapper">
+
+                    <button type="button"
+                            class="paw-header-notification"
+                            aria-label="Notifications">
+
+                        <i class="far fa-bell"></i>
+
+                        <span class="paw-notification-badge">3</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- DARK MODE -->
+                <button type="button"
+                        class="paw-header-theme-toggle"
+                        id="pawDashboardThemeToggle"
+                        aria-label="Toggle dark mode">
+
+                    <i class="fas fa-moon"></i>
+
+                </button>
+
+
+                <!-- RTL MODE -->
+                <button type="button"
+                        class="paw-header-rtl-toggle"
+                        id="pawDashboardRtlToggle"
+                        aria-label="Toggle RTL direction">
+
+                    <i class="fas fa-right-left"></i>
+
+                </button>
+
+
+                <!-- MEMBER PROFILE -->
+                <div class="paw-header-profile">
+
+                    <img src="images/member-profile.jpg"
+                         alt="Member Profile">
+
+                    <div class="paw-header-profile-info">
+                        <h4>Alex Morgan</h4>
+                        <span>Pet Parent</span>
+                    </div>
+
+                    <i class="fas fa-chevron-down paw-profile-arrow"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+       
+
+            
+<main class="paw-dashboard-content paw-mypets-page">
+
+<!-- ==========================================
+     MY PETS PAGE
+========================================== -->
+
+<!-- My Pets Hero -->
+<section class="paw-mypets-hero">
+    <div class="paw-mypets-hero-content">
+        <span class="paw-mypets-eyebrow">MY LITTLE COMPANIONS</span>
+        <h2>Every Paw Has a Story</h2>
+        <p>
+            Keep your pets' profiles, health details and medical
+            history organized in one happy place.
+        </p>
+
+        <div class="paw-mypets-hero-bottom">
+            <div class="paw-mypets-count">
+                <i class="fas fa-paw"></i>
+                <div>
+                    <strong>02</strong>
+                    <span>Registered Pets</span>
+                </div>
+            </div>
+
+            <button type="button" class="paw-mypets-add-btn"
+                    onclick="document.getElementById('pawAddPetForm').scrollIntoView({behavior:'smooth'})">
+                <i class="fas fa-plus"></i>
+                Add New Pet
+            </button>
+        </div>
+    </div>
+
+    <div class="paw-mypets-hero-image">
+        <img src="images/my-pets-hero.png"
+             alt="Dog and cat together">
+    </div>
+</section>
+
+
+<!-- My Pets Workspace -->
+<section class="paw-mypets-workspace">
+
+    <!-- Pet List -->
+    <aside class="paw-mypets-list-panel">
+        <div class="paw-mypets-list-heading">
+            <div>
+                <h3>My Pets</h3>
+                <p>Your lovely companions</p>
+            </div>
+            <span class="paw-mypets-total">02 Pets</span>
+        </div>
+
+        <div class="paw-mypets-search">
+            <i class="fas fa-search"></i>
+            <input type="search" id="pawPetSearch"
+                   placeholder="Search your pets...">
+        </div>
+
+        <div class="paw-mypets-list">
+
+            <button type="button"
+                    class="paw-mypets-list-card active"
+                    data-pet="buddy">
+                <img src="images/my-pets-buddy.jpg"
+                     alt="Buddy the Golden Retriever">
+                <span class="paw-mypets-list-info">
+                    <strong>Buddy</strong>
+                    <small>Golden Retriever</small>
+                    <small>3 Years Â· Male</small>
+                </span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <button type="button"
+                    class="paw-mypets-list-card"
+                    data-pet="luna">
+                <img src="images/my-pets-luna.jpg"
+                     alt="Luna the Domestic Cat">
+                <span class="paw-mypets-list-info">
+                    <strong>Luna</strong>
+                    <small>Domestic Cat</small>
+                    <small>2 Years Â· Female</small>
+                </span>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+        <div class="paw-mypets-list-note">
+            <i class="fas fa-heart"></i>
+            <p>Every pet deserves a lifetime of love and care.</p>
+        </div>
+    </aside>
+
+
+    <!-- Selected Pet Details -->
+    <div class="paw-mypets-details-panel">
+
+        <div class="paw-mypets-profile">
+
+            <div class="paw-mypets-profile-image">
+                <img src="images/my-pets-buddy.jpg"
+                     alt="Buddy the Golden Retriever">
+            </div>
+
+            <div class="paw-mypets-profile-info">
+                <div class="paw-mypets-profile-title">
+                    <div>
+                        <span class="paw-mypets-profile-label">
+                            PET PROFILE
+                        </span>
+                        <h2 id="pawSelectedPetName">Buddy</h2>
+                        <p id="pawSelectedPetBreed">Golden Retriever</p>
+                    </div>
+
+                    <span class="paw-mypets-health-status">
+                        <i class="fas fa-heart"></i>
+                        Healthy
+                    </span>
+                </div>
+
+                <div class="paw-mypets-profile-actions">
+                    <button type="button" class="paw-mypets-edit-btn"
+                            id="pawEditPetButton">
+                        <i class="fas fa-pen"></i> Edit Pet
+                    </button>
+
+                    <button type="button" class="paw-mypets-delete-btn"
+                            id="pawDeletePetButton">
+                        <i class="far fa-trash-alt"></i> Delete
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Pet Basic Information -->
+        <div class="paw-mypets-basic-info">
+
+            <div class="paw-mypets-info-item">
+                <span><i class="fas fa-birthday-cake"></i> Age</span>
+                <strong id="pawSelectedPetAge">3 Years</strong>
+            </div>
+
+            <div class="paw-mypets-info-item">
+                <span><i class="fas fa-weight"></i> Weight</span>
+                <strong id="pawSelectedPetWeight">24.5 kg</strong>
+            </div>
+
+            <div class="paw-mypets-info-item">
+                <span><i class="fas fa-calendar-check"></i> Last Checkup</span>
+                <strong>Nov 12, 2026</strong>
+            </div>
+
+            <div class="paw-mypets-info-item">
+                <span><i class="fas fa-calendar-alt"></i> Next Checkup</span>
+                <strong>Dec 12, 2026</strong>
+            </div>
+
+        </div>
+
+
+        <!-- Pet Detail Tabs -->
+        <div class="paw-mypets-tabs">
+            <button type="button" class="paw-mypets-tab active"
+                    data-tab="overview">Overview</button>
+
+            <button type="button" class="paw-mypets-tab"
+                    data-tab="medical">Medical History</button>
+
+            <button type="button" class="paw-mypets-tab"
+                    data-tab="vaccinations">Vaccinations</button>
+
+            <button type="button" class="paw-mypets-tab"
+                    data-tab="prescriptions">Prescriptions</button>
+
+            <button type="button" class="paw-mypets-tab"
+                    data-tab="documents">Documents</button>
+        </div>
+
+
+        <!-- Overview Tab -->
+        <div class="paw-mypets-tab-content active"
+             id="pawPetOverview">
+
+            <div class="paw-mypets-overview-grid">
+
+                <!-- Health Overview -->
+                <div class="paw-mypets-health-card">
+                    <div class="paw-mypets-section-heading">
+                        <div>
+                            <h3>Health Overview</h3>
+                            <p>Quick health insights</p>
+                        </div>
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+
+                    <div class="paw-mypets-health-metrics">
+
+                        <div class="paw-mypets-metric">
+                            <span class="paw-mypets-metric-icon">
+                                <i class="fas fa-weight"></i>
+                            </span>
+                            <div>
+                                <small>Current Weight</small>
+                                <strong>24.5 kg</strong>
+                            </div>
+                        </div>
+
+                        <div class="paw-mypets-metric">
+                            <span class="paw-mypets-metric-icon">
+                                <i class="fas fa-syringe"></i>
+                            </span>
+                            <div>
+                                <small>Vaccination Status</small>
+                                <strong class="paw-mypets-metric-good">
+                                    Up to Date
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="paw-mypets-metric">
+                            <span class="paw-mypets-metric-icon">
+                                <i class="fas fa-stethoscope"></i>
+                            </span>
+                            <div>
+                                <small>Last Checkup</small>
+                                <strong>Nov 12, 2026</strong>
+                            </div>
+                        </div>
+
+                        <div class="paw-mypets-metric">
+                            <span class="paw-mypets-metric-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </span>
+                            <div>
+                                <small>Next Health Check</small>
+                                <strong>Dec 12, 2026</strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="paw-mypets-quick-actions">
+                        <h4>Quick Actions</h4>
+
+                        <div class="paw-mypets-action-buttons">
+                            <a href="appointments.html">
+                                <i class="fas fa-calendar-plus"></i>
+                                Book Appointment
+                            </a>
+
+                            <a href="medical-records.html">
+                                <i class="fas fa-file-medical"></i>
+                                Add Medical Record
+                            </a>
+
+                            <a href="vaccination-records.html">
+                                <i class="fas fa-syringe"></i>
+                                Add Vaccination
+                            </a>
+
+                            <button type="button" id="pawUpdateWeightButton">
+                                <i class="fas fa-weight"></i>
+                                Update Weight
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Health Timeline -->
+                <div class="paw-mypets-timeline-card">
+                    <div class="paw-mypets-section-heading">
+                        <div>
+                            <h3>Health Timeline</h3>
+                            <p>Recent health activities</p>
+                        </div>
+                        <i class="fas fa-history"></i>
+                    </div>
+
+                    <div class="paw-mypets-timeline">
+
+                        <div class="paw-mypets-timeline-item">
+                            <span class="paw-mypets-timeline-icon">
+                                <i class="fas fa-stethoscope"></i>
+                            </span>
+                            <div>
+                                <strong>General Checkup</strong>
+                                <p>Routine health examination completed.</p>
+                                <small>November 12, 2026</small>
+                            </div>
+                            <span class="paw-mypets-timeline-tag">
+                                Completed
+                            </span>
+                        </div>
+
+                        <div class="paw-mypets-timeline-item">
+                            <span class="paw-mypets-timeline-icon">
+                                <i class="fas fa-syringe"></i>
+                            </span>
+                            <div>
+                                <strong>Vaccination - DHPP</strong>
+                                <p>Scheduled vaccination administered.</p>
+                                <small>October 20, 2026</small>
+                            </div>
+                            <span class="paw-mypets-timeline-tag">
+                                Completed
+                            </span>
+                        </div>
+
+                        <div class="paw-mypets-timeline-item">
+                            <span class="paw-mypets-timeline-icon">
+                                <i class="fas fa-pills"></i>
+                            </span>
+                            <div>
+                                <strong>Skin Allergy Treatment</strong>
+                                <p>Follow-up treatment recorded.</p>
+                                <small>September 28, 2026</small>
+                            </div>
+                            <span class="paw-mypets-timeline-tag">
+                                Completed
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- Other Tab Content Placeholders -->
+        <div class="paw-mypets-tab-content" id="pawPetMedical">
+            <div class="paw-mypets-empty-state">
+                <i class="fas fa-file-medical"></i>
+                <h3>Medical History</h3>
+                <p>View your pet's previous consultations and treatments here.</p>
+            </div>
+        </div>
+
+        <div class="paw-mypets-tab-content" id="pawPetVaccinations">
+            <div class="paw-mypets-empty-state">
+                <i class="fas fa-syringe"></i>
+                <h3>Vaccination Records</h3>
+                <p>Keep track of your pet's vaccination history and due dates.</p>
+            </div>
+        </div>
+
+        <div class="paw-mypets-tab-content" id="pawPetPrescriptions">
+            <div class="paw-mypets-empty-state">
+                <i class="fas fa-pills"></i>
+                <h3>Prescriptions</h3>
+                <p>View prescribed medicines and treatment instructions.</p>
+            </div>
+        </div>
+
+        <div class="paw-mypets-tab-content" id="pawPetDocuments">
+            <div class="paw-mypets-empty-state">
+                <i class="fas fa-folder-open"></i>
+                <h3>Pet Documents</h3>
+                <p>Store and access your pet's important health documents.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Add New Pet Form -->
+<section class="paw-mypets-add-section" id="pawAddPetForm">
+
+    <div class="paw-mypets-add-heading">
+        <span>GROW YOUR FAMILY</span>
+        <h2>Add a New Pet</h2>
+        <p>Create a profile to keep your pet's health information organized.</p>
+    </div>
+
+    <form class="paw-mypets-form" id="pawNewPetForm">
+
+        <div class="paw-mypets-form-grid">
+
+            <div class="paw-mypets-form-group">
+                <label for="pawPetName">Pet Name</label>
+                <input type="text" id="pawPetName"
+                       placeholder="Enter pet name" required>
+            </div>
+
+            <div class="paw-mypets-form-group">
+                <label for="pawPetType">Pet Type</label>
+                <select id="pawPetType" required>
+                    <option value="">Select pet type</option>
+                    <option>Dog</option>
+                    <option>Cat</option>
+                    <option>Bird</option>
+                    <option>Rabbit</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="paw-mypets-form-group">
+                <label for="pawPetBreed">Breed</label>
+                <input type="text" id="pawPetBreed"
+                       placeholder="Enter breed">
+            </div>
+
+            <div class="paw-mypets-form-group">
+                <label for="pawPetDob">Date of Birth</label>
+                <input type="date" id="pawPetDob">
+            </div>
+
+            <div class="paw-mypets-form-group">
+                <label for="pawPetGender">Gender</label>
+                <select id="pawPetGender" required>
+                    <option value="">Select gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+            <div class="paw-mypets-form-group">
+                <label for="pawPetWeight">Weight (kg)</label>
+                <input type="number" id="pawPetWeight"
+                       placeholder="Enter weight" min="0" step="0.1">
+            </div>
+
+        </div>
+
+        <div class="paw-mypets-form-group paw-mypets-photo-group">
+            <label for="pawPetPhoto">Pet Photo</label>
+            <input type="file" id="pawPetPhoto"
+                   accept="image/*">
+            <small>Upload a clear photo of your pet.</small>
+        </div>
+
+        <div class="paw-mypets-form-actions">
+            <button type="reset" class="paw-mypets-reset-btn">
+                Clear Form
+            </button>
+
+            <button type="submit" class="paw-mypets-submit-btn">
+                <i class="fas fa-plus"></i>
+                Add Pet Profile
+            </button>
+        </div>
+
+    </form>
+</section>
+
+</main>
+
+        
+    </div>
+
+</div>
+
+
+<!-- LOGOUT CONFIRMATION MODAL -->
+<div class="paw-logout-modal" id="pawLogoutModal">
+
+    <div class="paw-logout-modal-overlay"
+         id="pawLogoutModalOverlay"></div>
+
+    <div class="paw-logout-card">
+
+        <div class="paw-logout-icon">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
+
+        <h2>Confirm Logout</h2>
+
+        <p>
+            Are you sure you want to log out of your PawsHeal account?
+        </p>
+
+        <div class="paw-logout-actions">
+
+            <button type="button"
+                    class="paw-logout-cancel"
+                    id="pawLogoutCancel">
+                No, Stay
+            </button>
+
+            <button type="button"
+                    class="paw-logout-confirm"
+                    id="pawLogoutConfirm">
+                Yes, Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

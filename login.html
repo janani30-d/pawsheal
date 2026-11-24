@@ -1,0 +1,306 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | PawsHeal Veterinary Clinic</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+         LOGIN PAGE
+    ====================================== -->
+
+    <main class="paw-login-page">
+
+        <!-- TOP CONTROLS -->
+        <div class="paw-login-controls">
+
+            <!-- Dark Mode Toggle -->
+            <button type="button"
+                class="paw-login-theme-toggle"
+                id="pawLoginThemeToggle"
+                aria-label="Toggle dark mode"
+                title="Dark Mode">
+
+                <i class="fas fa-moon"></i>
+
+            </button>
+
+            <!-- RTL Toggle -->
+            <button type="button"
+                class="paw-login-rtl-toggle"
+                id="pawLoginRtlToggle"
+                aria-label="Toggle RTL direction"
+                title="RTL">
+
+                <i class="fas fa-right-left"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- LOGIN CARD -->
+        <div class="paw-login-wrapper">
+
+            <div class="paw-login-card">
+
+                <div class="paw-login-logo">
+    <a href="index.html" aria-label="PawsHeal Home">
+
+        <!-- Light Mode Logo -->
+        <img src="images/logo.png"
+             class="paw-login-logo-light"
+             alt="PawsHeal Logo">
+
+        <!-- Dark Mode Logo -->
+        <img src="images/logo-dark.png"
+             class="paw-login-logo-dark"
+             alt="PawsHeal Logo">
+
+    </a>
+</div>
+
+
+                <!-- HEADING -->
+                <div class="paw-login-heading">
+
+                    <span class="paw-login-eyebrow">
+                        WELCOME BACK
+                    </span>
+
+                    <h1>Welcome Back!</h1>
+
+                    <p>
+                        Sign in to your PawsHeal account and
+                        continue caring for your beloved pet.
+                    </p>
+
+                </div>
+
+
+                <!-- LOGIN FORM -->
+                <form class="paw-login-form" id="pawLoginForm">
+
+                    <!-- EMAIL -->
+                    <div class="paw-login-field">
+
+                        <label for="pawLoginEmail">
+                            Email Address
+                        </label>
+
+                        <div class="paw-login-input-box">
+
+                            <i class="far fa-envelope paw-login-input-icon"></i>
+
+                            <input type="email"
+                                id="pawLoginEmail"
+                                name="email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+                    <div class="paw-login-field">
+
+                        <label for="pawLoginPassword">
+                            Password
+                        </label>
+
+                        <div class="paw-login-input-box">
+
+                            <i class="fas fa-lock paw-login-input-icon"></i>
+
+                            <input type="password"
+                                id="pawLoginPassword"
+                                name="password"
+                                placeholder="Enter your password"
+                                autocomplete="current-password"
+                                required>
+
+                            <!-- PASSWORD VISIBILITY -->
+                            <button type="button"
+                                class="paw-login-password-toggle"
+                                id="pawLoginPasswordToggle"
+                                aria-label="Show password">
+
+                                <i class="far fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- REMEMBER ME & FORGOT PASSWORD -->
+                    <div class="paw-login-options">
+
+                        <label class="paw-login-remember">
+
+                            <input type="checkbox"
+                                id="pawLoginRemember"
+                                name="remember">
+
+                            <span class="paw-login-checkmark"></span>
+
+                            <span>Remember Me</span>
+
+                        </label>
+
+                        <a href="forgot-password.html"
+                            class="paw-login-forgot">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+
+                    <!-- LOGIN BUTTON -->
+                    <button type="submit" class="paw-login-submit">
+
+                        Login to Your Account
+
+                        <i class="fas fa-arrow-right"></i>
+
+                    </button>
+
+                </form>
+
+
+                <!-- DIVIDER -->
+                <div class="paw-login-divider">
+
+                    <span></span>
+
+                    <p>Or Continue With</p>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- SOCIAL LOGIN -->
+                <div class="paw-login-social">
+
+                    <!-- FACEBOOK -->
+                    <button type="button"
+                        class="paw-login-social-btn paw-login-facebook"
+                        aria-label="Continue with Facebook">
+
+                        <svg viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+
+                            <path fill="#1877F2"
+                                d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.093 10.125 24v-8.438H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.695 4.533-4.695 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.49 0-1.955.93-1.955 1.884v2.266h3.328l-.532 3.49h-2.796V24C19.612 23.093 24 18.1 24 12.073Z"/>
+
+                        </svg>
+
+                        <span>Facebook</span>
+
+                    </button>
+
+
+                    <!-- APPLE -->
+                    
+<!-- APPLE -->
+<button type="button"
+    class="paw-login-social-btn paw-login-apple"
+    aria-label="Continue with Apple">
+
+    <i class="fa-brands fa-apple"></i>
+
+    <span>Apple</span>
+
+</button>
+
+
+
+                    <!-- GOOGLE -->
+                    <button type="button"
+                        class="paw-login-social-btn paw-login-google"
+                        aria-label="Continue with Google">
+
+                        <svg viewBox="0 0 48 48"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+
+                            <path fill="#4285F4"
+                                d="M43.6 24.5c0-1.4-.1-2.7-.4-4H24v7.6h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.6c3.9-3.6 6.1-8.8 6.1-14.9Z"/>
+
+                            <path fill="#34A853"
+                                d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.6-5.1c-1.8 1.2-4 1.9-6.9 1.9-5.3 0-9.8-3.6-11.4-8.4H5.8v5.3A20 20 0 0 0 24 44Z"/>
+
+                            <path fill="#FBBC05"
+                                d="M12.6 27.6a12 12 0 0 1 0-7.2v-5.3H5.8a20 20 0 0 0 0 17.8l6.8-5.3Z"/>
+
+                            <path fill="#EA4335"
+                                d="M24 11.9c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 5.9 29.5 4 24 4A20 20 0 0 0 5.8 15.1l6.8 5.3c1.6-4.9 6.1-8.5 11.4-8.5Z"/>
+
+                        </svg>
+
+                        <span>Google</span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- REGISTER LINK -->
+                <div class="paw-login-register">
+
+                    <p>
+                        Don't have an account?
+
+                        <a href="register.html">
+                            Create an Account
+                        </a>
+                    </p>
+
+                </div>
+
+
+                <!-- BACK TO HOME -->
+                <div class="paw-login-home">
+
+                    <a href="index.html">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
