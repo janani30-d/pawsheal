@@ -373,6 +373,72 @@
 
 }
 
+/* Phone layout for the Pet Care Essentials guide. Keep every topic full width. */
+@media (max-width: 480px) {
+    .paw-pet-guide-content {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+        gap: 14px;
+    }
+
+    .paw-pet-guide-center {
+        grid-column: 1;
+        grid-row: 1;
+        width: 100%;
+        min-height: 260px;
+        height: 260px;
+        margin-bottom: 4px;
+    }
+
+    .paw-pet-guide-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    .paw-pet-guide-left,
+    .paw-pet-guide-right {
+        display: contents;
+    }
+
+    .paw-pet-guide-item {
+        grid-column: 1;
+        width: 100%;
+        min-width: 0;
+        min-height: 0;
+        box-sizing: border-box;
+        padding: 16px;
+        gap: 14px;
+        border-radius: 24px;
+    }
+
+    .paw-pet-guide-health { grid-row: 2; }
+    .paw-pet-guide-food { grid-row: 3; }
+    .paw-pet-guide-grooming { grid-row: 4; }
+    .paw-pet-guide-exercise { grid-row: 5; }
+    .paw-pet-guide-vet { grid-row: 6; }
+    .paw-pet-guide-love { grid-row: 7; }
+
+    .paw-pet-guide-icon {
+        flex: 0 0 54px;
+        width: 54px;
+        min-height: 54px;
+    }
+
+    .paw-pet-guide-icon > i:first-child {
+        font-size: 34px;
+    }
+
+    .paw-pet-guide-info h3 {
+        font-size: 17px;
+    }
+
+    .paw-pet-guide-info p {
+        font-size: 14px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+}
+
 /* =========================================================
    PAWSHEAL - GLOBAL RTL
 ========================================================= */
@@ -1164,7 +1230,7 @@ body.paw-menu-open {
 
     .paw-home1-about-grid {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 390px 270px 230px;
+        grid-template-rows: minmax(480px, auto) 270px 230px;
         grid-template-areas:
             "content team"
             "dog brand"
@@ -17122,4 +17188,196 @@ html.dark-mode .paw-vet-final-button:hover {
     background: #A3CEB8;
     color: #193F34;
     border-color: #A3CEB8;
+}
+
+/* Use one matching calendar icon in both directions. */
+.paw-home2-date-input-wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.paw-home2-date-input-wrap::before {
+    content: "\f073";
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    color: #193F34;
+    font-family: "Font Awesome 6 Free";
+    font-size: 15px;
+    font-weight: 900;
+    pointer-events: none;
+}
+
+.paw-home2-date-input-wrap input[type="date"] {
+    padding-right: 40px !important;
+}
+
+.paw-home2-date-input-wrap input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+html[dir="rtl"] .paw-home2-date-input-wrap::before {
+    right: auto;
+    left: 14px;
+}
+
+html[dir="rtl"] .paw-home2-date-input-wrap input[type="date"] {
+    padding-left: 40px !important;
+    padding-right: 14px !important;
+    text-align: right;
+}
+
+/* Align the RTL date text with the right-aligned field label. */
+html[dir="rtl"] .paw-home2-date-input-wrap input[type="date"] {
+    direction: rtl !important;
+    text-align: right !important;
+    text-align-last: right !important;
+}
+
+html[dir="rtl"] .paw-home2-date-input-wrap input[type="date"]::-webkit-datetime-edit {
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .paw-home2-date-input-wrap input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    direction: rtl;
+    justify-content: flex-start;
+}
+
+/* Pin the empty RTL date placeholder to the same right edge as its label. */
+html[dir="rtl"] .paw-home2-date-input-wrap::after {
+    content: "dd-mm-yyyy";
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    color: #000000;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 450;
+    pointer-events: none;
+}
+
+html[dir="rtl"] .paw-home2-date-input-wrap input[type="date"]:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+
+html[dir="rtl"] .paw-home2-date-input-wrap input[type="date"]:valid ~ * {
+    display: none;
+}
+
+html[dir="rtl"] .paw-home2-date-input-wrap:has(input[type="date"]:valid)::after {
+    display: none;
+}
+
+/* Add breathing room above the PawsHeal Difference heading. */
+.paw-about-difference {
+    padding-top: 110px;
+}
+
+@media (max-width: 1024px) {
+    .paw-about-difference {
+        padding-top: 95px;
+    }
+}
+
+@media (max-width: 480px) {
+    .paw-about-difference {
+        padding-top: 82px;
+    }
+}
+
+@media (max-width: 360px) {
+    .paw-about-difference {
+        padding-top: 72px;
+    }
+}
+
+/* Keep service timeline number badges inside the cards in RTL. */
+html[dir="rtl"] .paw-why-number {
+    translate: -10px 0;
+}
+
+/* Pet Care Essentials: stack one care card per row on mobile. */
+@media (max-width: 480px) {
+    .paw-pet-guide-content {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px !important;
+    }
+
+    .paw-pet-guide-left,
+    .paw-pet-guide-right {
+        display: contents !important;
+    }
+
+    .paw-pet-guide-center {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        min-height: 250px !important;
+        height: 250px !important;
+    }
+
+    .paw-pet-guide-item {
+        grid-column: 1 !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        min-height: 0 !important;
+        padding: 16px !important;
+        border-radius: 24px !important;
+    }
+
+    .paw-pet-guide-health { grid-row: 2 !important; }
+    .paw-pet-guide-food { grid-row: 3 !important; }
+    .paw-pet-guide-grooming { grid-row: 4 !important; }
+    .paw-pet-guide-exercise { grid-row: 5 !important; }
+    .paw-pet-guide-vet { grid-row: 6 !important; }
+    .paw-pet-guide-love { grid-row: 7 !important; }
+}
+
+/* Keep the Pet Care Essentials cards full width on iPad Mini as well. */
+@media (min-width: 481px) and (max-width: 768px) {
+    .paw-pet-guide-content {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 16px !important;
+    }
+
+    .paw-pet-guide-center {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        width: 100% !important;
+        max-width: 380px;
+        min-height: 300px !important;
+        height: 300px !important;
+        justify-self: center;
+    }
+
+    .paw-pet-guide-image {
+        height: 100% !important;
+    }
+
+    .paw-pet-guide-left,
+    .paw-pet-guide-right {
+        display: contents !important;
+    }
+
+    .paw-pet-guide-item {
+        grid-column: 1 !important;
+        width: 100% !important;
+        min-height: 0 !important;
+        box-sizing: border-box;
+    }
+
+    .paw-pet-guide-health { grid-row: 2 !important; }
+    .paw-pet-guide-food { grid-row: 3 !important; }
+    .paw-pet-guide-grooming { grid-row: 4 !important; }
+    .paw-pet-guide-exercise { grid-row: 5 !important; }
+    .paw-pet-guide-vet { grid-row: 6 !important; }
+    .paw-pet-guide-love { grid-row: 7 !important; }
 }

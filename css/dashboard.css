@@ -11661,3 +11661,26 @@ html[dir="rtl"] .paw-payment-filters select {
     padding-left: 42px !important;
     background-position: left 16px center !important;
 }
+/* Avoid a duplicate native calendar next to the appointment form icon in RTL. */
+html[dir="rtl"] .paw-appointment-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+/* Reserve separate RTL space for the leading dropdown arrow and trailing field icon. */
+html[dir="rtl"] .paw-appointment-input-wrapper select {
+    padding-right: 52px !important;
+    padding-left: 42px !important;
+    background-position: left 16px center !important;
+}
+
+/* Use the styled appointment calendar icon in both LTR and RTL. */
+.paw-appointment-input-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+/* Keep the pet name clear of the paw icon in the RTL medical selector. */
+html[dir="rtl"] .paw-medical-select-wrapper select {
+    padding-right: 42px !important;
+    padding-left: 42px !important;
+    background-position: left 16px center !important;
+}

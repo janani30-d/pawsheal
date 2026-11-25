@@ -263,7 +263,6 @@ html[dir="rtl"] .paw-logout-actions {
 
 }
 
-
 /* ==========================================
    RESPONSIVE - SMALL MOBILE / 360px
 ========================================== */
@@ -4682,4 +4681,102 @@ html[dir="rtl"] .paw-mypets-form-actions {
 /* Add room at the end of selects without replacing their native arrow. */
 .paw-dashboard-layout select {
     padding-inline-end: 32px;
+}
+
+/* Keep Vaccine Name, Date Given and Next Due fully visible on phones. */
+@media (max-width: 480px) {
+    .paw-vax-table-wrapper {
+        max-width: 100%;
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+        touch-action: pan-x;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .paw-vax-table {
+        width: 678px !important;
+        min-width: 678px !important;
+        table-layout: fixed;
+    }
+
+    .paw-vax-table th:nth-child(1),
+    .paw-vax-table td:nth-child(1) { width: 135px; }
+    .paw-vax-table th:nth-child(2),
+    .paw-vax-table td:nth-child(2) { width: 82px; }
+    .paw-vax-table th:nth-child(3),
+    .paw-vax-table td:nth-child(3) { width: 84px; }
+    .paw-vax-table th:nth-child(4),
+    .paw-vax-table td:nth-child(4) { width: 130px; }
+    .paw-vax-table th:nth-child(5),
+    .paw-vax-table td:nth-child(5) { width: 90px; }
+    .paw-vax-table th:nth-child(6),
+    .paw-vax-table td:nth-child(6) { width: 110px; }
+
+    .paw-vax-table th,
+    .paw-vax-table td {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+
+    .paw-vax-table td:nth-child(1),
+    .paw-vax-table td:nth-child(1) .paw-vax-table-name {
+        white-space: normal;
+    }
+
+    .paw-vax-table-name {
+        align-items: flex-start;
+        gap: 6px;
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .paw-vax-table-name i {
+        flex: 0 0 16px;
+        width: 16px;
+        margin-top: 2px;
+    }
+}
+
+/* Keep the Service column readable in the mobile transaction table. */
+@media (max-width: 480px) {
+    .paw-payment-table-wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto !important;
+        overflow-y: hidden;
+        overscroll-behavior-x: contain;
+        touch-action: pan-x;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .paw-payment-table {
+        width: 778px !important;
+        min-width: 778px !important;
+        table-layout: fixed;
+    }
+
+    .paw-payment-table th:nth-child(1),
+    .paw-payment-table td:nth-child(1) { width: 108px; }
+    .paw-payment-table th:nth-child(2),
+    .paw-payment-table td:nth-child(2) { width: 75px; }
+    .paw-payment-table th:nth-child(3),
+    .paw-payment-table td:nth-child(3) { width: 65px; }
+    .paw-payment-table th:nth-child(4),
+    .paw-payment-table td:nth-child(4) { width: 125px; }
+
+    .paw-payment-table th:nth-child(5),
+    .paw-payment-table td:nth-child(5) { width: 75px; }
+    .paw-payment-table th:nth-child(6),
+    .paw-payment-table td:nth-child(6) { width: 135px; }
+    .paw-payment-table th:nth-child(7),
+    .paw-payment-table td:nth-child(7) { width: 85px; }
+    .paw-payment-table th:nth-child(8),
+    .paw-payment-table td:nth-child(8) { width: 110px; }
+
+    .paw-payment-table td:nth-child(4) {
+        white-space: normal;
+        overflow-wrap: anywhere;
+        line-height: 1.35;
+    }
 }

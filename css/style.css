@@ -22268,6 +22268,121 @@ html.dark-mode .paw-nav-link.active::after {
     z-index: 2;
 }
 
+@media (max-width: 768px) {
+    .paw-home1-experience-card {
+        top: 15px !important;
+        left: 12px !important;
+        max-width: calc(100% - 24px);
+        box-sizing: border-box;
+    }
+}
+
+/* Keep the Pet Care Essentials guide readable on phone screens. */
+@media (max-width: 768px) {
+    .paw-pet-guide-section {
+        padding: 60px 0 65px;
+    }
+
+    .paw-pet-guide-container {
+        width: min(100% - 32px, 560px);
+    }
+
+    .paw-pet-guide-heading {
+        margin-bottom: 28px;
+    }
+
+    .paw-pet-guide-heading h2 {
+        font-size: clamp(27px, 7vw, 34px);
+    }
+
+    .paw-pet-guide-heading p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .paw-pet-guide-content {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        min-height: 0;
+    }
+
+    .paw-pet-guide-left,
+    .paw-pet-guide-right {
+        display: contents;
+    }
+
+    .paw-pet-guide-center {
+        grid-row: 1;
+        min-height: 0;
+        height: clamp(230px, 68vw, 320px);
+        margin-bottom: 8px;
+    }
+
+    .paw-pet-guide-circle,
+    .paw-pet-guide-image {
+        width: min(100%, 320px);
+        height: 100%;
+    }
+
+    .paw-pet-guide-circle {
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .paw-pet-guide-heart {
+        font-size: 34px;
+    }
+
+    .paw-pet-guide-connection {
+        display: none;
+    }
+
+    .paw-pet-guide-item {
+        grid-column: 1;
+        min-height: 0;
+        padding: 18px 20px;
+        gap: 14px;
+        border-radius: 24px;
+    }
+
+    .paw-pet-guide-health { grid-row: 2; }
+    .paw-pet-guide-food { grid-row: 3; }
+    .paw-pet-guide-grooming { grid-row: 4; }
+    .paw-pet-guide-exercise { grid-row: 5; }
+    .paw-pet-guide-vet { grid-row: 6; }
+    .paw-pet-guide-love { grid-row: 7; }
+
+    .paw-pet-guide-icon {
+        flex-basis: 58px;
+        width: 58px;
+        min-height: 58px;
+    }
+
+    .paw-pet-guide-icon > i:first-child,
+    .paw-pet-guide-food .paw-pet-guide-icon > i:first-child,
+    .paw-pet-guide-grooming .paw-pet-guide-icon > i:first-child,
+    .paw-pet-guide-exercise .paw-pet-guide-icon > i:first-child {
+        font-size: 34px;
+    }
+
+    .paw-pet-guide-icon > i:nth-child(2) {
+        right: 0;
+        bottom: 1px;
+        font-size: 15px;
+    }
+
+    .paw-pet-guide-info h3 {
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+
+    .paw-pet-guide-info p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
 /* Keep the pet image above the card area visible */
 .paw-home1-hero-image {
     object-position: center 20%;
@@ -22343,4 +22458,30 @@ html.dark-mode .paw-nav-link.active::after {
     width: 75% !important;
     max-width: 560px;
     flex: 0 0 75%;
+}
+
+
+/* Keep Home 2 hero trust items aligned correctly in RTL. */
+html[dir="rtl"] .paw-home2-hero-trust {
+    direction: rtl;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .paw-home2-trust-item {
+    direction: rtl;
+    flex-direction: row;
+    text-align: right;
+}
+/* Align the Pet Care final CTA label with the RTL content edge. */
+html[dir="rtl"] .paw-petcare-final-label {
+    align-self: flex-start;
+}
+
+/* Align contact form values with their labels in RTL layouts. */
+html[dir="rtl"] .paw-contact-input-wrapper input,
+html[dir="rtl"] .paw-contact-input-wrapper select,
+html[dir="rtl"] .paw-contact-input-wrapper textarea {
+    direction: rtl;
+    text-align: right;
 }
