@@ -22236,3 +22236,111 @@ html.dark-mode .paw-nav-link.active::after {
     background: #B7DCCB;
     color: #173B2F;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.paw-home1-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20% !important;
+}
+
+
+
+
+
+/* Move Trusted Care card away from the pet's face */
+.paw-home1-experience-card {
+    top: 15px !important;
+    left: -35px !important;
+    z-index: 2;
+}
+
+/* Keep the pet image above the card area visible */
+.paw-home1-hero-image {
+    object-position: center 20%;
+}
+
+
+
+.paw-home1-about-image-overlay span {
+    color: #ffffff !important;
+}
+
+
+
+
+
+
+
+
+
+
+/* Core Values Cards - Paragraph Spacing Fix */
+.paw-about-value-card {
+    box-sizing: border-box;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+}
+
+.paw-about-value-card p {
+    width: 100%;
+    max-width: 155px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+
+
+
+/* Add spacing between number circle and card edge */
+.paw-why-number {
+    translate: 10px 0;
+    z-index: 2;
+}
+
+
+
+
+.paw-vet-final-button {
+    border: 2px solid #ffffff !important;
+    border-radius: 8px;
+}
+
+
+
+
+
+/* Prevent benefit text from touching divider */
+.paw-vet-prevention-benefit {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+    box-sizing: border-box;
+}
+
+.paw-vet-prevention-benefit span {
+    display: block;
+    white-space: nowrap;
+    margin-top: 10px;
+}
+
+
+.paw-vet-prevention-banner-main {
+    width: 75% !important;
+    max-width: 560px;
+    flex: 0 0 75%;
+}

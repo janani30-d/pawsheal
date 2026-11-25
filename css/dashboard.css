@@ -11460,3 +11460,204 @@ html[dir="rtl"] .paw-payment-form-actions {
     top: 0;
     transform: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Pet Type & Gender Dropdown */
+.paw-mypets-form-group select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+
+    padding: 0 48px 0 16px !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23245747' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+
+    background-repeat: no-repeat !important;
+    background-position: right 18px center !important;
+    background-size: 16px !important;
+}
+
+/* RTL */
+html[dir="rtl"] .paw-mypets-form-group select {
+    padding: 0 16px 0 48px !important;
+    background-position: left 18px center !important;
+}
+
+
+
+
+
+/* Dark Mode - Dropdown Arrow */
+html.dark-mode .paw-mypets-form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+}
+
+
+
+
+
+
+
+
+
+/* Appointment Dropdown Arrow Spacing */
+.paw-appointment-filters select,
+.paw-appointment-input-wrapper select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23245747' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+
+    background-repeat: no-repeat !important;
+    background-position: right 16px center !important;
+    background-size: 16px !important;
+
+    padding-right: 42px !important;
+}
+
+/* Dark Mode - White Arrow */
+html.dark-mode .paw-appointment-filters select,
+html.dark-mode .paw-appointment-input-wrapper select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+}
+
+/* RTL Support */
+html[dir="rtl"] .paw-appointment-filters select,
+html[dir="rtl"] .paw-appointment-input-wrapper select {
+    background-position: left 16px center !important;
+    padding-right: 16px !important;
+    padding-left: 42px !important;
+}
+
+
+
+
+/* Medical Records - Pet Dropdown Arrow */
+.paw-medical-select-wrapper select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+
+    padding-right: 42px !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23245747' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+
+    background-repeat: no-repeat !important;
+    background-position: right 16px center !important;
+    background-size: 16px !important;
+}
+
+/* Dark Mode - White Arrow */
+html.dark-mode .paw-medical-select-wrapper select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+}
+
+/* RTL */
+html[dir="rtl"] .paw-medical-select-wrapper select {
+    padding-right: 16px !important;
+    padding-left: 42px !important;
+    background-position: left 16px center !important;
+}
+
+
+
+
+
+/* Prescription Pet Dropdown */
+.paw-rx-pet-selector select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+
+    padding-right: 42px !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23245747' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+
+    background-repeat: no-repeat !important;
+    background-position: right 16px center !important;
+    background-size: 16px !important;
+}
+
+/* Dark Mode - White Arrow */
+html.dark-mode .paw-rx-pet-selector select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+}
+
+/* RTL */
+html[dir="rtl"] .paw-rx-pet-selector select {
+    padding-right: 16px !important;
+    padding-left: 42px !important;
+    background-position: left 16px center !important;
+}
+
+
+
+
+
+/* Vaccination Status Dropdown */
+.paw-vax-record-controls select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+
+    padding-right: 42px !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23245747' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+
+    background-repeat: no-repeat !important;
+    background-position: right 16px center !important;
+    background-size: 16px !important;
+}
+
+/* Dark Mode - White Arrow */
+html.dark-mode .paw-vax-record-controls select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+}
+
+/* RTL */
+html[dir="rtl"] .paw-vax-record-controls select {
+    padding-right: 16px !important;
+    padding-left: 42px !important;
+    background-position: left 16px center !important;
+}
+
+
+
+
+
+/* Payment Filters - Dropdown Arrow Spacing */
+.paw-payment-filters select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+
+    padding-right: 42px !important;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23245747' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+
+    background-repeat: no-repeat !important;
+    background-position: right 16px center !important;
+    background-size: 16px !important;
+}
+
+/* Dark Mode - White Arrow */
+html.dark-mode .paw-payment-filters select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") !important;
+}
+
+/* RTL Support */
+html[dir="rtl"] .paw-payment-filters select {
+    padding-right: 16px !important;
+    padding-left: 42px !important;
+    background-position: left 16px center !important;
+}
