@@ -677,6 +677,17 @@ html[dir="rtl"] .paw-overview-reminder-status {
         padding: 10px;
     }
 
+    .paw-overview-appointment-date {
+        width: 58px;
+        min-width: 58px;
+        min-height: 58px;
+    }
+
+    .paw-overview-appointment-details h3 {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
     .paw-overview-appointment-status {
         grid-column: 2;
         margin-left: 0;
@@ -974,6 +985,8 @@ html[dir="rtl"] .paw-overview-reminder-status {
     .paw-mypets-tabs {
         gap: 17px;
         padding-top: 14px;
+        flex-wrap: wrap;
+        overflow-x: visible;
     }
 
     .paw-mypets-tab {
@@ -1542,7 +1555,9 @@ html[dir="rtl"] .paw-mypets-form-actions {
 
     .paw-appointment-filters select {
         width: 100%;
-        height: 40px;
+        height: 46px;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 
     .paw-appointment-item,
@@ -2524,10 +2539,9 @@ html[dir="rtl"] .paw-mypets-form-actions {
     .paw-rx-tabs {
         display: flex;
         width: 100%;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 7px;
-        scrollbar-width: thin;
+        flex-wrap: wrap;
+        overflow: visible;
+        padding-bottom: 0;
     }
 
     .paw-rx-tab {
@@ -3081,6 +3095,26 @@ html[dir="rtl"] .paw-mypets-form-actions {
         padding: 14px;
     }
 
+    .paw-vax-table {
+        min-width: 680px;
+    }
+
+    .paw-vax-table th,
+    .paw-vax-table td {
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+
+    .paw-vax-actions {
+        gap: 2px;
+    }
+
+    .paw-vax-actions button {
+        flex-basis: 25px;
+        width: 25px;
+        height: 25px;
+    }
+
     .paw-vax-records-header {
         align-items: flex-start;
         flex-direction: column;
@@ -3246,7 +3280,19 @@ html[dir="rtl"] .paw-mypets-form-actions {
     }
 
     .paw-vax-table {
-        min-width: 730px;
+        min-width: 680px;
+    }
+
+    .paw-vax-table th,
+    .paw-vax-table td {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+
+    .paw-vax-actions button {
+        flex-basis: 23px;
+        width: 23px;
+        height: 23px;
     }
 
     /* BOTTOM SECTIONS */
@@ -4007,7 +4053,16 @@ html[dir="rtl"] .paw-mypets-form-actions {
     }
 
     .paw-payment-table {
-        min-width: 900px;
+        min-width: 760px;
+    }
+
+    .paw-payment-table th,
+    .paw-payment-table td {
+        padding: 6px 5px;
+    }
+
+    .paw-payment-table td:nth-child(7) {
+        white-space: nowrap;
     }
 
     /* HISTORY */

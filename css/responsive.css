@@ -786,6 +786,11 @@ body.paw-menu-open {
         height: 46px;
     }
 
+    .paw-footer-newsletter-form input {
+        box-sizing: border-box;
+        padding: 10px 28px !important;
+    }
+
     .paw-footer-bottom {
         flex-direction: column;
         text-align: center;
@@ -11116,7 +11121,27 @@ body.paw-menu-open {
 
     .paw-vet-team-highlights {
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 22px;
+        row-gap: 0;
+    }
+
+    .paw-vet-team-highlight {
+        min-width: 0;
+        min-height: 54px;
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 8px 24px;
+    }
+
+    .paw-vet-team-highlight > i {
+        flex: 0 0 24px;
+        width: 24px;
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .paw-vet-team-highlight h4 {
+        min-width: 0;
+        font-size: 14px;
     }
 
     .paw-vet-team-highlight:nth-child(2) {
@@ -11183,15 +11208,36 @@ body.paw-menu-open {
     .paw-vet-team-highlights {
         margin-top: 35px;
         padding: 22px 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 0;
     }
 
     .paw-vet-team-highlight {
-        gap: 11px;
-        padding: 5px 10px;
+        min-width: 0;
+        min-height: 56px;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 8px 14px;
+    }
+
+    .paw-vet-team-highlight:nth-child(2) {
+        border-right: none;
+    }
+
+    .paw-vet-team-highlight:nth-child(1),
+    .paw-vet-team-highlight:nth-child(3) {
+        border-right: 1px solid rgba(36, 87, 71, 0.25);
+    }
+
+    .paw-vet-team-highlight h4 {
+        min-width: 0;
+        font-size: 14px;
     }
 
     .paw-vet-team-highlight > i {
-        font-size: 30px;
+        flex: 0 0 24px;
+        width: 24px;
+        font-size: 24px;
     }
 }
 
@@ -11932,7 +11978,7 @@ body.paw-menu-open {
     }
 
     .paw-vet-specialty-wellness {
-        min-height: 350px;
+        min-height: 300px;
     }
 
     .paw-vet-specialty-wellness .paw-vet-specialty-image {
@@ -12926,7 +12972,7 @@ body.paw-menu-open {
     .paw-vet-final-content {
         width: 72%;
         min-height: 520px;
-        padding: 45px 35px 40px 20%;
+        padding: 45px 46px 40px 20%;
     }
 
     .paw-vet-final-description {
@@ -12934,15 +12980,21 @@ body.paw-menu-open {
     }
 
     .paw-vet-final-contact-item {
-        padding: 8px 9px;
+        min-width: 0;
+        padding: 8px 5px;
     }
 
     .paw-vet-final-contact-item strong {
-        font-size: 14px;
+        font-size: 12px;
+        overflow-wrap: anywhere;
     }
 
     .paw-vet-final-contact-item span {
-        font-size: 13px;
+        font-size: 11px;
+    }
+
+    .paw-vet-final-contact-item div {
+        min-width: 0;
     }
 }
 
@@ -16847,12 +16899,9 @@ html.dark-mode .paw-home2-quickbooking-field select option {
     color: #F3F3E9;
 }
 
-/* Dark Mode - Calendar Icon White */
-
-html.dark-mode .paw-home2-quickbooking-field input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-    opacity: 1;
-    cursor: pointer;
+/* Keep the native picker hidden so the styled calendar stays consistent in both themes. */
+html.dark-mode .paw-home2-date-input-wrap input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
 }
 
 
@@ -17209,6 +17258,10 @@ html.dark-mode .paw-vet-final-button:hover {
     font-size: 15px;
     font-weight: 900;
     pointer-events: none;
+}
+
+html.dark-mode .paw-home2-date-input-wrap::before {
+    color: #FFFFFF;
 }
 
 .paw-home2-date-input-wrap input[type="date"] {
